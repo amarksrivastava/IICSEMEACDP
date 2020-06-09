@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "kern3OdVwUlgq4dBgAdssF",
+    "name" : "getAirlineInfo",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hIppppppppppppp-gt-8509414-2020-05-19T09:56:11.24Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "0hcaOIKTitqe6Z8mxrIjyj",
+    "name" : "AmadeusGetAirlineInfo",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "g0aaaaaaaaaaaaa-gt-8492498-2020-05-19T09:56:10.99Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/AMADEUS"
+  }, {
+    "id" : "321yb3xJawWgqaL2SwTnUc",
+    "name" : "AmadeusLogin",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bcifSB7O2htghGZ-gt-8492508-2020-05-19T09:56:11.019Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/AMADEUS"
+  } ]
+}

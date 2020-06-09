@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "8YIn6iRiMsxgtusuct2n2H",
+    "name" : "Order",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "FAWtHww43dtQR6k-gt-6524742-2020-05-13T11:25:10.504Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

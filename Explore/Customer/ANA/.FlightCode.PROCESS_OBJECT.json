@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5PPoKcaelgMiDZNkf41VQq",
+    "name" : "FlightCode",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "GnRpB7O2htghGZ5-gt-8196701-2020-05-18T13:17:01.952Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

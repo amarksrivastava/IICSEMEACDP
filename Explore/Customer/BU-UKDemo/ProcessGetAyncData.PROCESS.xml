@@ -1,0 +1,126 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Uuopz4KhPVEQrXh-gt-1932613-2020-05-14T10:25:12.757Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessGetAyncData</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-14T10:25:13Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-21T10:13:21Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-21T10:13:24Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessGetAyncData/ProcessGetAyncData.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessGetAyncData"
+                  name="ProcessGetAyncData"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="UniqueId" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Response" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PipelineNetworkData</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">3HL1MdRrkm9jKpbGn7vfMC</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmpSQL" type="reference">
+                  <options>
+                     <option name="referenceTo">SQLServerDBOnPremise:PipelineNetworkData</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">78ZvoAXvcKHcRmoMgmZ7WW</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka6mmets" targetId="ka6mmetr"/>
+               </start>
+               <assignment id="ka6mmetr">
+                  <title>Assignment to tmpSQL</title>
+                  <operation source="query" to="temp.tmpSQL">
+                     <query advanceQuery="false" from="SQLServerDBOnPremise:PipelineNetworkData">
+                        <where>UniqueId='{$input.UniqueId }'</where>
+                     </query>
+                  </operation>
+                  <link id="ka6mmeu6" targetId="ka6mmeu5"/>
+               </assignment>
+               <assignment id="ka6mmeu5">
+                  <title>Assignment to Application, CompressorStation etc.</title>
+                  <operation source="formula" to="output.Response[1]/Application">
+                     <expression language="XQuery">$temp.tmpSQL[1]/Application </expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/CompressorStation">
+                     <expression language="XQuery">$temp.tmpSQL[1]/CompressorStation </expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/Diameter">
+                     <expression language="XQuery">$temp.tmpSQL[1]/Diameter </expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/Equipment">
+                     <expression language="XQuery">$temp.tmpSQL[1]/Equipment </expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/Location">
+                     <expression language="XQuery">$temp.tmpSQL[1]/Location || ' United Kingdom'</expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/Operation">
+                     <expression language="XQuery">$temp.tmpSQL[1]/Operation </expression>
+                  </operation>
+                  <operation source="formula" to="output.Response[1]/UniqueId">
+                     <expression language="XQuery">$temp.tmpSQL[1]/UniqueId </expression>
+                  </operation>
+                  <link id="ka6mmeu7" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>39d950de-c3e6-4c50-9b4f-644c7e81f7e7</ns1:Id>
+               <ns1:Name>Test</ns1:Name>
+               <ns1:CreatedBy>amsrivastava@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2020-05-14T10:36:22Z</ns1:CreationDate>
+               <ns1:ModifiedBy>amsrivastava@informatica.com</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-05-14T10:36:22Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "UniqueId": "de2572a1-6d9b-4bce-b29b-01564b51cf31"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>8IvpSlskBgth7xgnYg5lWZ</types1:GUID>
+      <types1:DisplayName>ProcessGetAyncData</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.051Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

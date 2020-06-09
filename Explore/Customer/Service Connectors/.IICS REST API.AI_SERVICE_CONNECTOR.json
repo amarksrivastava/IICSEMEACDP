@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "3gbtOQ59wp5cevr8zTTX2V",
+    "name" : "IICS REST API",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Wu8zbgdwUiQLnzY-gt-10326440-2020-05-27T09:55:36.789Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This service defines actions to connect to IICS through REST API",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

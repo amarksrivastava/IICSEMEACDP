@@ -1,0 +1,106 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>KHUPAZf5kck8jKB-gt-6621008-2020-05-13T17:24:20.596Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessPipelineDataAsync</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T17:24:21Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-21T10:11:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-21T10:11:52Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessPipelineDataAsync/ProcessPipelineDataAsync.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessPipelineDataAsync"
+                  name="ProcessPipelineDataAsync"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="PipelineNetworkDataRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PipelineNetworkData</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">3HL1MdRrkm9jKpbGn7vfMC</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="UniqueId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka5mfwsh" targetId="ka5mfwsg"/>
+               </start>
+               <assignment id="ka5mfwsg">
+                  <title>Assignment to Status, UniqueId</title>
+                  <operation source="constant" to="output.Status">Submitted</operation>
+                  <operation source="formula" to="output.UniqueId">
+                     <expression language="XQuery">util:generateUUID()</expression>
+                  </operation>
+                  <link id="ka5mfwsi" targetId="ka5m4ihk"/>
+               </assignment>
+               <assignment id="kagm1w4h">
+                  <title>Assignment to Location</title>
+                  <operation source="formula" to="input.PipelineNetworkDataRequest[1]/Location">
+                     <expression language="XQuery">$input.PipelineNetworkDataRequest[1]/Location ||' UK'</expression>
+                  </operation>
+                  <link id="kagm1w4j" targetId="ka5m4ihe"/>
+               </assignment>
+               <milestone id="ka5m4ihk">
+                  <title>SendAck</title>
+                  <httpStatus>201</httpStatus>
+                  <link id="kagm1w4i" targetId="kagm1w4h"/>
+               </milestone>
+               <create id="ka5m4ihe">
+                  <title>PipelineNetworkData</title>
+                  <entityName>SQLServerDBOnPremise:PipelineNetworkData</entityName>
+                  <createInput>
+                     <parameter name="UniqueId" source="field" updatable="true">output.UniqueId</parameter>
+                     <parameter name="Application" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/Application</parameter>
+                     <parameter name="Operation" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/Operation</parameter>
+                     <parameter name="Location" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/Location</parameter>
+                     <parameter name="Equipment" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/Equipment</parameter>
+                     <parameter name="CompressorStation" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/CompressorStation</parameter>
+                     <parameter name="Diameter" source="field" updatable="true">input.PipelineNetworkDataRequest[1]/Diameter</parameter>
+                  </createInput>
+                  <link id="ka5m4ihg" targetId="c"/>
+               </create>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>8wklvxSVNaEk4hun2MqHIX</types1:GUID>
+      <types1:DisplayName>ProcessPipelineDataAsync</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.092Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

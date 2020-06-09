@@ -1,0 +1,51 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>WSwxF1T4W6jKsJl-gt-1880262-2020-05-13T13:56:25.78Z::conn.xml</types1:EntryId>
+      <types1:Name>OrderEventAppConnection</types1:Name>
+      <types1:ParentFlowIds>RbeIXycotFgpKi9-gt-6595863-2020-05-13T13:32:10.707Z::pd.xml,siUQbgdwUiQLnzY-gt-6613378-2020-05-13T14:25:14.302Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T13:56:26Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-13T13:57:05Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-13T14:12:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/OrderEventAppConnection/OrderEventAppConnection.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="OrderEventAppConnection"
+                     label="OrderEventAppConnection"
+                     name="OrderEventAppConnection">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="hostName"
+                          value="emw1-cai.dm-em.informaticacloud.com:443"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/OrderEventServiceConnector/OrderEventServiceConnector_svcDef.xml"
+                               guid="1ZamMvkg0S9egFTJGUSi4o"
+                               name="OrderEventServiceConnector"
+                               supportsConnectionTest="false"
+                               uuid="d4f1f1ba-fc1a-417d-a09e-c7ec7a7ed1d0">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>hYrfIoY7cwqfCa4BQgITyC</types1:GUID>
+      <types1:DisplayName>OrderEventAppConnection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.105Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

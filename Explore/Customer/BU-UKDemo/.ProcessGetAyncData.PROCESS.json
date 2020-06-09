@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "8IvpSlskBgth7xgnYg5lWZ",
+    "name" : "ProcessGetAyncData",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Uuopz4KhPVEQrXh-gt-1932613-2020-05-14T10:25:12.757Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3HL1MdRrkm9jKpbGn7vfMC",
+    "name" : "PipelineNetworkData",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5OUwvwNXHVOJ2oT-gt-1894922-2020-05-13T17:19:35.909Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  }, {
+    "id" : "78ZvoAXvcKHcRmoMgmZ7WW",
+    "name" : "SQLServerDBOnPremise",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "J8NFoFuR55aaabd-gt-8330949-2020-03-02T19:54:00.56Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAITraining/SQLInsertDataAPI"
+  } ]
+}

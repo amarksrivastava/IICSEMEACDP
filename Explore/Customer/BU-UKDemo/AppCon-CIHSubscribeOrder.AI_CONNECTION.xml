@@ -1,0 +1,50 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dreAFLK2D86CjqF-gt-6951087-2020-05-14T17:35:52.053Z::conn.xml</types1:EntryId>
+      <types1:Name>AppCon-CIHSubscribeOrder</types1:Name>
+      <types1:ParentFlowIds>eHbcjqbdpIO3M4W-gt-6950039-2020-05-14T17:34:33.07Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-14T17:35:52Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-14T17:35:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AppCon-CIHSubscribeOrder/AppCon-CIHSubscribeOrder.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppCon-CIHSubscribeOrder"
+                     label="AppCon-CIHSubscribeOrder"
+                     name="AppCon-CIHSubscribeOrder">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="hostName"
+                          value="emw1-cih.dm-em.informaticacloud.com:443"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_CIHSubscribeOrder/SC_CIHSubscribeOrder_svcDef.xml"
+                               guid="axKnMquBWW5jiLenYiKVEz"
+                               name="SC-CIHSubscribeOrder"
+                               supportsConnectionTest="false"
+                               uuid="87f81deb-8aac-41ad-b3b1-06e7dee8a349">
+               <description>REST interface to subscribe data to a Data Integration Hub topic.</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>khpwdGfYvYmhrfO7GIPJ4V</types1:GUID>
+      <types1:DisplayName>AppCon-CIHSubscribeOrder</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "7uOoJiCkuGykP23eIBnQQY",
+    "name" : "AmadeusLogin",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UWplp6oIuQaaabc-gt-8424267-2020-05-19T09:56:10.753Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

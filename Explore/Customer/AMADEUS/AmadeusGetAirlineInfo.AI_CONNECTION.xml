@@ -1,0 +1,61 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>g0aaaaaaaaaaaaa-gt-8492498-2020-05-19T09:56:10.99Z::conn.xml</types1:EntryId>
+      <types1:Name>AmadeusGetAirlineInfo</types1:Name>
+      <types1:ParentFlowIds>hIppppppppppppp-gt-8509414-2020-05-19T09:56:11.24Z::pd.xml,VPNzUzeA8rJ4pbg-gt-40811381-2020-05-19T15:05:10.772Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T09:56:11Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-19T09:59:46Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-19T09:59:49Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AmadeusGetAirlineInfo/AmadeusGetAirlineInfo.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AmadeusGetAirlineInfo"
+                     label="AmadeusGetAirlineInfo"
+                     name="AmadeusGetAirlineInfo">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="hostName" value="test.api.amadeus.com"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/AmadeusGetAirlineInfo/AmadeusGetAirlineInfo_svcDef.xml"
+                               guid="7YZ0iXHIjc1fl7yOJcuHc2"
+                               name="AmadeusGetAirlineInfo"
+                               supportsConnectionTest="false"
+                               uuid="dbfea118-c70b-46dc-b3cb-c684d7cacfa7">
+               <description>This document aims at describing how to use the Amadeus REST/JSON API Airline Code Lookup.
+
+# Introduction:
+
+This API returns the airline name and code.
+
+# Authorization
+
+Before using the API you will need to get an access token. Please read our **[Authorization Guide](https://developers.amadeus.com/self-service/apis-docs/guides/authorization)** for more information on how to get your token.
+
+## Supported Operations
+List of supported operations by resource:
+- GET airlines</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>0hcaOIKTitqe6Z8mxrIjyj</types1:GUID>
+      <types1:DisplayName>AmadeusGetAirlineInfo</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.993Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>cjjn9OQcjoYsjql-gt-33581902-2020-05-13T09:33:40.38Z::conn.xml</types1:EntryId>
+      <types1:Name>ReportStudentScore</types1:Name>
+      <types1:ParentFlowIds>URDwXtqdsQR6kbe-gt-6461911-2020-05-13T09:33:40.746Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:USW1PC0CSM3P</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T09:33:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="ReportStudentScore"
+                     label="ReportStudentScore"
+                     name="ReportStudentScore">
+            <description/>
+            <tags>.agent:USW1PC0CSM3P</tags>
+            <agent>USW1PC0CSM3P</agent>
+            <attributes>
+               <attribute encrypted="false" name="hostName" value="localhost:7443"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/ReportStudentScore/ReportStudentScore_svcDef.xml"
+                               guid="1rRDovMdLQMfecoEtRwFAe"
+                               name="ReportStudentScore"
+                               supportsConnectionTest="false"
+                               uuid="cf7f449d-0757-408e-a9ad-aea99c6ae845">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>geUOBfsKRugjnDZfovlzs9</types1:GUID>
+      <types1:DisplayName>ReportStudentScore</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.028Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

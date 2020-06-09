@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "4Bf1jcX4AMug2n3xi1vfsn",
+    "name" : "Airport",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "KZhHwzZsMBw8jIw-gt-8196707-2020-05-18T13:17:02.058Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

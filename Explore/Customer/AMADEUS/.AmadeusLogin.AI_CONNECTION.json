@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "321yb3xJawWgqaL2SwTnUc",
+    "name" : "AmadeusLogin",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bcifSB7O2htghGZ-gt-8492508-2020-05-19T09:56:11.019Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "7uOoJiCkuGykP23eIBnQQY",
+    "name" : "AmadeusLogin",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UWplp6oIuQaaabc-gt-8424267-2020-05-19T09:56:10.753Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/AMADEUS"
+  } ]
+}

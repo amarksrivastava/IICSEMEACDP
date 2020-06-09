@@ -1,0 +1,100 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>SEaaaaaaaaaaaaa-gt-1509472-2020-06-03T12:58:58.724Z::pd.xml</types1:EntryId>
+      <types1:Name>ReceiveXMlInputV2</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-06-03T12:58:59Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-09T09:54:10Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-06-09T09:54:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ReceiveXMlInputV2/ReceiveXMlInputV2.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ReceiveXMlInputV2"
+                  name="ReceiveXMlInputV2"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tmpFiletask" type="reference">
+                  <options>
+                     <option name="referenceTo">FileConnectionForApplicationIntegration:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">2roOiNkT05lkXMELqznMsM</option>
+                  </options>
+               </field>
+               <field description="" name="CostCenter" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kb7q8cse" targetId="kb7q8csd"/>
+               </start>
+               <assignment id="kb7q8csd">
+                  <title>Assignment to CostCenter</title>
+                  <operation source="formula" to="temp.CostCenter">
+                     <expression language="XQuery">sff:createAttachmentFromBase64('Content.xml',util:base64Encode(util:toXML($input.input)) , 'application/xml')</expression>
+                  </operation>
+                  <link id="kb7q8csf" targetId="kazcwz2j"/>
+               </assignment>
+               <assignment id="kazcwz2j">
+                  <title>Assignment to File name, Content Format</title>
+                  <operation source="constant" to="temp.tmpFiletask[1]/format">Attachment</operation>
+                  <operation source="formula" to="temp.tmpFiletask[1]/fileName">
+                     <expression language="XQuery">'ReceiveXMlInput.xml'</expression>
+                  </operation>
+                  <link id="kazcwz2l" targetId="kazcwz2a"/>
+               </assignment>
+               <service id="kazcwz2a">
+                  <title>FileWriter</title>
+                  <serviceName>FileConnectionForApplicationIntegration:FileWriter</serviceName>
+                  <serviceGUID>2roOiNkT05lkXMELqznMsM</serviceGUID>
+                  <serviceInput>
+                     <parameter name="fileWriteTask" source="field" updatable="true">temp.tmpFiletask</parameter>
+                     <parameter name="attachment" source="field" updatable="true">temp.CostCenter</parameter>
+                  </serviceInput>
+                  <link id="kazcwz2c" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>gU4skkA9yGxgI3xO6E8dUf</types1:GUID>
+      <types1:DisplayName>ReceiveXMlInputV2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.217Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

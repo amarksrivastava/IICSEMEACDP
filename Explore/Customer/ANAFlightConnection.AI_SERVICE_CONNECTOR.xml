@@ -1,0 +1,1329 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kLmk3zx6i4tciSr-gt-5297029-2020-05-07T12:37:38.161Z::svc.xml</types1:EntryId>
+      <types1:Name>ANAFlightConnection</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-07T12:37:38Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="ANAFlightConnection"
+                            label=""
+                            name="ANAFlightConnection"
+                            uuid="2437bf3c-2999-4378-a47c-cadeca4f44c6">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="BaseAction"
+                       maxRedirects="100"
+                       name="BaseAction"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://appsqa.ana.pt/FUB/flightupdate.asmx"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">text/xml; charset=utf-8</header>
+                        </httpHeaders>
+                        <body/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateGroundMovs"
+                       maxRedirects="100"
+                       name="UpdateGroundMovs"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateGroundMovs"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateGroundMovs_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateGroundMovs"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateGroundMovs xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:GroundMovements&gt;
+                {
+                    for $stGroundMovements in $UpdateGroundMovs/GroundMovements/stGroundMovements
+                    return
+                    &lt;ns:stGroundMovements&gt;
+                        &lt;ns:ExternalId&gt;{$stGroundMovements/ExternalId/text()}&lt;/ns:ExternalId&gt;
+                        &lt;ns:ExternalFlightId&gt;{$stGroundMovements/ExternalFlightId/text()}&lt;/ns:ExternalFlightId&gt;
+                        &lt;ns:AirportIATA&gt;{$stGroundMovements/AirportIATA/text()}&lt;/ns:AirportIATA&gt;
+                        &lt;ns:FlightNr&gt;{$stGroundMovements/FlightNr/text()}&lt;/ns:FlightNr&gt;
+                        &lt;ns:MovType&gt;{$stGroundMovements/MovType/text()}&lt;/ns:MovType&gt;
+                        &lt;ns:ScheduleDateTimeUTC&gt;{$stGroundMovements/ScheduleDateTimeUTC/text()}&lt;/ns:ScheduleDateTimeUTC&gt;
+                        &lt;ns:StandOrigin&gt;{$stGroundMovements/StandOrigin/text()}&lt;/ns:StandOrigin&gt;
+                        &lt;ns:StandDestination&gt;{$stGroundMovements/StandDestination/text()}&lt;/ns:StandDestination&gt;
+                        &lt;ns:ArrivalDateTimeUTC&gt;{$stGroundMovements/ArrivalDateTimeUTC/text()}&lt;/ns:ArrivalDateTimeUTC&gt;
+                        &lt;ns:ExitDateTimeUTC&gt;{$stGroundMovements/ExitDateTimeUTC/text()}&lt;/ns:ExitDateTimeUTC&gt;
+                        &lt;ns:CreatedBy&gt;{$stGroundMovements/CreatedBy/text()}&lt;/ns:CreatedBy&gt;
+                        &lt;ns:CreatedDateTime&gt;{$stGroundMovements/CreatedDateTime/text()}&lt;/ns:CreatedDateTime&gt;
+                        &lt;ns:LastModifedBy&gt;{$stGroundMovements/LastModifedBy/text()}&lt;/ns:LastModifedBy&gt;
+                        &lt;ns:LastUpdateDateTime&gt;{$stGroundMovements/LastUpdateDateTime/text()}&lt;/ns:LastUpdateDateTime&gt;
+                        &lt;ns:StandOrder&gt;{$stGroundMovements/StandOrder/text()}&lt;/ns:StandOrder&gt;
+                    &lt;/ns:stGroundMovements&gt;
+                }
+            &lt;/ns:GroundMovements&gt;
+        &lt;/ns:UpdateGroundMovs&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateGroundMovsResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateGroundMovsResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateGroundMovsResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateServices"
+                       maxRedirects="100"
+                       name="UpdateServices"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateServices"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateServices_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateServices"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateServices xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:Services&gt;
+                {
+                    for $stServices in $UpdateServices/Services/stServices
+                    return
+                    &lt;ns:stServices&gt;
+                        &lt;ns:ExternalId&gt;{$stServices/ExternalId/text()}&lt;/ns:ExternalId&gt;
+                        &lt;ns:OperationType&gt;{$stServices/OperationType/text()}&lt;/ns:OperationType&gt;
+                        &lt;ns:AirportIATA&gt;{$stServices/AirportIATA/text()}&lt;/ns:AirportIATA&gt;
+                        &lt;ns:Type&gt;{$stServices/Type/text()}&lt;/ns:Type&gt;
+                        &lt;ns:StandCode&gt;{$stServices/StandCode/text()}&lt;/ns:StandCode&gt;
+                        &lt;ns:OnDateTimeUTC&gt;{$stServices/OnDateTimeUTC/text()}&lt;/ns:OnDateTimeUTC&gt;
+                        &lt;ns:OffDateTimeUTC&gt;{$stServices/OffDateTimeUTC/text()}&lt;/ns:OffDateTimeUTC&gt;
+                        &lt;ns:CreatedBy&gt;{$stServices/CreatedBy/text()}&lt;/ns:CreatedBy&gt;
+                        &lt;ns:CreatedDateTime&gt;{$stServices/CreatedDateTime/text()}&lt;/ns:CreatedDateTime&gt;
+                        &lt;ns:LastModifiedBy&gt;{$stServices/LastModifiedBy/text()}&lt;/ns:LastModifiedBy&gt;
+                        &lt;ns:LastUpdateDateTime&gt;{$stServices/LastUpdateDateTime/text()}&lt;/ns:LastUpdateDateTime&gt;
+                    &lt;/ns:stServices&gt;
+                }
+            &lt;/ns:Services&gt;
+        &lt;/ns:UpdateServices&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateServicesResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateServicesResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateServicesResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateTrafficData"
+                       maxRedirects="100"
+                       name="UpdateTrafficData"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateTrafficData"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateTrafficData_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateTrafficData"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateTrafficData xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:Username&gt;{$UpdateTrafficData/Username/text()}&lt;/ns:Username&gt;
+            &lt;ns:Password&gt;{$UpdateTrafficData/Password/text()}&lt;/ns:Password&gt;
+            &lt;ns:TrafficData&gt;
+                {
+                    for $str_TrafficData in $UpdateTrafficData/TrafficData/str_TrafficData
+                    return
+                    &lt;ns:str_TrafficData&gt;
+                        &lt;ns:FlightId&gt;{$str_TrafficData/FlightId/text()}&lt;/ns:FlightId&gt;
+                        &lt;ns:Airport&gt;{$str_TrafficData/Airport/text()}&lt;/ns:Airport&gt;
+                        &lt;ns:Operator&gt;{$str_TrafficData/Operator/text()}&lt;/ns:Operator&gt;
+                        &lt;ns:FlightNr&gt;{$str_TrafficData/FlightNr/text()}&lt;/ns:FlightNr&gt;
+                        &lt;ns:MovType&gt;{$str_TrafficData/MovType/text()}&lt;/ns:MovType&gt;
+                        &lt;ns:ScheduleDateTimeUTC&gt;{$str_TrafficData/ScheduleDateTimeUTC/text()}&lt;/ns:ScheduleDateTimeUTC&gt;
+                        &lt;ns:ActualDateTimeUTC&gt;{$str_TrafficData/ActualDateTimeUTC/text()}&lt;/ns:ActualDateTimeUTC&gt;
+                        &lt;ns:Via&gt;{$str_TrafficData/Via/text()}&lt;/ns:Via&gt;
+                        &lt;ns:OrigDest&gt;{$str_TrafficData/OrigDest/text()}&lt;/ns:OrigDest&gt;
+                        &lt;ns:PgsWithoutTax&gt;{$str_TrafficData/PgsWithoutTax/text()}&lt;/ns:PgsWithoutTax&gt;
+                        &lt;ns:PgsWithTax&gt;{$str_TrafficData/PgsWithTax/text()}&lt;/ns:PgsWithTax&gt;
+                        &lt;ns:PgsDirect&gt;{$str_TrafficData/PgsDirect/text()}&lt;/ns:PgsDirect&gt;
+                        &lt;ns:PsgTransfWithoutTax&gt;{$str_TrafficData/PsgTransfWithoutTax/text()}&lt;/ns:PsgTransfWithoutTax&gt;
+                        &lt;ns:PsgTransfWithTax&gt;{$str_TrafficData/PsgTransfWithTax/text()}&lt;/ns:PsgTransfWithTax&gt;
+                        &lt;ns:CargoLocal&gt;{$str_TrafficData/CargoLocal/text()}&lt;/ns:CargoLocal&gt;
+                        &lt;ns:CargoTransit&gt;{$str_TrafficData/CargoTransit/text()}&lt;/ns:CargoTransit&gt;
+                        &lt;ns:Mail&gt;{$str_TrafficData/Mail/text()}&lt;/ns:Mail&gt;
+                        &lt;ns:EquipChange&gt;{$str_TrafficData/EquipChange/text()}&lt;/ns:EquipChange&gt;
+                        &lt;ns:TechnicalReasons&gt;{$str_TrafficData/TechnicalReasons/text()}&lt;/ns:TechnicalReasons&gt;
+                        &lt;ns:MTec&gt;{$str_TrafficData/MTec/text()}&lt;/ns:MTec&gt;
+                        &lt;ns:Observations&gt;{$str_TrafficData/Observations/text()}&lt;/ns:Observations&gt;
+                        &lt;ns:Baggage&gt;{$str_TrafficData/Baggage/text()}&lt;/ns:Baggage&gt;
+                        &lt;ns:CreateDateTimeUTC&gt;{$str_TrafficData/CreateDateTimeUTC/text()}&lt;/ns:CreateDateTimeUTC&gt;
+                        &lt;ns:Status&gt;{$str_TrafficData/Status/text()}&lt;/ns:Status&gt;
+                    &lt;/ns:str_TrafficData&gt;
+                }
+            &lt;/ns:TrafficData&gt;
+            &lt;ns:Origin&gt;{$UpdateTrafficData/Origin/text()}&lt;/ns:Origin&gt;
+        &lt;/ns:UpdateTrafficData&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateTrafficDataResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateTrafficDataResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateTrafficDataResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateCustomsData"
+                       maxRedirects="100"
+                       name="UpdateCustomsData"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateCustomsData"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateCustomsData_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateCustomsData"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateCustomsData xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:Password&gt;{$UpdateCustomsData/Password/text()}&lt;/ns:Password&gt;
+            &lt;ns:CustomsData&gt;
+                {
+                    for $stCustomsData in $UpdateCustomsData/CustomsData/stCustomsData
+                    return
+                    &lt;ns:stCustomsData&gt;
+                        &lt;ns:Airport&gt;{$stCustomsData/Airport/text()}&lt;/ns:Airport&gt;
+                        &lt;ns:FlightNr&gt;{$stCustomsData/FlightNr/text()}&lt;/ns:FlightNr&gt;
+                        &lt;ns:MovType&gt;{$stCustomsData/MovType/text()}&lt;/ns:MovType&gt;
+                        &lt;ns:ScheduleDateTimeUTC&gt;{$stCustomsData/ScheduleDateTimeUTC/text()}&lt;/ns:ScheduleDateTimeUTC&gt;
+                        &lt;ns:ContraMarca&gt;{$stCustomsData/ContraMarca/text()}&lt;/ns:ContraMarca&gt;
+                    &lt;/ns:stCustomsData&gt;
+                }
+            &lt;/ns:CustomsData&gt;
+        &lt;/ns:UpdateCustomsData&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateCustomsDataResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateCustomsDataResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateCustomsDataResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateFlightExtended"
+                       maxRedirects="100"
+                       name="UpdateFlightExtended"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateFlightExtended"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlightExtended_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateFlightExtended"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateFlightExtended xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:Flights&gt;
+                {
+                    for $stFlightExtended in $UpdateFlightExtended/Flights/stFlightExtended
+                    return
+                    &lt;ns:stFlightExtended&gt;
+                        &lt;ns:ExternalFlightId&gt;{$stFlightExtended/ExternalFlightId/text()}&lt;/ns:ExternalFlightId&gt;
+                        &lt;ns:Airport&gt;{$stFlightExtended/Airport/text()}&lt;/ns:Airport&gt;
+                        &lt;ns:BusinessCenter&gt;{$stFlightExtended/BusinessCenter/text()}&lt;/ns:BusinessCenter&gt;
+                        &lt;ns:IcaoOperator&gt;{$stFlightExtended/IcaoOperator/text()}&lt;/ns:IcaoOperator&gt;
+                        &lt;ns:FlightNumber&gt;{$stFlightExtended/FlightNumber/text()}&lt;/ns:FlightNumber&gt;
+                        &lt;ns:MovType&gt;{$stFlightExtended/MovType/text()}&lt;/ns:MovType&gt;
+                        &lt;ns:ScheduledDateTime&gt;{$stFlightExtended/ScheduledDateTime/text()}&lt;/ns:ScheduledDateTime&gt;
+                        &lt;ns:FullFligthNr&gt;{$stFlightExtended/FullFligthNr/text()}&lt;/ns:FullFligthNr&gt;
+                        &lt;ns:Nature&gt;{$stFlightExtended/Nature/text()}&lt;/ns:Nature&gt;
+                        &lt;ns:OperationType&gt;{$stFlightExtended/OperationType/text()}&lt;/ns:OperationType&gt;
+                        &lt;ns:Classification&gt;{$stFlightExtended/Classification/text()}&lt;/ns:Classification&gt;
+                        &lt;ns:Runway&gt;{$stFlightExtended/Runway/text()}&lt;/ns:Runway&gt;
+                        &lt;ns:SeatNumber&gt;{$stFlightExtended/SeatNumber/text()}&lt;/ns:SeatNumber&gt;
+                        &lt;ns:Vias&gt;{$stFlightExtended/Vias/text()}&lt;/ns:Vias&gt;
+                        &lt;ns:AirlineCodeICAO&gt;{$stFlightExtended/AirlineCodeICAO/text()}&lt;/ns:AirlineCodeICAO&gt;
+                    &lt;/ns:stFlightExtended&gt;
+                }
+            &lt;/ns:Flights&gt;
+        &lt;/ns:UpdateFlightExtended&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateFlightExtendedResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlightExtendedResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateFlightExtendedResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateFlightGroundMov"
+                       maxRedirects="100"
+                       name="UpdateFlightGroundMov"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateFlightGroundMov"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlightGroundMov_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateFlightGroundMov"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateFlightGroundMov xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:FlightGroundMov&gt;
+                &lt;ns:AirportCodeIATA&gt;{$UpdateFlightGroundMov/FlightGroundMov/AirportCodeIATA/text()}&lt;/ns:AirportCodeIATA&gt;
+                &lt;ns:FlightId&gt;{$UpdateFlightGroundMov/FlightGroundMov/FlightId/text()}&lt;/ns:FlightId&gt;
+                &lt;ns:StandOrder&gt;{$UpdateFlightGroundMov/FlightGroundMov/StandOrder/text()}&lt;/ns:StandOrder&gt;
+                &lt;ns:StandFrom&gt;{$UpdateFlightGroundMov/FlightGroundMov/StandFrom/text()}&lt;/ns:StandFrom&gt;
+                &lt;ns:StandFromDateTimeUTC&gt;{$UpdateFlightGroundMov/FlightGroundMov/StandFromDateTimeUTC/text()}&lt;/ns:StandFromDateTimeUTC&gt;
+                &lt;ns:StandTo&gt;{$UpdateFlightGroundMov/FlightGroundMov/StandTo/text()}&lt;/ns:StandTo&gt;
+                &lt;ns:StandToDateTimeUTC&gt;{$UpdateFlightGroundMov/FlightGroundMov/StandToDateTimeUTC/text()}&lt;/ns:StandToDateTimeUTC&gt;
+            &lt;/ns:FlightGroundMov&gt;
+        &lt;/ns:UpdateFlightGroundMov&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="UpdateFlightGroundMovResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlightGroundMovResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateFlightGroundMovResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="BaseAction"
+                       label="UpdateFlight"
+                       maxRedirects="100"
+                       name="UpdateFlight"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <section type="body">
+                           <attribute inherit="overwrite" name="content" type="content"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="UpdateFlight"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlight_AT</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="http://appsqa.ana.pt/FUB/flightupdate.asmx" verb="POST">
+                        <httpHeaders>
+                           <header name="SOAPAction">"http://FUB/FlightUpdate/UpdateFlight"</header>
+                        </httpHeaders>
+                        <body>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Header/&gt;
+   &lt;soap:Body&gt;
+      &lt;ns:UpdateFlight xmlns:ns="http://www.outsystems.com"&gt;
+            &lt;ns:Flight&gt;
+                &lt;ns:FlightId&gt;{$UpdateFlight/Flight/FlightId/text()}&lt;/ns:FlightId&gt;
+                &lt;ns:FlightCode&gt;
+                    &lt;ns:FlightCode&gt;{$UpdateFlight/Flight/FlightCode/FlightCode/text()}&lt;/ns:FlightCode&gt;
+                    &lt;ns:PublicFlightCode&gt;{$UpdateFlight/Flight/FlightCode/PublicFlightCode/text()}&lt;/ns:PublicFlightCode&gt;
+                    &lt;ns:AirlineCodeIATA&gt;{$UpdateFlight/Flight/FlightCode/AirlineCodeIATA/text()}&lt;/ns:AirlineCodeIATA&gt;
+                    &lt;ns:AirlineCodeICAO&gt;{$UpdateFlight/Flight/FlightCode/AirlineCodeICAO/text()}&lt;/ns:AirlineCodeICAO&gt;
+                &lt;/ns:FlightCode&gt;
+                &lt;ns:MovType&gt;{$UpdateFlight/Flight/MovType/text()}&lt;/ns:MovType&gt;
+                &lt;ns:ScheduleDateTimeUTC&gt;{$UpdateFlight/Flight/ScheduleDateTimeUTC/text()}&lt;/ns:ScheduleDateTimeUTC&gt;
+                &lt;ns:Airport&gt;
+                    &lt;ns:ICAO&gt;{$UpdateFlight/Flight/Airport/ICAO/text()}&lt;/ns:ICAO&gt;
+                    &lt;ns:IATA&gt;{$UpdateFlight/Flight/Airport/IATA/text()}&lt;/ns:IATA&gt;
+                &lt;/ns:Airport&gt;
+                &lt;ns:FlightType&gt;{$UpdateFlight/Flight/FlightType/text()}&lt;/ns:FlightType&gt;
+                &lt;ns:CallSign&gt;{$UpdateFlight/Flight/CallSign/text()}&lt;/ns:CallSign&gt;
+                &lt;ns:AircraftModel&gt;
+                    &lt;ns:ICAO&gt;{$UpdateFlight/Flight/AircraftModel/ICAO/text()}&lt;/ns:ICAO&gt;
+                    &lt;ns:IATA&gt;{$UpdateFlight/Flight/AircraftModel/IATA/text()}&lt;/ns:IATA&gt;
+                    &lt;ns:IATASubType&gt;{$UpdateFlight/Flight/AircraftModel/IATASubType/text()}&lt;/ns:IATASubType&gt;
+                &lt;/ns:AircraftModel&gt;
+                &lt;ns:AircraftRegistration&gt;{$UpdateFlight/Flight/AircraftRegistration/text()}&lt;/ns:AircraftRegistration&gt;
+                &lt;ns:AircraftCapacity&gt;{$UpdateFlight/Flight/AircraftCapacity/text()}&lt;/ns:AircraftCapacity&gt;
+                &lt;ns:OrigDestAirport&gt;
+                    &lt;ns:ICAO&gt;{$UpdateFlight/Flight/OrigDestAirport/ICAO/text()}&lt;/ns:ICAO&gt;
+                    &lt;ns:IATA&gt;{$UpdateFlight/Flight/OrigDestAirport/IATA/text()}&lt;/ns:IATA&gt;
+                &lt;/ns:OrigDestAirport&gt;
+                &lt;ns:ClassificationCode&gt;{$UpdateFlight/Flight/ClassificationCode/text()}&lt;/ns:ClassificationCode&gt;
+                &lt;ns:ServiceTypeCode&gt;{$UpdateFlight/Flight/ServiceTypeCode/text()}&lt;/ns:ServiceTypeCode&gt;
+                &lt;ns:NatureCode&gt;{$UpdateFlight/Flight/NatureCode/text()}&lt;/ns:NatureCode&gt;
+                &lt;ns:OperationCode&gt;{$UpdateFlight/Flight/OperationCode/text()}&lt;/ns:OperationCode&gt;
+                &lt;ns:Runway&gt;{$UpdateFlight/Flight/Runway/text()}&lt;/ns:Runway&gt;
+                &lt;ns:FlightStopList&gt;
+                    {
+                        for $str_Airport in $UpdateFlight/Flight/FlightStopList/str_Airport
+                        return
+                        &lt;ns:str_Airport&gt;
+                            &lt;ns:ICAO&gt;{$str_Airport/ICAO/text()}&lt;/ns:ICAO&gt;
+                            &lt;ns:IATA&gt;{$str_Airport/IATA/text()}&lt;/ns:IATA&gt;
+                        &lt;/ns:str_Airport&gt;
+                    }
+                &lt;/ns:FlightStopList&gt;
+                &lt;ns:CodeShareList&gt;
+                    {
+                        for $str_FlightCode in $UpdateFlight/Flight/CodeShareList/str_FlightCode
+                        return
+                        &lt;ns:str_FlightCode&gt;
+                            &lt;ns:FlightCode&gt;{$str_FlightCode/FlightCode/text()}&lt;/ns:FlightCode&gt;
+                            &lt;ns:PublicFlightCode&gt;{$str_FlightCode/PublicFlightCode/text()}&lt;/ns:PublicFlightCode&gt;
+                            &lt;ns:AirlineCodeIATA&gt;{$str_FlightCode/AirlineCodeIATA/text()}&lt;/ns:AirlineCodeIATA&gt;
+                            &lt;ns:AirlineCodeICAO&gt;{$str_FlightCode/AirlineCodeICAO/text()}&lt;/ns:AirlineCodeICAO&gt;
+                        &lt;/ns:str_FlightCode&gt;
+                    }
+                &lt;/ns:CodeShareList&gt;
+                &lt;ns:DelayCodeList&gt;
+                    {
+                        for $str_Delay in $UpdateFlight/Flight/DelayCodeList/str_Delay
+                        return
+                        &lt;ns:str_Delay&gt;
+                            &lt;ns:Code&gt;{$str_Delay/Code/text()}&lt;/ns:Code&gt;
+                        &lt;/ns:str_Delay&gt;
+                    }
+                &lt;/ns:DelayCodeList&gt;
+                &lt;ns:BeltList&gt;
+                    {
+                        for $str_Resource in $UpdateFlight/Flight/BeltList/str_Resource
+                        return
+                        &lt;ns:str_Resource&gt;
+                            &lt;ns:Code&gt;{$str_Resource/Code/text()}&lt;/ns:Code&gt;
+                            &lt;ns:TerminalCode&gt;{$str_Resource/TerminalCode/text()}&lt;/ns:TerminalCode&gt;
+                        &lt;/ns:str_Resource&gt;
+                    }
+                &lt;/ns:BeltList&gt;
+                &lt;ns:CheckInList&gt;
+                    {
+                        for $str_Resource in $UpdateFlight/Flight/CheckInList/str_Resource
+                        return
+                        &lt;ns:str_Resource&gt;
+                            &lt;ns:Code&gt;{$str_Resource/Code/text()}&lt;/ns:Code&gt;
+                            &lt;ns:TerminalCode&gt;{$str_Resource/TerminalCode/text()}&lt;/ns:TerminalCode&gt;
+                        &lt;/ns:str_Resource&gt;
+                    }
+                &lt;/ns:CheckInList&gt;
+                &lt;ns:ChuteList&gt;
+                    {
+                        for $str_Resource in $UpdateFlight/Flight/ChuteList/str_Resource
+                        return
+                        &lt;ns:str_Resource&gt;
+                            &lt;ns:Code&gt;{$str_Resource/Code/text()}&lt;/ns:Code&gt;
+                            &lt;ns:TerminalCode&gt;{$str_Resource/TerminalCode/text()}&lt;/ns:TerminalCode&gt;
+                        &lt;/ns:str_Resource&gt;
+                    }
+                &lt;/ns:ChuteList&gt;
+                &lt;ns:GateList&gt;
+                    {
+                        for $str_Gate in $UpdateFlight/Flight/GateList/str_Gate
+                        return
+                        &lt;ns:str_Gate&gt;
+                            &lt;ns:Code&gt;{$str_Gate/Code/text()}&lt;/ns:Code&gt;
+                            &lt;ns:TerminalCode&gt;{$str_Gate/TerminalCode/text()}&lt;/ns:TerminalCode&gt;
+                            &lt;ns:FlightGateStatus&gt;{$str_Gate/FlightGateStatus/text()}&lt;/ns:FlightGateStatus&gt;
+                            &lt;ns:StartDateTimeUTC&gt;{$str_Gate/StartDateTimeUTC/text()}&lt;/ns:StartDateTimeUTC&gt;
+                            &lt;ns:EndDateTimeUTC&gt;{$str_Gate/EndDateTimeUTC/text()}&lt;/ns:EndDateTimeUTC&gt;
+                        &lt;/ns:str_Gate&gt;
+                    }
+                &lt;/ns:GateList&gt;
+                &lt;ns:StandList&gt;
+                    {
+                        for $str_Resource in $UpdateFlight/Flight/StandList/str_Resource
+                        return
+                        &lt;ns:str_Resource&gt;
+                            &lt;ns:Code&gt;{$str_Resource/Code/text()}&lt;/ns:Code&gt;
+                            &lt;ns:TerminalCode&gt;{$str_Resource/TerminalCode/text()}&lt;/ns:TerminalCode&gt;
+                        &lt;/ns:str_Resource&gt;
+                    }
+                &lt;/ns:StandList&gt;
+                &lt;ns:LastDateTimeUTC&gt;{$UpdateFlight/Flight/LastDateTimeUTC/text()}&lt;/ns:LastDateTimeUTC&gt;
+                &lt;ns:EstimatedDateTimeUTC&gt;{$UpdateFlight/Flight/EstimatedDateTimeUTC/text()}&lt;/ns:EstimatedDateTimeUTC&gt;
+                &lt;ns:PublicEstimatedDateTimeUTC&gt;{$UpdateFlight/Flight/PublicEstimatedDateTimeUTC/text()}&lt;/ns:PublicEstimatedDateTimeUTC&gt;
+                &lt;ns:BlockDateTimeUTC&gt;{$UpdateFlight/Flight/BlockDateTimeUTC/text()}&lt;/ns:BlockDateTimeUTC&gt;
+                &lt;ns:ActualDateTimeUTC&gt;{$UpdateFlight/Flight/ActualDateTimeUTC/text()}&lt;/ns:ActualDateTimeUTC&gt;
+                &lt;ns:HandlersList&gt;
+                    {
+                        for $str_Handler in $UpdateFlight/Flight/HandlersList/str_Handler
+                        return
+                        &lt;ns:str_Handler&gt;
+                            &lt;ns:AssistanceTypeCode&gt;{$str_Handler/AssistanceTypeCode/text()}&lt;/ns:AssistanceTypeCode&gt;
+                            &lt;ns:HandlerCode&gt;{$str_Handler/HandlerCode/text()}&lt;/ns:HandlerCode&gt;
+                            &lt;ns:ServiceCode&gt;{$str_Handler/ServiceCode/text()}&lt;/ns:ServiceCode&gt;
+                        &lt;/ns:str_Handler&gt;
+                    }
+                &lt;/ns:HandlersList&gt;
+                &lt;ns:Observations&gt;{$UpdateFlight/Flight/Observations/text()}&lt;/ns:Observations&gt;
+                &lt;ns:RotationKey&gt;{$UpdateFlight/Flight/RotationKey/text()}&lt;/ns:RotationKey&gt;
+                &lt;ns:OSTD_UTC&gt;{$UpdateFlight/Flight/OSTD_UTC/text()}&lt;/ns:OSTD_UTC&gt;
+                &lt;ns:DSTA_UTC&gt;{$UpdateFlight/Flight/DSTA_UTC/text()}&lt;/ns:DSTA_UTC&gt;
+                &lt;ns:RemarksCode&gt;{$UpdateFlight/Flight/RemarksCode/text()}&lt;/ns:RemarksCode&gt;
+                &lt;ns:RemarksValue&gt;{$UpdateFlight/Flight/RemarksValue/text()}&lt;/ns:RemarksValue&gt;
+                &lt;ns:TTOT_UTC&gt;{$UpdateFlight/Flight/TTOT_UTC/text()}&lt;/ns:TTOT_UTC&gt;
+                &lt;ns:InfrastructureRemarkCode&gt;{$UpdateFlight/Flight/InfrastructureRemarkCode/text()}&lt;/ns:InfrastructureRemarkCode&gt;
+                &lt;ns:InfrastructureRemarkValue&gt;{$UpdateFlight/Flight/InfrastructureRemarkValue/text()}&lt;/ns:InfrastructureRemarkValue&gt;
+            &lt;/ns:Flight&gt;
+        &lt;/ns:UpdateFlight&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="UpdateFlightResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">UpdateFlightResponse_AT</option>
+                        </options>
+                        <xquery>{util:simplifyXml(//*[local-name()='UpdateFlightResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStCustomsData">
+                  <description/>
+                  <detail>
+                     <field name="stCustomsData" type="objectlist">
+                        <options>
+                           <option name="referenceTo">stCustomsData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStFlightExtended">
+                  <description/>
+                  <detail>
+                     <field name="stFlightExtended" type="objectlist">
+                        <options>
+                           <option name="referenceTo">stFlightExtended</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStGroundMovements">
+                  <description/>
+                  <detail>
+                     <field name="stGroundMovements" type="objectlist">
+                        <options>
+                           <option name="referenceTo">stGroundMovements</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStServices">
+                  <description/>
+                  <detail>
+                     <field name="stServices" type="objectlist">
+                        <options>
+                           <option name="referenceTo">stServices</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_Airport">
+                  <description/>
+                  <detail>
+                     <field name="str_Airport" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_Airport</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_Delay">
+                  <description/>
+                  <detail>
+                     <field name="str_Delay" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_Delay</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_FlightCode">
+                  <description/>
+                  <detail>
+                     <field name="str_FlightCode" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_FlightCode</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_Gate">
+                  <description/>
+                  <detail>
+                     <field name="str_Gate" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_Gate</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_Handler">
+                  <description/>
+                  <detail>
+                     <field name="str_Handler" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_Handler</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_Resource">
+                  <description/>
+                  <detail>
+                     <field name="str_Resource" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_Resource</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ArrayOfStr_TrafficData">
+                  <description/>
+                  <detail>
+                     <field name="str_TrafficData" type="objectlist">
+                        <options>
+                           <option name="referenceTo">str_TrafficData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateCustomsDataResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateCustomsData_AT">
+                  <description/>
+                  <detail>
+                     <field name="Password" type="string"/>
+                     <field name="CustomsData" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStCustomsData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlightExtendedResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlightExtended_AT">
+                  <description/>
+                  <detail>
+                     <field name="Flights" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStFlightExtended</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlightGroundMovResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlightGroundMov_AT">
+                  <description/>
+                  <detail>
+                     <field name="FlightGroundMov" type="reference">
+                        <options>
+                           <option name="referenceTo">str_FlightGroundMov</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlightResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                     <field name="WebServiceLogId" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateFlight_AT">
+                  <description/>
+                  <detail>
+                     <field name="Flight" type="reference">
+                        <options>
+                           <option name="referenceTo">str_FlightMov</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateGroundMovsResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateGroundMovs_AT">
+                  <description/>
+                  <detail>
+                     <field name="GroundMovements" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStGroundMovements</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateServicesResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateServices_AT">
+                  <description/>
+                  <detail>
+                     <field name="Services" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStServices</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateTrafficDataResponse_AT">
+                  <description/>
+                  <detail>
+                     <field name="Result" type="boolean"/>
+                     <field name="Message" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UpdateTrafficData_AT">
+                  <description/>
+                  <detail>
+                     <field name="Username" type="string"/>
+                     <field name="Password" type="string"/>
+                     <field name="Origin" type="string"/>
+                     <field name="TrafficData" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_TrafficData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="stCustomsData">
+                  <description/>
+                  <detail>
+                     <field name="Airport" type="string"/>
+                     <field name="FlightNr" type="string"/>
+                     <field name="MovType" type="string"/>
+                     <field name="ScheduleDateTimeUTC" type="datetime"/>
+                     <field name="ContraMarca" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="stFlightExtended">
+                  <description/>
+                  <detail>
+                     <field name="ExternalFlightId" type="double"/>
+                     <field name="Airport" type="string"/>
+                     <field name="BusinessCenter" type="string"/>
+                     <field name="IcaoOperator" type="string"/>
+                     <field name="FlightNumber" type="string"/>
+                     <field name="MovType" type="string"/>
+                     <field name="ScheduledDateTime" type="datetime"/>
+                     <field name="FullFligthNr" type="boolean"/>
+                     <field name="Nature" type="string"/>
+                     <field name="OperationType" type="string"/>
+                     <field name="Classification" type="string"/>
+                     <field name="Runway" type="string"/>
+                     <field name="SeatNumber" type="double"/>
+                     <field name="Vias" type="string"/>
+                     <field name="AirlineCodeICAO" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="stGroundMovements">
+                  <description/>
+                  <detail>
+                     <field name="ExternalId" type="double"/>
+                     <field name="ExternalFlightId" type="double"/>
+                     <field name="AirportIATA" type="string"/>
+                     <field name="FlightNr" type="string"/>
+                     <field name="MovType" type="string"/>
+                     <field name="ScheduleDateTimeUTC" type="datetime"/>
+                     <field name="StandOrigin" type="string"/>
+                     <field name="StandDestination" type="string"/>
+                     <field name="ArrivalDateTimeUTC" type="datetime"/>
+                     <field name="ExitDateTimeUTC" type="datetime"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="CreatedDateTime" type="datetime"/>
+                     <field name="LastModifedBy" type="string"/>
+                     <field name="LastUpdateDateTime" type="datetime"/>
+                     <field name="StandOrder" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="stServices">
+                  <description/>
+                  <detail>
+                     <field name="ExternalId" type="double"/>
+                     <field name="OperationType" type="string"/>
+                     <field name="AirportIATA" type="string"/>
+                     <field name="Type" type="string"/>
+                     <field name="StandCode" type="string"/>
+                     <field name="OnDateTimeUTC" type="datetime"/>
+                     <field name="OffDateTimeUTC" type="datetime"/>
+                     <field name="CreatedBy" type="string"/>
+                     <field name="CreatedDateTime" type="datetime"/>
+                     <field name="LastModifiedBy" type="string"/>
+                     <field name="LastUpdateDateTime" type="datetime"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_AircraftModel">
+                  <description/>
+                  <detail>
+                     <field name="ICAO" type="string"/>
+                     <field name="IATA" type="string"/>
+                     <field name="IATASubType" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_Airport">
+                  <description/>
+                  <detail>
+                     <field name="ICAO" type="string"/>
+                     <field name="IATA" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_Delay">
+                  <description/>
+                  <detail>
+                     <field name="Code" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_FlightCode">
+                  <description/>
+                  <detail>
+                     <field name="FlightCode" type="string"/>
+                     <field name="PublicFlightCode" type="string"/>
+                     <field name="AirlineCodeIATA" type="string"/>
+                     <field name="AirlineCodeICAO" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_FlightGroundMov">
+                  <description/>
+                  <detail>
+                     <field name="AirportCodeIATA" type="string"/>
+                     <field name="FlightId" type="double"/>
+                     <field name="StandOrder" type="double"/>
+                     <field name="StandFrom" type="string"/>
+                     <field name="StandFromDateTimeUTC" type="string"/>
+                     <field name="StandTo" type="string"/>
+                     <field name="StandToDateTimeUTC" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_FlightMov">
+                  <description/>
+                  <detail>
+                     <field name="FlightId" type="double"/>
+                     <field name="MovType" type="string"/>
+                     <field name="ScheduleDateTimeUTC" type="string"/>
+                     <field name="FlightType" type="string"/>
+                     <field name="CallSign" type="string"/>
+                     <field name="AircraftRegistration" type="string"/>
+                     <field name="AircraftCapacity" type="double"/>
+                     <field name="ClassificationCode" type="double"/>
+                     <field name="ServiceTypeCode" type="string"/>
+                     <field name="NatureCode" type="double"/>
+                     <field name="OperationCode" type="double"/>
+                     <field name="Runway" type="string"/>
+                     <field name="LastDateTimeUTC" type="string"/>
+                     <field name="EstimatedDateTimeUTC" type="string"/>
+                     <field name="PublicEstimatedDateTimeUTC" type="string"/>
+                     <field name="BlockDateTimeUTC" type="string"/>
+                     <field name="ActualDateTimeUTC" type="string"/>
+                     <field name="Observations" type="string"/>
+                     <field name="RotationKey" type="double"/>
+                     <field name="OSTD_UTC" type="string"/>
+                     <field name="DSTA_UTC" type="string"/>
+                     <field name="RemarksCode" type="string"/>
+                     <field name="RemarksValue" type="string"/>
+                     <field name="TTOT_UTC" type="string"/>
+                     <field name="InfrastructureRemarkCode" type="string"/>
+                     <field name="InfrastructureRemarkValue" type="string"/>
+                     <field name="FlightCode" type="reference">
+                        <options>
+                           <option name="referenceTo">str_FlightCode</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="Airport" type="reference">
+                        <options>
+                           <option name="referenceTo">str_Airport</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="AircraftModel" type="reference">
+                        <options>
+                           <option name="referenceTo">str_AircraftModel</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="OrigDestAirport" type="reference">
+                        <options>
+                           <option name="referenceTo">str_Airport</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="FlightStopList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Airport</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="CodeShareList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_FlightCode</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="DelayCodeList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Delay</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="BeltList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Resource</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="CheckInList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Resource</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="ChuteList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Resource</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="GateList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Gate</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="StandList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Resource</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="HandlersList" type="reference">
+                        <options>
+                           <option name="referenceTo">ArrayOfStr_Handler</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_Gate">
+                  <description/>
+                  <detail>
+                     <field name="Code" type="string"/>
+                     <field name="TerminalCode" type="string"/>
+                     <field name="FlightGateStatus" type="string"/>
+                     <field name="StartDateTimeUTC" type="string"/>
+                     <field name="EndDateTimeUTC" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_Handler">
+                  <description/>
+                  <detail>
+                     <field name="AssistanceTypeCode" type="string"/>
+                     <field name="HandlerCode" type="string"/>
+                     <field name="ServiceCode" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_Resource">
+                  <description/>
+                  <detail>
+                     <field name="Code" type="string"/>
+                     <field name="TerminalCode" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="str_TrafficData">
+                  <description/>
+                  <detail>
+                     <field name="FlightId" type="double"/>
+                     <field name="Airport" type="string"/>
+                     <field name="Operator" type="string"/>
+                     <field name="FlightNr" type="string"/>
+                     <field name="MovType" type="string"/>
+                     <field name="ScheduleDateTimeUTC" type="datetime"/>
+                     <field name="ActualDateTimeUTC" type="datetime"/>
+                     <field name="Via" type="string"/>
+                     <field name="OrigDest" type="string"/>
+                     <field name="PgsWithoutTax" type="double"/>
+                     <field name="PgsWithTax" type="double"/>
+                     <field name="PgsDirect" type="double"/>
+                     <field name="PsgTransfWithoutTax" type="double"/>
+                     <field name="PsgTransfWithTax" type="double"/>
+                     <field name="CargoLocal" type="double"/>
+                     <field name="CargoTransit" type="double"/>
+                     <field name="Mail" type="double"/>
+                     <field name="EquipChange" type="boolean"/>
+                     <field name="TechnicalReasons" type="boolean"/>
+                     <field name="MTec" type="string"/>
+                     <field name="Observations" type="string"/>
+                     <field name="Baggage" type="double"/>
+                     <field name="CreateDateTimeUTC" type="datetime"/>
+                     <field name="Status" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>6cycBv6jrmCeYdmGnWxjiN</types1:GUID>
+      <types1:DisplayName>ANAFlightConnection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.019Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

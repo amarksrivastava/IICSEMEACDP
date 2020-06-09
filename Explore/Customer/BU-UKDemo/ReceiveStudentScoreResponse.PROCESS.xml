@@ -1,0 +1,129 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>vIInLhBJQWSwxF1-gt-33581891-2020-05-13T09:33:40.354Z::pd.xml</types1:EntryId>
+      <types1:Name>ReceiveStudentScoreResponse</types1:Name>
+      <types1:ParentFlowIds>NFoFuR55aaabdqp-gt-6461895-2020-05-13T09:33:40.644Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:USW1PC0CSM3P,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T09:33:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ReceiveStudentScoreResponse"
+                  name="ReceiveStudentScoreResponse"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:USW1PC0CSM3P,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="request" required="true" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StudentScoreRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">cRVVQDyxzqlkCwAybSNJAF</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="response" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StudentScoreResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eii6qS8fHuHki1o1fheTYn</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tDummy" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>USW1PC0CSM3P</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="scoreEvent">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="studentId"
+                                required="true"
+                                type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                     <parameter description="" name="studentScore" required="true" type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <deployment>
+                     <rest>
+                        <allowAnonymousAccess/>
+                     </rest>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka45ezey" targetId="ka45ezen"/>
+               </start>
+               <assignment id="ka45ezen">
+                  <title>Set process title</title>
+                  <operation source="formula" to="temp.tDummy">
+                     <expression language="XQuery">ipd:setProcessTitle(fn:concat("ReceiveStudentScoreResponse - st=", $input.request[1]/studentId ))</expression>
+                  </operation>
+                  <link id="ka45ezep" targetId="ka44r6go"/>
+               </assignment>
+               <assignment id="ka45ezez">
+                  <title>Add score to process title</title>
+                  <operation source="formula" to="temp.tDummy">
+                     <expression language="XQuery">ipd:setProcessTitle(fn:concat("ReceiveStudentScoreResponse - st=", $input.request[1]/studentId, ", sc=",$input.studentScore  ))</expression>
+                  </operation>
+                  <link id="ka45ezf1" targetId="ka44r6gw"/>
+               </assignment>
+               <assignment id="ka44r6gw">
+                  <title>Assignment to studentId, score</title>
+                  <operation source="field" to="output.response[1]/studentId">input.studentId</operation>
+                  <operation source="field" to="output.response[1]/score">input.studentScore</operation>
+                  <link id="ka44r6gy" targetId="c"/>
+               </assignment>
+               <receive id="ka44r6go">
+                  <title>Receive Score</title>
+                  <message refer="scoreEvent">
+                     <correlation>
+                        <parameter name="studentId" source="field" updatable="true">input.request[1]/studentId</parameter>
+                     </correlation>
+                  </message>
+                  <link id="ka45ezf0" targetId="ka45ezez"/>
+               </receive>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>6rObU5vxS2ff5Kjq96QM6q</types1:GUID>
+      <types1:DisplayName>ReceiveStudentScoreResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.036Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

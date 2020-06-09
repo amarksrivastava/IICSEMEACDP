@@ -1,0 +1,99 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>TMneBjrabcmWR7h-gt-6949283-2020-05-14T17:23:00.773Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessPublishCIH</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-14T17:23:01Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-14T17:42:10Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-14T17:42:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessPublishCIH/ProcessPublishCIH.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessPublishCIH"
+                  name="ProcessPublishCIH"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Request" required="true" type="reference">
+                  <options>
+                     <option name="referenceTo">AppCon-CIHPublishOrder:PublicationData</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6PUq7OwYXD2fnJqS9EcQAD</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka71jc51" targetId="ka71jc5g"/>
+               </start>
+               <eventContainer id="ka71jc5g">
+                  <service id="ka71jc50">
+                     <title>publish</title>
+                     <serviceName>AppCon-CIHPublishOrder:publish</serviceName>
+                     <serviceGUID>6PUq7OwYXD2fnJqS9EcQAD</serviceGUID>
+                     <serviceInput>
+                        <parameter name="body" source="field">input.Request</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ka71jc5i">
+                     <assignment id="ka71jc5q">
+                        <title>Assignment to Status</title>
+                        <operation source="constant" to="output.Status">Success</operation>
+                     </assignment>
+                     <link id="ka71jc5j" targetId="ka71jc5g" type="containerLink"/>
+                  </flow>
+                  <flow id="ka71jc5l">
+                     <assignment id="ka71jc5y">
+                        <title>Assignment to Status</title>
+                        <operation source="constant" to="output.Status">Failed</operation>
+                     </assignment>
+                     <link id="ka71jc5m" targetId="ka71jc5g" type="containerLink"/>
+                  </flow>
+                  <link id="ka71jc5h" targetId="ka71jc5i" type="containerLink"/>
+                  <link id="ka71jc5p" targetId="c"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ka71jc5f" interrupting="true">
+                        <link id="ka71jc5k" targetId="ka71jc5l" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4dyJM0593VCdzthWYRz38K</types1:GUID>
+      <types1:DisplayName>ProcessPublishCIH</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.306Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9WPUFl9P0o5etfgDXCniKD",
+    "name" : "StrHandler",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "SOC074Rpf6JfOMW-gt-8136982-2020-05-18T13:17:01.71Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

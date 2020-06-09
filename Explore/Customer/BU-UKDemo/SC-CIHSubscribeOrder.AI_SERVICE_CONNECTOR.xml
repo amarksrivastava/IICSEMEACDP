@@ -1,0 +1,186 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rQHqlGwm7iUQbgd-gt-6949885-2020-05-14T17:32:57.277Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-CIHSubscribeOrder</types1:Name>
+      <types1:ParentFlowIds>dreAFLK2D86CjqF-gt-6951087-2020-05-14T17:35:52.053Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>REST interface to subscribe data to a Data Integration Hub topic.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-14T17:32:57Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-14T17:33:36Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-14T17:35:14Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_CIHSubscribeOrder/SC_CIHSubscribeOrder_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-CIHSubscribeOrder"
+                            label=""
+                            name="SC-CIHSubscribeOrder"
+                            uuid="87f81deb-8aac-41ad-b3b1-06e7dee8a349">
+            <description>REST interface to subscribe data to a Data Integration Hub topic.</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="emw1-cih.dm-em.informaticacloud.com:443"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="subscribe"
+                       maxRedirects="100"
+                       name="subscribe"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Data subscribed on this endpoint will be for the named Data Integration Hub subscription. The input body contains the batch interval for subscription request.</description>
+                  <input>
+                     <parameter description="Subscription body."
+                                label="body"
+                                name="body"
+                                required="true"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">SubscriptionRequestData</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/dih-pub-repo-service/api/v1/subscriptions/SubscribeOrder/data"
+                                        verb="POST">
+                        <authentication>
+                           <username>amsrivastava@informatica.com</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json;charset=utf-8</header>
+                           <header name="Accept">application/json;charset=utf-8</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Subscription job request accepted. See response details."
+                            entireResponse="true"
+                            name="response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">response</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Order">
+                  <description/>
+                  <detail>
+                     <field name="OrderStatus" type="string"/>
+                     <field name="Amount" type="string"/>
+                     <field name="Quantity" type="double"/>
+                     <field name="Product" type="string"/>
+                     <field name="OrderNo" type="string"/>
+                     <field name="ProductId" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="response">
+                  <description/>
+                  <detail>
+                     <field name="responseExtraMessage" type="string"/>
+                     <field name="responseType" type="string"/>
+                     <field name="data" type="objectlist">
+                        <options>
+                           <option name="referenceTo">TopicDetails</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="aggregatedEventId" type="int"/>
+                     <field name="statsSuccessRows" type="int"/>
+                     <field name="statsTotalRows" type="int"/>
+                     <field name="responseStatus" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"SUCCESS","label":"SUCCESS"},{"value":"FAIL","label":"FAIL"}]</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="SubscriptionRequestData">
+                  <description>Subscription Request Details</description>
+                  <detail/>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="TopicDetails">
+                  <description>Publish data info</description>
+                  <detail>
+                     <field name="Order" type="objectlist">
+                        <options>
+                           <option name="referenceTo">Order</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>axKnMquBWW5jiLenYiKVEz</types1:GUID>
+      <types1:DisplayName>SC-CIHSubscribeOrder</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.223Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

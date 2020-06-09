@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "0eTLpwW8TS8ecf9izM4RaK",
+    "name" : "AMQP-BackendService",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "txGomUhGdwOLIFv-gt-6566651-2020-05-13T14:27:33.322Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

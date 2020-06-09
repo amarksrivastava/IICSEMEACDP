@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "geUOBfsKRugjnDZfovlzs9",
+    "name" : "ReportStudentScore",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "cjjn9OQcjoYsjql-gt-33581902-2020-05-13T09:33:40.38Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "1rRDovMdLQMfecoEtRwFAe",
+    "name" : "ReportStudentScore",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "aaaaaa-gt-33581881-2020-05-13T09:33:40.09Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  } ]
+}

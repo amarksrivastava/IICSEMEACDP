@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "518HXOuIlFEd02P7efKJEJ",
+    "name" : "AMQP-Orders",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fOC2XZPnE29Em2k-gt-6509295-2020-05-13T10:24:16.081Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

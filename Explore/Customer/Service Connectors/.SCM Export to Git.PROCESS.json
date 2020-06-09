@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "5eARp0MvygfeDab0ZXb6Gu",
+    "name" : "SCM Export to Git",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "YwDxomUhGdwOLIF-gt-50068261-2020-05-27T09:55:37.808Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This process implements partial Source Code Management. It exports the Cloud Assets using IICS REST API and checks them in Git using Git Contents API.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "iZpdMq7ybE9labugv6wG6s",
+    "name" : "IICS-REST-API-actions",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bcnIQtEOvlp6oIu-gt-10326450-2020-05-27T09:55:37.021Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/Service Connectors"
+  }, {
+    "id" : "fiy8JvRVPoUfW8ezSDbJSY",
+    "name" : "Git-Contents-API-actions",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "IG45YLnzYLnzYLn-gt-2741330-2020-05-27T09:55:37.561Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    },
+    "path" : "/Explore/Customer/Service Connectors"
+  } ]
+}

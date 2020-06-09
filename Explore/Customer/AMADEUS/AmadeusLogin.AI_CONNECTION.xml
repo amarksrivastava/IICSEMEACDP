@@ -1,0 +1,49 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bcifSB7O2htghGZ-gt-8492508-2020-05-19T09:56:11.019Z::conn.xml</types1:EntryId>
+      <types1:Name>AmadeusLogin</types1:Name>
+      <types1:ParentFlowIds>hIppppppppppppp-gt-8509414-2020-05-19T09:56:11.24Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T09:56:11Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-19T10:00:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-19T10:00:03Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AmadeusLogin/AmadeusLogin.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AmadeusLogin"
+                     label="AmadeusLogin"
+                     name="AmadeusLogin">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="hostname" value="test.api.amadeus.com"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/AmadeusLogin/AmadeusLogin_svcDef.xml"
+                               guid="7uOoJiCkuGykP23eIBnQQY"
+                               name="AmadeusLogin"
+                               supportsConnectionTest="false"
+                               uuid="39fceae1-446d-435e-b480-a4639853b818">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>321yb3xJawWgqaL2SwTnUc</types1:GUID>
+      <types1:DisplayName>AmadeusLogin</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.085Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

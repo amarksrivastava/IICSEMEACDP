@@ -1,0 +1,86 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>aaaa-gt-2735806-2020-06-08T12:34:21.007Z::pd.xml</types1:EntryId>
+      <types1:Name>ReceiveXMlInput</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-06-08T12:34:21Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-09T11:47:29Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-06-09T11:47:33Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ReceiveXMlInput/ReceiveXMlInput.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ReceiveXMlInput"
+                  name="ReceiveXMlInput"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tmpFiletask" type="reference">
+                  <options>
+                     <option name="referenceTo">FileConnectionForApplicationIntegration:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">2roOiNkT05lkXMELqznMsM</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kazcwz2k" targetId="kazcwz2j"/>
+               </start>
+               <assignment id="kazcwz2j">
+                  <title>Assignment to File name, Content Format etc.</title>
+                  <operation source="formula" to="temp.tmpFiletask[1]/fileName">
+                     <expression language="XQuery">'ReceiveXMlInputV0.xml'</expression>
+                  </operation>
+                  <operation source="constant" to="temp.tmpFiletask[1]/format">XML</operation>
+                  <operation source="field" to="temp.tmpFiletask[1]/content">input.input</operation>
+                  <link id="kazcwz2l" targetId="kazcwz2a"/>
+               </assignment>
+               <service id="kazcwz2a">
+                  <title>FileWriter</title>
+                  <serviceName>FileConnectionForApplicationIntegration:FileWriter</serviceName>
+                  <serviceGUID>2roOiNkT05lkXMELqznMsM</serviceGUID>
+                  <serviceInput>
+                     <parameter name="fileWriteTask" source="field" updatable="true">temp.tmpFiletask</parameter>
+                  </serviceInput>
+                  <link id="kazcwz2c" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>acHYlXgNbkdhQnu63zfNas</types1:GUID>
+      <types1:DisplayName>ReceiveXMlInput</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.199Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "1RgCjYGqFJOijk6ol2LzSB",
+    "name" : "PRODUCT",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0qRi92qBbbeJOSM-gt-16216138-2020-06-03T13:29:11.986Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

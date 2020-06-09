@@ -1,0 +1,54 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>5OUwvwNXHVOJ2oT-gt-1894922-2020-05-13T17:19:35.909Z::po.xml</types1:EntryId>
+      <types1:Name>PipelineNetworkData</types1:Name>
+      <types1:ParentFlowIds>KHUPAZf5kck8jKB-gt-6621008-2020-05-13T17:24:20.596Z::pd.xml,Uuopz4KhPVEQrXh-gt-1932613-2020-05-14T10:25:12.757Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T17:19:36Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-14T10:28:25Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="PipelineNetworkData"
+                        isByCopy="true"
+                        name="PipelineNetworkData">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="Application" name="Application" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"Onshore","label":"Onshore"},{"value":"Offshore","label":"Offshore"}]</option>
+                  </options>
+               </field>
+               <field label="Operation" name="Operation" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"Transmission","label":"Transmission"},{"value":"Distribution","label":"Distribution"}]</option>
+                  </options>
+               </field>
+               <field label="Location" name="Location" type="string"/>
+               <field label="Equipment" name="Equipment" type="string"/>
+               <field label="CompressorStation" name="CompressorStation" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"Turbine","label":"Turbine"},{"value":"Motors","label":"Motors"}]</option>
+                  </options>
+               </field>
+               <field label="Diameter" name="Diameter" type="string"/>
+               <field label="UniqueId" name="UniqueId" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>3HL1MdRrkm9jKpbGn7vfMC</types1:GUID>
+      <types1:DisplayName>PipelineNetworkData</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.421Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

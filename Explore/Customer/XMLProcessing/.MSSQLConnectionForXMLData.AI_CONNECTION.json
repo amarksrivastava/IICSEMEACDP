@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "0TyTKH6lQUEgCBzzV9h2y0",
+    "name" : "MSSQLConnectionForXMLData",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fOC2XZPnE29Em2k-gt-16216162-2020-06-03T13:29:12.081Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

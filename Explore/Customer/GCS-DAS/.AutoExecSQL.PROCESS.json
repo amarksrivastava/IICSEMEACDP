@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9Eii4JiXLXrd5f2n8vVNqM",
+    "name" : "AutoExecSQL",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ykgpbdoPVm5Y6tM-gt-20332236-2020-04-09T14:29:41.402Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

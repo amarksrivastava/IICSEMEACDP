@@ -1,0 +1,95 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>UfTRgpDqotxGomU-gt-458999-2020-06-03T13:29:12.742Z::pd.xml</types1:EntryId>
+      <types1:Name>XMLDataTransferProcess</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-06-03T13:29:13Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="XMLDataTransferProcess"
+                  name="XMLDataTransferProcess">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="MessageIn" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:TESTFILE</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">3i1pkOow3bFdb3VdojZtmP</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="myout123" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="DBID" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jtuo9x4c" targetId="jtuo9x4b"/>
+               </start>
+               <assignment id="jtuo9x4b">
+                  <title>Assign Primary Key</title>
+                  <operation source="constant" to="temp.DBID">1</operation>
+                  <link id="jtuo9x4d" targetId="in1sh3jk"/>
+               </assignment>
+               <assignment id="in1vmfpl">
+                  <title>DummyAssign</title>
+                  <operation source="constant" to="output.myout123">Process Completed</operation>
+                  <link id="in1vmfpn" targetId="d"/>
+               </assignment>
+               <create id="in1sh3jk">
+                  <title>XMLDataTable</title>
+                  <entityName>MSSQLConnectionForXMLData:XMLDataTable</entityName>
+                  <createInput>
+                     <parameter name="id" source="field" updatable="true">temp.DBID</parameter>
+                     <parameter name="Action" source="field" updatable="true">input.MessageIn[1]/MYMESSAGE[1]/ACTION</parameter>
+                     <parameter name="BatchId" source="field" updatable="true">input.MessageIn[1]/MYMESSAGE[1]/BATCHID</parameter>
+                     <parameter name="OrgCode" source="field" updatable="true">input.MessageIn[1]/MYMESSAGE[1]/TESTKEY[1]/ORGCODE</parameter>
+                     <parameter name="ProdId" source="field" updatable="true">input.MessageIn[1]/MYMESSAGE[1]/TESTKEY[1]/PRODID</parameter>
+                     <parameter name="TestCode" source="field" updatable="true">input.MessageIn[1]/PRODUCT[1]/TESTCODE</parameter>
+                     <parameter name="DevId" source="field" updatable="true">input.MessageIn[1]/PRODUCT[1]/DEVID</parameter>
+                     <parameter name="SourceId" source="field" updatable="true">input.MessageIn[1]/PRODUCT[1]/SOURCEID</parameter>
+                  </createInput>
+                  <link id="in1vmfq5" targetId="in1vmfpl"/>
+               </create>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>63zKpzCrCfQeb33T5MC2GF</types1:GUID>
+      <types1:DisplayName>XMLDataTransferProcess</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.504Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

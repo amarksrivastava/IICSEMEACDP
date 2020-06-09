@@ -1,0 +1,187 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>P2PCwkNmumf6S3w-gt-6563726-2020-05-13T11:30:43.662Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessOrder</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T11:30:44Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-02T15:34:07Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-06-02T15:34:10Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessOrder/ProcessOrder.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessOrder"
+                  name="ProcessOrder"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="OrderRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:Order-1</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8YIn6iRiMsxgtusuct2n2H</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="OrderResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:Order-1</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8YIn6iRiMsxgtusuct2n2H</option>
+                  </options>
+               </field>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">Service Unavailable. Please retry after sometime.</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmpMQWtite" type="reference">
+                  <options>
+                     <option name="referenceTo">AMQP-Orders:AMQPMessage</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">518HXOuIlFEd02P7efKJEJ</option>
+                  </options>
+               </field>
+               <field description="" name="tmpOrderId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="newMQWrite" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+                  <additionalConstraint>
+                     <constraint>APIM</constraint>
+                  </additionalConstraint>
+               </rest>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="OrderEvent">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="OrderNo"
+                                required="true"
+                                type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                     <parameter description="" name="Amount" required="true" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <deployment>
+                     <rest>
+                        <allowAnonymousAccess/>
+                     </rest>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka59mnep" targetId="ka59mneo"/>
+               </start>
+               <assignment id="ka59mneo">
+                  <title>Assignment to tmpOrderId, OrderStatus etc.</title>
+                  <operation source="formula" to="temp.tmpOrderId">
+                     <expression language="XQuery">util:generateUUID()</expression>
+                  </operation>
+                  <operation source="constant" to="input.OrderRequest[1]/OrderStatus">In Process</operation>
+                  <operation source="formula" to="temp.tmpMQWtite[1]/body">
+                     <expression language="XQuery">$input.OrderRequest </expression>
+                  </operation>
+                  <link id="ka59mneq" targetId="ka6tn0ig"/>
+               </assignment>
+               <assignment id="ka5a80wx">
+                  <title>Assignment to Amount, ProductId etc.</title>
+                  <operation source="field" to="output.OrderResponse[1]/Amount">input.Amount</operation>
+                  <operation source="field" to="output.OrderResponse[1]/ProductId">input.OrderRequest[1]/ProductId</operation>
+                  <operation source="field" to="output.OrderResponse[1]/OrderNo">input.OrderRequest[1]/OrderNo</operation>
+                  <operation source="constant" to="output.OrderResponse[1]/OrderStatus">Confirmed</operation>
+                  <operation source="field" to="output.OrderResponse[1]/Product">input.OrderRequest[1]/Product</operation>
+                  <operation source="field" to="output.OrderResponse[1]/Quantity">input.OrderRequest[1]/Quantity</operation>
+                  <operation source="constant" to="output.Status">Order Processed Successfully</operation>
+                  <link id="ka5a80wz" targetId="c"/>
+               </assignment>
+               <eventContainer id="ka6tn0ig">
+                  <service id="ka59i1wn">
+                     <title>writeEvent</title>
+                     <serviceName>AMQP-Orders:writeEvent</serviceName>
+                     <serviceGUID>518HXOuIlFEd02P7efKJEJ</serviceGUID>
+                     <serviceInput>
+                        <parameter name="event" source="field" updatable="true">temp.tmpMQWtite</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ka6tn0ii">
+                     <link id="ka6tn0ij" targetId="ka6tn0ig" type="containerLink"/>
+                  </flow>
+                  <flow id="ka6tn0il">
+                     <milestone id="ka6tn0ir">
+                        <title>Service Unavailable</title>
+                        <httpStatus>503</httpStatus>
+                        <link id="ka6tn0ix" targetId="ka6tn0iw"/>
+                     </milestone>
+                     <end id="ka6tn0iw">
+                        <title>End Service Unavailable</title>
+                     </end>
+                  </flow>
+                  <link id="ka6tn0ih" targetId="ka6tn0ii" type="containerLink"/>
+                  <link id="ka5d9pc6" targetId="ka5d9pc5"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ka6tn0if" interrupting="true">
+                        <link id="ka6tn0ik" targetId="ka6tn0il" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <receive id="ka5d9pc5">
+                  <title>ReceiveOrderResponse</title>
+                  <message refer="OrderEvent">
+                     <correlation>
+                        <parameter name="OrderNo" source="field" updatable="true">input.OrderRequest[1]/OrderNo</parameter>
+                     </correlation>
+                  </message>
+                  <link id="ka5d9pc7" targetId="ka5a80wx"/>
+               </receive>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>gEnUzT0hFMVb4OvZCcwY8w</types1:GUID>
+      <types1:DisplayName>ProcessOrder</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.955Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

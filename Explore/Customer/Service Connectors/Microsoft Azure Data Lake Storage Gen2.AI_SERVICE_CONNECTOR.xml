@@ -1,0 +1,200 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>58pIO3M4WwOC2XZ-gt-10294360-2020-05-27T09:32:24.916Z::svc.xml</types1:EntryId>
+      <types1:Name>Microsoft_Azure_Data_Lake_Storage_Gen2</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-27T09:32:25Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="Microsoft Azure Data Lake Storage Gen2"
+                            label=""
+                            name="Microsoft_Azure_Data_Lake_Storage_Gen2"
+                            uuid="72516f93-fd8c-4826-bf92-abf2d9ce60e5">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="dataLakeName"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="client_id"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="client_secret"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="tenant"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="List File "
+                       maxRedirects="100"
+                       name="List File "
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="token"
+                                nogen="true"
+                                required="false"
+                                testWith="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyIsImtpZCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83ZTljZDhkNy04N2I1LTQzY2UtYjQ3OS0xMDgzZjhhZjQyYjcvIiwiaWF0IjoxNTYxNDY3NzE4LCJuYmYiOjE1NjE0Njc3MTgsImV4cCI6MTU2MTQ3MTYxOCwiYWlvIjoiNDJaZ1lKQnY4aXM5ZHZEcE1XNDVueGxkRC83d0FBQT0iLCJhcHBpZCI6Ijg4YWI5NzdiLTM5NTctNGY5MS1hMjBmLTBjMTQ2YWFjMzEwMyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdlOWNkOGQ3LTg3YjUtNDNjZS1iNDc5LTEwODNmOGFmNDJiNy8iLCJvaWQiOiI0NTc1NWE4NS1hMWYyLTQzMzctOGI1Mi03MTI3OWNkOTczOGQiLCJzdWIiOiI0NTc1NWE4NS1hMWYyLTQzMzctOGI1Mi03MTI3OWNkOTczOGQiLCJ0aWQiOiI3ZTljZDhkNy04N2I1LTQzY2UtYjQ3OS0xMDgzZjhhZjQyYjciLCJ1dGkiOiJvTmNqVzB3RmIwS3lnM3h2V2tNWkFBIiwidmVyIjoiMS4wIn0.FniX9z3g23XTifLLDgTcQ7JwOMCerSsRj4EBz6fsun2ycpOKhaKE39gESBIaCm_1bYk_nwz1u4kTTQCm4gkaIbE4GUu_H3BeZgtTpcEo_IUATTLyhbAg-J2mcmwK5PFFhSG1-e9Ql4NvRIcOQjl9oQ5wP8FsOldj2qLeUYlJSmMlIC2tSoUpTlhgCb14cyGPgJzs0EuUkNucPv_Z3RlZDUpgTRzw7W-0k3gjAyuwtbYxYJvGBfct78-mcC2G9yQHrnXYdwEdcailGhF21posk28hETvbjcr8UGahm9R-OlRANqqw3bE8ySjYBIi8SChKOaP0sSgTMPBQ2gx43NF4aw"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://cdp.azuredatalakestore.net/webhdfs/v1/Informatica?op=LISTSTATUS"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Authorization">Bearer {$token}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Upload File"
+                       maxRedirects="100"
+                       name="Upload File"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="File" required="false" testWith="" type="attachment"/>
+                     <parameter name="FileName"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="token"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$dataLakeName}.azuredatalakestore.net/webhdfs/v1/Informatica/{$FileName}?{fn:escape-html-uri('op=CREATE&amp;amp;write=true')}"
+                                        verb="PUT">
+                        <httpHeaders>
+                           <header name="Authorization">Bearer {$token}</header>
+                        </httpHeaders>
+                        <body generateUsing="Form"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="Status"
+                            responseStatusCode="true"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Get Token"
+                       maxRedirects="100"
+                       name="Get Token"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://login.microsoftonline.com/{$tenant}/oauth2/token"
+                                        verb="POST">
+                        <otherParams>
+                           <otherParam name="grant_type">client_credentials</otherParam>
+                           <otherParam name="client_id">{$client_id}</otherParam>
+                           <otherParam name="client_secret">{$client_secret}</otherParam>
+                           <otherParam name="resource">https://management.core.windows.net/</otherParam>
+                        </otherParams>
+                        <body generateUsing="Form"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="access_token"
+                            property="access_token"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Read File"
+                       maxRedirects="100"
+                       name="Read File"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="token"
+                                nogen="true"
+                                required="false"
+                                testWith="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCIsImtpZCI6IkhCeGw5bUFlNmd4YXZDa2NvT1UyVEhzRE5hMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83ZTljZDhkNy04N2I1LTQzY2UtYjQ3OS0xMDgzZjhhZjQyYjcvIiwiaWF0IjoxNTU3ODUwMjk4LCJuYmYiOjE1NTc4NTAyOTgsImV4cCI6MTU1Nzg1NDE5OCwiYWlvIjoiNDJaZ1lQamhHYStXM0J2M2NjYU9zd2ZsZkQ2SEFBQT0iLCJhcHBpZCI6Ijg4YWI5NzdiLTM5NTctNGY5MS1hMjBmLTBjMTQ2YWFjMzEwMyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdlOWNkOGQ3LTg3YjUtNDNjZS1iNDc5LTEwODNmOGFmNDJiNy8iLCJvaWQiOiI0NTc1NWE4NS1hMWYyLTQzMzctOGI1Mi03MTI3OWNkOTczOGQiLCJzdWIiOiI0NTc1NWE4NS1hMWYyLTQzMzctOGI1Mi03MTI3OWNkOTczOGQiLCJ0aWQiOiI3ZTljZDhkNy04N2I1LTQzY2UtYjQ3OS0xMDgzZjhhZjQyYjciLCJ1dGkiOiJrMGdtb2pKNDMwYUszRklIUUp3bUFBIiwidmVyIjoiMS4wIn0.Dt2E-RNNGa2BGP3pnb_TM4ddW25x7Xsnwhljgokn99w2oN9E-PVVBSUpe4Uwt6xgqmB6qVlRe0AwxnDYK9sOUUTUeCzt3jLovL7Xy57Vf5p_UIgfM5eSuqm2yo1hu74QLajRAaD6PcjIlAh2tFTJIVQ5Hv1vzCluOzjepHgpLi_O4EdNkclS2uxxRUdG7Dc-_-KKeP-eUXIziowkgGmZysT4vQjgsng12ynffAw3ejYRSKlNqpgo2-DKWsNzpBFQUKJmjJIjjpf_g7k9-HXmrduQIt2wd1lgTGX6mUiteO9_H6UWw9DdS1IAe2YuM_65XqUVj9VhAt7ZlsJf7vwTLQ"
+                                type="string"/>
+                     <parameter name="file_name"
+                                nogen="true"
+                                required="false"
+                                testWith="File_Location.json"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$dataLakeName}.azuredatalakestore.net/webhdfs/v1/Informatica/{$file_name}"
+                                        verb="GET">
+                        <otherParams>
+                           <otherParam name="op">OPEN</otherParam>
+                           <otherParam name="read">true</otherParam>
+                        </otherParams>
+                        <httpHeaders>
+                           <header name="Authorization">Bearer {$token}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field attachment="true"
+                            description=""
+                            name="FileContent"
+                            type="attachment"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>35tuC2GHv6ulz3Yht49deQ</types1:GUID>
+      <types1:DisplayName>Microsoft Azure Data Lake Storage Gen2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.18Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "1zVc4QYc7a6iRxAu9LvOWv",
+    "name" : "AMQP-FlightMovement",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6WIuOSSHCwkNmum-gt-8904375-2020-05-20T14:20:43.926Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

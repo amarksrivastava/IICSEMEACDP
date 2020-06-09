@@ -1,0 +1,35 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>6w7zsZvEIAkRtO3-gt-33581871-2020-05-13T09:33:39.929Z::po.xml</types1:EntryId>
+      <types1:Name>StudentScoreRequest</types1:Name>
+      <types1:ParentFlowIds>NFoFuR55aaabdqp-gt-6461895-2020-05-13T09:33:40.644Z::pd.xml,vIInLhBJQWSwxF1-gt-33581891-2020-05-13T09:33:40.354Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T09:33:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="StudentScoreRequest"
+                        isByCopy="true"
+                        name="StudentScoreRequest">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="studentId" name="studentId" type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>cRVVQDyxzqlkCwAybSNJAF</types1:GUID>
+      <types1:DisplayName>StudentScoreRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.189Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "acHYlXgNbkdhQnu63zfNas",
+    "name" : "ReceiveXMlInput",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "aaaa-gt-2735806-2020-06-08T12:34:21.007Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "2roOiNkT05lkXMELqznMsM",
+    "name" : "FileConnectionForApplicationIntegration",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "VUJQhtGci3zymbd-gt-328634-2019-12-16T11:58:33.766Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAITraining"
+  } ]
+}

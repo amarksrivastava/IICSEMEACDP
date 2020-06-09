@@ -1,0 +1,94 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bgaaaaa-gt-39537622-2020-05-18T13:17:02.203Z::po.xml</types1:EntryId>
+      <types1:Name>StrFlightMov</types1:Name>
+      <types1:ParentFlowIds>aabcoq3xgjATO9p-gt-8215972-2020-05-18T13:20:34.012Z::pd.xml,hINciZBpDUQbgdw-gt-8508950-2020-05-19T10:50:08.112Z::pd.xml,ncjIw8jIw8jIw8j-gt-2369616-2020-05-20T14:51:18.224Z::pd.xml,VPNzUzeA8rJ4pbg-gt-40811381-2020-05-19T15:05:10.772Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>This object was generated from [str_FlightMov element declaration] located in the [ANAPoCSample.xsd] source XML schema.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-18T13:17:02Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-19T12:00:01Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="StrFlightMov"
+                        isByCopy="true"
+                        name="StrFlightMov">
+            <description>This object was generated from [str_FlightMov element declaration] located in the [ANAPoCSample.xsd] source XML schema.</description>
+            <tags/>
+            <detail>
+               <field label="FlightId" name="FlightId" type="int"/>
+               <field label="FlightCode" name="FlightCode" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FlightCode</option>
+                     <option name="guid">5PPoKcaelgMiDZNkf41VQq</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="MovType" name="MovType" type="string"/>
+               <field label="ScheduleDateTimeUTC"
+                      name="ScheduleDateTimeUTC"
+                      type="string"/>
+               <field label="Airport" name="Airport" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:Airport</option>
+                     <option name="guid">4Bf1jcX4AMug2n3xi1vfsn</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="FlightType" name="FlightType" type="string"/>
+               <field label="CallSign" name="CallSign" type="string"/>
+               <field label="AircraftModel" name="AircraftModel" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AircraftModel</option>
+                     <option name="guid">7juML7iw1ORkvySPCBddiL</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="AircraftCapacity" name="AircraftCapacity" type="int"/>
+               <field label="OrigDestAirport" name="OrigDestAirport" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:OrigDestAirport</option>
+                     <option name="guid">9rKfJXjhQGrd7nUgAWKpAv</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="ClassificationCode" name="ClassificationCode" type="int"/>
+               <field label="ServiceTypeCode" name="ServiceTypeCode" type="string"/>
+               <field label="NatureCode" name="NatureCode" type="int"/>
+               <field label="OperationCode" name="OperationCode" type="int"/>
+               <field label="LastDateTimeUTC" name="LastDateTimeUTC" type="string"/>
+               <field label="EstimatedDateTimeUTC"
+                      name="EstimatedDateTimeUTC"
+                      type="string"/>
+               <field label="PublicEstimatedDateTimeUTC"
+                      name="PublicEstimatedDateTimeUTC"
+                      type="string"/>
+               <field label="BlockDateTimeUTC" name="BlockDateTimeUTC" type="string"/>
+               <field label="ActualDateTimeUTC" name="ActualDateTimeUTC" type="string"/>
+               <field label="HandlersList" name="HandlersList" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:HandlersList</option>
+                     <option name="guid">5B0j5cTmlEsicbL2e6oakE</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="RotationKey" name="RotationKey" type="int"/>
+               <field label="OSTD_UTC" name="OSTD_UTC" type="string"/>
+               <field label="UniqueId" name="UniqueId" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>9mjeejhxOyQjQ57TQi6nUo</types1:GUID>
+      <types1:DisplayName>StrFlightMov</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.358Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

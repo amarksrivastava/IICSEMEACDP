@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "iZpdMq7ybE9labugv6wG6s",
+    "name" : "IICS-REST-API-actions",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bcnIQtEOvlp6oIu-gt-10326450-2020-05-27T09:55:37.021Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

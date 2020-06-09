@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "dGYj1qJBAaPfvVIeM2hvuk",
+    "name" : "SC-CIHPublishOrder",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "pLnzYLnzYLnzYLn-gt-35143689-2020-05-14T17:19:21.257Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "REST interface to publish data to a Cloud Integration Hub publication.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

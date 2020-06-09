@@ -1,0 +1,200 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NFoFuR55aaabdqp-gt-6461895-2020-05-13T09:33:40.644Z::pd.xml</types1:EntryId>
+      <types1:Name>StudentScoreQuery</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:USW1PC0CSM3P,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T09:33:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="StudentScoreQuery"
+                  name="StudentScoreQuery"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:USW1PC0CSM3P,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="request" required="true" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StudentScoreRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">cRVVQDyxzqlkCwAybSNJAF</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="StudentScoreResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StudentScoreResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eii6qS8fHuHki1o1fheTYn</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tDummy" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>USW1PC0CSM3P</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="scoreEvent">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="eventStudentId"
+                                required="true"
+                                type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                     <parameter description="" name="eventScore" required="true" type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <deployment>
+                     <rest>
+                        <allowAnonymousAccess/>
+                     </rest>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka3ya296" targetId="ka3ya295"/>
+               </start>
+               <assignment id="ka3ya295">
+                  <title>Set Process Title student</title>
+                  <operation source="formula" to="temp.tDummy">
+                     <expression language="XQuery">ipd:setProcessTitle(fn:concat("StudentScoreQuery - st=", $input.request[1]/studentId ))</expression>
+                  </operation>
+                  <link id="ka3ya299" targetId="ka2lbik4"/>
+               </assignment>
+               <service id="ka2lbik4">
+                  <title>JMS Enqueue Service</title>
+                  <serviceName>jmsEnqueueService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="momManager" source="constant">ActiveMQConfig2</parameter>
+                     <parameter name="destination" source="constant">dynamicQueues/studentScoreRequest</parameter>
+                     <parameter name="message" source="field" updatable="true">input.request</parameter>
+                     <parameter name="format" source="constant">JSON</parameter>
+                  </serviceInput>
+                  <link id="ka44to32" targetId="ka44to38"/>
+               </service>
+               <eventContainer id="ka44to38">
+                  <subflow id="ka44to31">
+                     <title>ReceiveStudentScoreResponse</title>
+                     <subflowGUID>6rObU5vxS2ff5Kjq96QM6q</subflowGUID>
+                     <subflowPath>ReceiveStudentScoreResponse</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="request" source="field" updatable="true">input.request</parameter>
+                     </input>
+                     <outputDef>
+                        <field name="response" type="reference">
+                           <options>
+                              <option name="referenceTo">$po:StudentScoreResponse</option>
+                              <option name="required">false</option>
+                              <option name="isCopy">true</option>
+                              <option name="guid">eii6qS8fHuHki1o1fheTYn</option>
+                           </options>
+                        </field>
+                     </outputDef>
+                  </subflow>
+                  <flow id="ka44to3a">
+                     <assignment id="ka44to5a">
+                        <title>Add score to process title</title>
+                        <operation source="formula" to="temp.tDummy">
+                           <expression language="XQuery">ipd:setProcessTitle(fn:concat("StudentScoreQuery - st=", $input.request[1]/studentId, ", sc=", $output.response[1]/score  ))</expression>
+                        </operation>
+                        <link id="ka44to5b" targetId="ka44to43"/>
+                     </assignment>
+                     <assignment id="ka44to43">
+                        <title>Assignment to StudentScoreResponse</title>
+                        <operation source="field" to="output.StudentScoreResponse">output.response</operation>
+                     </assignment>
+                     <link id="ka44to3b" targetId="ka44to38" type="containerLink"/>
+                  </flow>
+                  <flow id="ka44to3d">
+                     <assignment id="ka4dotg6">
+                        <title>Assignment to tDummy</title>
+                        <operation source="formula" to="temp.tDummy">
+                           <expression language="XQuery">ipd:setProcessTitle(fn:concat("StudentScoreQuery - st=", $input.request[1]/studentId, ", NO SCORE RECEIVED"  ))</expression>
+                        </operation>
+                        <link id="ka4flr5z" targetId="ka4flr5y"/>
+                     </assignment>
+                     <throw id="ka4flr5y">
+                        <title>Throw 1</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">504</parameter>
+                           <parameter name="detail" source="constant" updatable="true">timeout</parameter>
+                           <parameter name="reason" source="constant" updatable="true">gateway timeout</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="ka44to39" targetId="ka44to3a" type="containerLink"/>
+                  <link id="ka44to33" targetId="c"/>
+                  <events>
+                     <timer id="ka44to37" interrupting="true">
+                        <duration source="formula">
+                           <function name="duration_expression">
+                              <arg name="value">{60}</arg>
+                              <arg name="scale">S</arg>
+                              <arg name="businessDays"/>
+                           </function>
+                        </duration>
+                        <link id="ka44to3c" targetId="ka44to3d" type="containerLink"/>
+                     </timer>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>62a4f87a-a5e1-4061-82ec-9ceb39506cc6</ns1:Id>
+               <ns1:Name>student5</ns1:Name>
+               <ns1:CreatedBy>amsrivastava@informatica.com</ns1:CreatedBy>
+               <ns1:CreationDate>2020-05-13T09:33:41Z</ns1:CreationDate>
+               <ns1:ModifiedBy>amsrivastava@informatica.com</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-05-13T09:33:41Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "request": {
+	 	 "studentId": "5"
+	 }
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>dtuX8M4NioFeT1a3FdKvcW</types1:GUID>
+      <types1:DisplayName>StudentScoreQuery</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.38Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

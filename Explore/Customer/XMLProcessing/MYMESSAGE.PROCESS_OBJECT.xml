@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>CNgbcggaaaaa-gt-1538134-2020-06-03T13:29:12.465Z::po.xml</types1:EntryId>
+      <types1:Name>MYMESSAGE</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-06-03T13:29:12Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        xmlns:ns3="http://schemas.active-endpoints.com/appmodules/screenflow/2012/09/avosObjectDiscovery.xsd"
+                        displayName="MYMESSAGE"
+                        isByCopy="true"
+                        name="MYMESSAGE">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="ACTION" name="ACTION" type="string"/>
+               <field label="BATCHID" name="BATCHID" type="string"/>
+               <field label="TESTKEY" name="TESTKEY" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:TESTKEY</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">04O0PI8rnASg40zhs9GFkP</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>1WaJxfUrlUckUL6xgJX84G</types1:GUID>
+      <types1:DisplayName>MYMESSAGE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.078Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

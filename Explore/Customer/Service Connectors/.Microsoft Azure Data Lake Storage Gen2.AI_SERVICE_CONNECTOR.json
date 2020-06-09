@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "35tuC2GHv6ulz3Yht49deQ",
+    "name" : "Microsoft Azure Data Lake Storage Gen2",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "58pIO3M4WwOC2XZ-gt-10294360-2020-05-27T09:32:24.916Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

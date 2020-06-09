@@ -1,0 +1,64 @@
+{
+  "objectInfo" : {
+    "id" : "6rObU5vxS2ff5Kjq96QM6q",
+    "name" : "ReceiveStudentScoreResponse",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vIInLhBJQWSwxF1-gt-33581891-2020-05-13T09:33:40.354Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "eii6qS8fHuHki1o1fheTYn",
+    "name" : "StudentScoreResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "WglH8n55ErhNzUz-gt-33581861-2020-05-13T09:33:39.775Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Test Score for a student",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  }, {
+    "id" : "cRVVQDyxzqlkCwAybSNJAF",
+    "name" : "StudentScoreRequest",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6w7zsZvEIAkRtO3-gt-33581871-2020-05-13T09:33:39.929Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  } ]
+}

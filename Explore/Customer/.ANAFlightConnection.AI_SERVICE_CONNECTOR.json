@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6cycBv6jrmCeYdmGnWxjiN",
+    "name" : "ANAFlightConnection",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "kLmk3zx6i4tciSr-gt-5297029-2020-05-07T12:37:38.161Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

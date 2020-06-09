@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "8wklvxSVNaEk4hun2MqHIX",
+    "name" : "ProcessPipelineDataAsync",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "KHUPAZf5kck8jKB-gt-6621008-2020-05-13T17:24:20.596Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3HL1MdRrkm9jKpbGn7vfMC",
+    "name" : "PipelineNetworkData",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5OUwvwNXHVOJ2oT-gt-1894922-2020-05-13T17:19:35.909Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  } ]
+}

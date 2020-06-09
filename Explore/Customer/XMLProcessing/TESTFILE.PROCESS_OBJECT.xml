@@ -1,0 +1,50 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>LWFrLWEQT53nQci-gt-439214-2020-06-03T13:29:12.598Z::po.xml</types1:EntryId>
+      <types1:Name>TESTFILE</types1:Name>
+      <types1:ParentFlowIds>UfTRgpDqotxGomU-gt-458999-2020-06-03T13:29:12.742Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-06-03T13:29:13Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        xmlns:ns3="http://schemas.active-endpoints.com/appmodules/screenflow/2012/09/avosObjectDiscovery.xsd"
+                        displayName="TESTFILE"
+                        isByCopy="true"
+                        name="TESTFILE">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="MYMESSAGE" name="MYMESSAGE" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:MYMESSAGE</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">1WaJxfUrlUckUL6xgJX84G</option>
+                  </options>
+               </field>
+               <field label="PRODUCT" name="PRODUCT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PRODUCT</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">1RgCjYGqFJOijk6ol2LzSB</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>3i1pkOow3bFdb3VdojZtmP</types1:GUID>
+      <types1:DisplayName>TESTFILE</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.335Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

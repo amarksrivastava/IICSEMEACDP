@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9rKfJXjhQGrd7nUgAWKpAv",
+    "name" : "OrigDestAirport",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "puoJ49ARJi4tciS-gt-8213319-2020-05-18T13:17:01.825Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

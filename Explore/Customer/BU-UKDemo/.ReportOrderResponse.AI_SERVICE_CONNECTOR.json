@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "eOCh8ehOjIklurDQzFS3Qw",
+    "name" : "ReportOrderResponse",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "HAHufWC64Ky2uI5-gt-6552268-2020-05-13T13:25:55.4Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

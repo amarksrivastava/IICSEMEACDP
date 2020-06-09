@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "7GyMQTWhnkDiZ2ZXQD8jeK",
+    "name" : "ProcessOrderResponse",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "RbeIXycotFgpKi9-gt-6595863-2020-05-13T13:32:10.707Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "hYrfIoY7cwqfCa4BQgITyC",
+    "name" : "OrderEventAppConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "WSwxF1T4W6jKsJl-gt-1880262-2020-05-13T13:56:25.78Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  } ]
+}

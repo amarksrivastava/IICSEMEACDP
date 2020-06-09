@@ -1,0 +1,120 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>siUQbgdwUiQLnzY-gt-6613378-2020-05-13T14:25:14.302Z::pd.xml</types1:EntryId>
+      <types1:Name>BackendService</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:AS_Agent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T14:25:14Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-14T13:54:36Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-14T13:54:39Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.BackendService/BackendService.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="BackendService"
+                  name="BackendService"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:AS_Agent</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="event" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">AMQP-BackendService:AMQPMessage</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tmpOrderEvent" type="reference">
+                  <options>
+                     <option name="referenceTo">OrderEventAppConnection:OrderEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">hYrfIoY7cwqfCa4BQgITyC</option>
+                  </options>
+               </field>
+               <field description="" name="tmpOrderRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:Order-1</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8YIn6iRiMsxgtusuct2n2H</option>
+                  </options>
+               </field>
+               <field description="" name="tmpdoneEvent" type="reference">
+                  <options>
+                     <option name="referenceTo">AMQP-BackendService:AMQPMessage</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">0eTLpwW8TS8ecf9izM4RaK</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>AS_Agent</targetLocation>
+               <event eventSource="AMQP-BackendService:readEvent"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jxuiqnc8" targetId="jxuiqnc7"/>
+               </start>
+               <assignment id="jxuiqnc7">
+                  <title>Assignment to tmpOrderRequest</title>
+                  <operation source="field" to="temp.tmpOrderRequest">input.event[1]/body</operation>
+                  <link id="ka5g50q1" targetId="ka5g50q0"/>
+               </assignment>
+               <assignment id="ka5g50q0">
+                  <title>Assignment to Amount, OrderNo etc.</title>
+                  <operation source="formula" to="temp.tmpOrderEvent[1]/Amount">
+                     <expression language="XQuery">$temp.tmpOrderRequest[1]/Quantity *55.5</expression>
+                  </operation>
+                  <operation source="field" to="temp.tmpOrderEvent[1]/OrderNo">temp.tmpOrderRequest[1]/OrderNo</operation>
+                  <operation source="formula" to="temp.tmpdoneEvent[1]/body">
+                     <expression language="XQuery">$temp.tmpOrderEvent </expression>
+                  </operation>
+                  <link id="ka5g50q2" targetId="jxuiqncg"/>
+               </assignment>
+               <wait id="jxuiqncg">
+                  <title>Wait 10 seconds</title>
+                  <duration source="formula">
+                     <function name="duration_expression">
+                        <arg name="value">10</arg>
+                        <arg name="scale">S</arg>
+                        <arg name="businessDays"/>
+                     </function>
+                  </duration>
+                  <link id="jxuiqncm" targetId="jxuiqncl"/>
+               </wait>
+               <service id="jxuiqncl">
+                  <title>WritingOrderTotargetQueue</title>
+                  <serviceName>AMQP-BackendService:writeEvent</serviceName>
+                  <serviceGUID>0eTLpwW8TS8ecf9izM4RaK</serviceGUID>
+                  <serviceInput>
+                     <parameter name="event" source="field" updatable="true">temp.tmpdoneEvent</parameter>
+                  </serviceInput>
+                  <link id="jxuiqncn" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>a0eh9ovXn7LelWzjXopm0U</types1:GUID>
+      <types1:DisplayName>BackendService</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.408Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,98 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>URDwXtqdsQR6kbe-gt-6461911-2020-05-13T09:33:40.746Z::pd.xml</types1:EntryId>
+      <types1:Name>StudentScoreListener</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:USW1PC0CSM3P,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T09:33:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="StudentScoreListener"
+                  name="StudentScoreListener"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:USW1PC0CSM3P,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="StudentScoreResponse"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StudentScoreResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eii6qS8fHuHki1o1fheTYn</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tDummy" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tStudentScoreEventRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">ReportStudentScore:scoreEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">geUOBfsKRugjnDZfovlzs9</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>USW1PC0CSM3P</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka3yll5c" targetId="ka3yll5b"/>
+               </start>
+               <assignment id="ka3yll5b">
+                  <title>Set Process Title</title>
+                  <operation source="formula" to="temp.tDummy">
+                     <expression language="XQuery">ipd:setProcessTitle(fn:concat("StudentScoreListener - st=", $input.StudentScoreResponse[1]/studentId,", sc=", $input.StudentScoreResponse[1]/score ))</expression>
+                  </operation>
+                  <link id="ka3yll5d" targetId="ka3w4om1"/>
+               </assignment>
+               <assignment id="ka3w4om1">
+                  <title>Assignment to temp.tStudentScoreEventRequest[1]/studentId, temp.tStudentScoreEventRequest[1]/studentScore</title>
+                  <operation source="field" to="temp.tStudentScoreEventRequest[1]/studentId">input.StudentScoreResponse[1]/studentId</operation>
+                  <operation source="field" to="temp.tStudentScoreEventRequest[1]/studentScore">input.StudentScoreResponse[1]/score</operation>
+                  <link id="ka4deug7" targetId="ka4deug6"/>
+               </assignment>
+               <service id="ka4deug6">
+                  <title>score Event Operation</title>
+                  <serviceName>ReportStudentScore:scoreEventOperation</serviceName>
+                  <serviceGUID>geUOBfsKRugjnDZfovlzs9</serviceGUID>
+                  <serviceInput>
+                     <parameter name="body" source="field">temp.tStudentScoreEventRequest</parameter>
+                  </serviceInput>
+                  <link id="ka4deug8" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>g4dlKgq352IfXEqZLZ90kN</types1:GUID>
+      <types1:DisplayName>StudentScoreListener</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.394Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

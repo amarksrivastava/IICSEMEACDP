@@ -1,0 +1,133 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>VPNzUzeA8rJ4pbg-gt-40811381-2020-05-19T15:05:10.772Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessFlightMovement</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T15:05:11Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-20T11:33:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-20T11:33:46Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessFlightMovement/ProcessFlightMovement.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessFlightMovement"
+                  name="ProcessFlightMovement"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="FlightId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="FlightMovementDetails" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StrFlightMov</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9mjeejhxOyQjQ57TQi6nUo</option>
+                  </options>
+               </field>
+               <field description="" name="AirlineDetails" type="reference">
+                  <options>
+                     <option name="referenceTo">AmadeusGetAirlineInfo:Airline</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">0hcaOIKTitqe6Z8mxrIjyj</option>
+                  </options>
+               </field>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">Service Unavailable. Please retry after sometime.</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kae1trg1" targetId="kaf96fmo"/>
+               </start>
+               <eventContainer id="kaf96fmo">
+                  <service id="kae1trg0">
+                     <title>ProcessGetFlightMovement</title>
+                     <serviceName>ProcessGetFlightMovement</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="FlightId" source="field" updatable="true">input.FlightId</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kaf96fmq">
+                     <link id="kaf96fmr" targetId="kaf96fmo" type="containerLink"/>
+                  </flow>
+                  <flow id="kaf96fmt">
+                     <milestone id="kaf96fmz">
+                        <title>Milestone 503</title>
+                        <httpStatus>503</httpStatus>
+                        <link id="kaf96fo8" targetId="kaf96fo7"/>
+                     </milestone>
+                     <end id="kaf96fo7">
+                        <title>End With Failure</title>
+                     </end>
+                  </flow>
+                  <link id="kaf96fmp" targetId="kaf96fmq" type="containerLink"/>
+                  <link id="kae1trgn" targetId="kae1trgm"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kaf96fmn" interrupting="true">
+                        <link id="kaf96fms" targetId="kaf96fmt" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <assignment id="kae1trgm">
+                  <title>Assignment to FlightMovementDetails</title>
+                  <operation source="field" to="output.FlightMovementDetails">output.Response</operation>
+                  <link id="kae1trgo" targetId="kae1trgb"/>
+               </assignment>
+               <assignment id="kae1trgv">
+                  <title>Assignment to AirlineDetails, Status</title>
+                  <operation source="field" to="output.AirlineDetails">output.Airline</operation>
+                  <operation source="constant" to="output.Status">Success</operation>
+                  <link id="kae1trgx" targetId="c"/>
+               </assignment>
+               <service id="kae1trgb">
+                  <title>getAirlineInfo</title>
+                  <serviceName>getAirlineInfo</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="airlineCode" source="field" updatable="true">output.FlightMovementDetails[1]/FlightCode[1]/AirlineCodeIATA</parameter>
+                  </serviceInput>
+                  <link id="kae1trgw" targetId="kae1trgv"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4E2yFd9ASkvjhMfCpEOZwU</types1:GUID>
+      <types1:DisplayName>ProcessFlightMovement</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.559Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,209 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ykgpbdoPVm5Y6tM-gt-6526942-2020-05-13T13:28:21.402Z::svc.xml</types1:EntryId>
+      <types1:Name>OrderEventServiceConnector</types1:Name>
+      <types1:ParentFlowIds>WSwxF1T4W6jKsJl-gt-1880262-2020-05-13T13:56:25.78Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T13:28:21Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-13T13:31:06Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-13T13:55:39Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/OrderEventServiceConnector/OrderEventServiceConnector_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="OrderEventServiceConnector"
+                            label=""
+                            name="OrderEventServiceConnector"
+                            uuid="d4f1f1ba-fc1a-417d-a09e-c7ec7a7ed1d0">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="emw1-cai.dm-em.informaticacloud.com:443"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="OrderEventOperation"
+                       maxRedirects="100"
+                       name="OrderEventOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="body"
+                                name="body"
+                                required="true"
+                                testWith="{&#xA;&#34;Amount&#34;:&#34;1000&#34;,&#xA;&#34;OrderNo&#34;:&#34;1234&#34;&#xA;}"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">OrderEventRequest</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/active-bpel/public/rt/fuKLowf1IOtlcwKRfcOQgM/ProcessOrder/event/OrderEvent"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="ProcessOrderOperation"
+                       maxRedirects="100"
+                       name="ProcessOrderOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="body"
+                                name="body"
+                                required="true"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">ProcessOrderRequest</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/active-bpel/public/rt/fuKLowf1IOtlcwKRfcOQgM/ProcessOrder"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Successful response"
+                            entireResponse="true"
+                            name="ProcessOrderResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">ProcessOrderResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="Order_1">
+                  <description/>
+                  <detail>
+                     <field name="OrderStatus" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"In Process","label":"In Process"},{"value":"Confirmed","label":"Confirmed"},{"value":"Rejected","label":"Rejected"}]</option>
+                        </options>
+                     </field>
+                     <field name="Amount" type="string"/>
+                     <field name="Product" type="string"/>
+                     <field name="Quantity" type="double"/>
+                     <field name="ProductId" type="string"/>
+                     <field name="OrderNo" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ProcessOrderResponse">
+                  <description/>
+                  <detail>
+                     <field name="OrderResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">Order_1</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="ProcessOrderRequest">
+                  <description/>
+                  <detail>
+                     <field name="OrderRequest" type="reference">
+                        <options>
+                           <option name="referenceTo">Order_1</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="OrderEventRequest">
+                  <description/>
+                  <detail>
+                     <field name="Amount" type="string"/>
+                     <field name="OrderNo" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>1ZamMvkg0S9egFTJGUSi4o</types1:GUID>
+      <types1:DisplayName>OrderEventServiceConnector</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.235Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,77 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ykgpbdoPVm5Y6tM-gt-20332236-2020-04-09T14:29:41.402Z::pd.xml</types1:EntryId>
+      <types1:Name>AutoExecSQL</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:AS_AGENT,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-04-09T14:29:41Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-09T14:50:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-09T14:50:08Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.AutoExecSQL/AutoExecSQL.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="AutoExecSQL"
+                  name="AutoExecSQL"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:AS_AGENT,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="FinalResponse" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>AS_AGENT</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="joh3hrfd" targetId="joh3hrfc"/>
+               </start>
+               <service id="joh3hrfc">
+                  <title>Execute a SQL Statement</title>
+                  <serviceName>InfaDASAutoExecSQL</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="SQLStatement" source="constant">SELECT * FROM TESTBIG WHERE KEYCOL &lt; 11</parameter>
+                  </serviceInput>
+                  <link id="joh3hrfm" targetId="joh3hrfl"/>
+               </service>
+               <assignment id="joh3hrfl">
+                  <title>Assignment to FinalResponse</title>
+                  <operation source="formula" to="output.FinalResponse">
+                     <expression language="XQuery">$output.Response//*:row</expression>
+                  </operation>
+                  <link id="joh3hrfn" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>9Eii4JiXLXrd5f2n8vVNqM</types1:GUID>
+      <types1:DisplayName>AutoExecSQL</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.198Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

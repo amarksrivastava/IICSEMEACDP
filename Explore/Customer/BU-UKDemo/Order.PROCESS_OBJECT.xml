@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>FAWtHww43dtQR6k-gt-6524742-2020-05-13T11:25:10.504Z::po.xml</types1:EntryId>
+      <types1:Name>Order-1</types1:Name>
+      <types1:ParentFlowIds>P2PCwkNmumf6S3w-gt-6563726-2020-05-13T11:30:43.662Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T11:25:11Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-13T13:15:09Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="Order"
+                        isByCopy="true"
+                        name="Order-1">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="ProductId" name="ProductId" type="string"/>
+               <field label="Product" name="Product" type="string"/>
+               <field label="Quantity" name="Quantity" type="double"/>
+               <field label="OrderNo" name="OrderNo" type="string"/>
+               <field label="Amount" name="Amount" type="string"/>
+               <field label="OrderStatus" name="OrderStatus" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"In Process","label":"In Process"},{"value":"Confirmed","label":"Confirmed"},{"value":"Rejected","label":"Rejected"}]</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>8YIn6iRiMsxgtusuct2n2H</types1:GUID>
+      <types1:DisplayName>Order</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.486Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

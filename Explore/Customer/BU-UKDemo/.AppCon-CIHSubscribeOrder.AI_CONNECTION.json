@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "khpwdGfYvYmhrfO7GIPJ4V",
+    "name" : "AppCon-CIHSubscribeOrder",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "dreAFLK2D86CjqF-gt-6951087-2020-05-14T17:35:52.053Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "axKnMquBWW5jiLenYiKVEz",
+    "name" : "SC-CIHSubscribeOrder",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rQHqlGwm7iUQbgd-gt-6949885-2020-05-14T17:32:57.277Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "REST interface to subscribe data to a Data Integration Hub topic.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/BU-UKDemo"
+  } ]
+}

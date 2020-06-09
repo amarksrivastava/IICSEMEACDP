@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "7YZ0iXHIjc1fl7yOJcuHc2",
+    "name" : "AmadeusGetAirlineInfo",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "H4tciSrZMSPfXBi-gt-8424257-2020-05-19T09:56:10.537Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This document aims at describing how to use the Amadeus REST/JSON API Airline Code Lookup.\n\n# Introduction:\n\nThis API returns the airline name and code.\n\n# Authorization\n\nBefore using the API you will need to get an access token. Please read our **[Authorization Guide](https://developers.amadeus.com/self-service/apis-docs/guides/authorization)** for more information on how to get your token.\n\n## Supported Operations\nList of supported operations by resource:\n- GET airlines",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

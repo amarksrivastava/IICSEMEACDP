@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "63zKpzCrCfQeb33T5MC2GF",
+    "name" : "XMLDataTransferProcess",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UfTRgpDqotxGomU-gt-458999-2020-06-03T13:29:12.742Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3i1pkOow3bFdb3VdojZtmP",
+    "name" : "TESTFILE",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "LWFrLWEQT53nQci-gt-439214-2020-06-03T13:29:12.598Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/XMLProcessing"
+  } ]
+}

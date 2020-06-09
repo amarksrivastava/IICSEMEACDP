@@ -1,0 +1,78 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>6WIuOSSHCwkNmum-gt-8904375-2020-05-20T14:20:43.926Z::conn.xml</types1:EntryId>
+      <types1:Name>AMQP-FlightMovement</types1:Name>
+      <types1:ParentFlowIds>aabcoq3xgjATO9p-gt-8215972-2020-05-18T13:20:34.012Z::pd.xml,ncjIw8jIw8jIw8j-gt-2369616-2020-05-20T14:51:18.224Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:AS_Agent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-20T14:20:44Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-21T10:41:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-21T10:41:07Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AMQP-FlightMovement/AMQP-FlightMovement.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AMQP-FlightMovement"
+                     label="AMQP-FlightMovement"
+                     name="AMQP-FlightMovement">
+            <description/>
+            <tags>.agent:AS_Agent</tags>
+            <agent>AS_Agent</agent>
+            <attributes>
+               <attribute encrypted="false" name="User Name" value="admin"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Virtual Host" value=""/>
+               <attribute encrypted="false" name="Host" value="GBW1PF0V4EXN"/>
+               <attribute encrypted="false" name="Port" value="5672"/>
+               <attribute encrypted="false" name="Use SSL" value="false"/>
+               <attribute encrypted="false" name="Query Parameters" value=""/>
+            </attributes>
+            <consumers>
+               <consumer enabled="true" name="readEvent" typeName="AMQP Source">
+                  <attributes>
+                     <attribute encrypted="false" name="Destination Type" value="queue"/>
+                     <attribute encrypted="false" name="Destination" value="NotDecided"/>
+                     <attribute encrypted="false" name="Payload Format" value="Json"/>
+                     <attribute encrypted="false" name="Objectlist Field Name" value="object"/>
+                     <attribute encrypted="false" name="Dead Letter Queue Name" value=""/>
+                     <attribute encrypted="false" name="Other Attributes" value=""/>
+                  </attributes>
+               </consumer>
+            </consumers>
+            <producers>
+               <producer enabled="true" name="writeEvent" typeName="AMQP Target">
+                  <attributes>
+                     <attribute encrypted="false" name="Destination Type" value="queue"/>
+                     <attribute encrypted="false" name="Destination" value="FlightMovementRequest"/>
+                     <attribute encrypted="false" name="Payload Format" value="Json"/>
+                     <attribute encrypted="false" name="Other Attributes" value=""/>
+                  </attributes>
+               </producer>
+            </producers>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           type="AMQP"
+                           uuid="59b13626-0180-4d48-a749-38f8f33f7b18">
+               <description>Provides connections to AMQP brokers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>1zVc4QYc7a6iRxAu9LvOWv</types1:GUID>
+      <types1:DisplayName>AMQP-FlightMovement</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:37.425Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

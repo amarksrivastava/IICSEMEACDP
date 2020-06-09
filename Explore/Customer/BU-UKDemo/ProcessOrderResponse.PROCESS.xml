@@ -1,0 +1,88 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>RbeIXycotFgpKi9-gt-6595863-2020-05-13T13:32:10.707Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessOrderResponse</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:AS_Agent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-13T13:32:11Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-13T14:14:14Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-13T15:15:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessOrderResponse/ProcessOrderResponse.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessOrderResponse"
+                  name="ProcessOrderResponse"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:AS_Agent</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="event" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">AMQP-Orders:AMQPMessage</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmpOrderResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">OrderEventAppConnection:OrderEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">hYrfIoY7cwqfCa4BQgITyC</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>AS_Agent</targetLocation>
+               <event eventSource="AMQP-Orders:readEvent"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ka5dv0h1" targetId="ka5dv0h0"/>
+               </start>
+               <assignment id="ka5dv0h0">
+                  <title>Assignment to untitled1, tmpOrderResponse</title>
+                  <operation source="field" to="temp.untitled1">input.event[1]/body</operation>
+                  <operation source="field" to="temp.tmpOrderResponse">input.event[1]/body</operation>
+                  <link id="ka5dv0hi" targetId="ka5dv0hh"/>
+               </assignment>
+               <service id="ka5dv0hh">
+                  <title>OrderEventOperation</title>
+                  <serviceName>OrderEventAppConnection:OrderEventOperation</serviceName>
+                  <serviceGUID>hYrfIoY7cwqfCa4BQgITyC</serviceGUID>
+                  <serviceInput>
+                     <parameter name="body" source="field">temp.tmpOrderResponse</parameter>
+                  </serviceInput>
+                  <link id="ka5dv0hj" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>7GyMQTWhnkDiZ2ZXQD8jeK</types1:GUID>
+      <types1:DisplayName>ProcessOrderResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-09T14:15:38.366Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
