@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "75n74HbdxAdhEYxps0fxSv",
+    "name" : "TEST DAS",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "IjG3lqAOclkZ2sB-gt-1155692-2020-04-21T17:25:52.558Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Test process to test various scenarios on DAS Service",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

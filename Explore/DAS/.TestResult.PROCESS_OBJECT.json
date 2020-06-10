@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "4WC4MehkYociZ32xrbaUaC",
+    "name" : "TestResult",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "M9hOznKKvvNtLSV-gt-7126410-2020-04-21T17:25:51.616Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This Object Represent a Test Reults",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

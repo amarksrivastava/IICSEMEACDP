@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6V35T6IT8MJbvBix3ygZGW",
+    "name" : "execSQLProxy",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3A1vyoY2G7QnG5Y-gt-7126437-2020-04-21T17:25:51.874Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

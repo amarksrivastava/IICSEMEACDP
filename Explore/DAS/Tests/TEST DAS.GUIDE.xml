@@ -1,0 +1,287 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>T53nQciSrZMSPfX-gt-1155702-2020-04-21T17:25:52.734Z::gt.xml</types1:EntryId>
+      <types1:Name>TEST_DAS</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide To Run various data acess Service Wrapper test</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bmantha_asshared</types1:CreatedBy>
+      <types1:CreationDate>2020-04-21T17:25:53Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         disableScreenRollback="true"
+                         displayName="TEST DAS"
+                         doneOnEndStep="true"
+                         name="TEST_DAS"
+                         runAsUser="$current">
+            <description>Guide To Run various data acess Service Wrapper test</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Screenflow Designer 9</generator>
+            <tempFields>
+               <field name="dataAccessRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field name="resultXml" type="richtextarea">
+                  <options>
+                     <option name="text_height">12</option>
+                     <option name="text_width">100</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="ive6vc26">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="ive6vc26_ivjsmmry" targetScreen="ivjsmmry">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="ivjsmmry">
+                  <title>Data Access Service</title>
+                  <body contentType="text/html">&lt;p&gt;This &amp;nbsp;Guide Is a tasting harness to est DAS Service Wrapper automated Step&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Access Service &lt;a title="DAS" href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/com.activee.bpep.doc/html/UG28-9.html"&gt;documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="ivjsmmry_ivjsmmsf" targetScreen="ivjsmmsf">
+                        <text>Run Simple SQL</text>
+                     </action>
+                     <action alt="null" id="ivjsmmry_ivjssaqa" targetScreen="ivjssaqa">
+                        <text>Test Run execSQL</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="ivjsmmsf">
+                  <title>SET SQL PARAMS</title>
+                  <body contentType="text/html">&lt;p&gt;dataAccessRequest&amp;gt;sqlStatement&amp;gt;statement &lt;input class="" title="dataAccessRequest&gt;sqlStatement&gt;statement" name="temp.dataAccessRequest[1]/sqlStatement[1]/statement" type="text" value="dataAccessRequest&gt;sqlStatement&gt;statement"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;dataAccessRequest&amp;gt;sqlStatement&amp;gt;columnCase &lt;input class="" title="dataAccessRequest&gt;sqlStatement&gt;columnCase" name="temp.dataAccessRequest[1]/sqlStatement[1]/columnCase" type="text" value="dataAccessRequest&gt;sqlStatement&gt;columnCase"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;dataAccessRequest&amp;gt;sqlStatement&amp;gt;hasResultSet &lt;input class="" title="dataAccessRequest&gt;sqlStatement&gt;hasResultSet" name="temp.dataAccessRequest[1]/sqlStatement[1]/hasResultSet" type="text" value="dataAccessRequest&gt;sqlStatement&gt;hasResultSet"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;dataAccessRequest&amp;gt;sqlStatement&amp;gt;includeMetadata &lt;input class="" title="dataAccessRequest&gt;sqlStatement&gt;includeMetadata" name="temp.dataAccessRequest[1]/sqlStatement[1]/includeMetadata" type="text" value="dataAccessRequest&gt;sqlStatement&gt;includeMetadata"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;dataAccessRequest&amp;gt;sqlStatement&amp;gt;statementId &lt;input class="" title="dataAccessRequest&gt;sqlStatement&gt;statementId" name="temp.dataAccessRequest[1]/sqlStatement[1]/statementId" type="text" value="dataAccessRequest&gt;sqlStatement&gt;statementId"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;dataAccessRequest&amp;gt;dataSource &lt;input class="" title="dataAccessRequest&gt;dataSource" name="temp.dataAccessRequest[1]/dataSource" type="text" value="dataAccessRequest&gt;dataSource"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="ivjsmmsf_ivjsmmsm" targetScreen="ivjsmmsm">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/statement"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">SELECT page_url FROM source_metadata</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/columnCase"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"lowercase","label":"lowercase"},{"value":"uppercase","label":"uppercase"},{"value":"unchanged","label":"unchanged"}]</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">unchanged</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/statementId"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">test_statement</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/dataSource"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS1","label":"DS1"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">DS1</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/hasResultSet"
+                                     readonly="false"
+                                     required="false"
+                                     type="boolean">
+                        <options>
+                           <option name="defaultvalue">true</option>
+                           <option name="boolean_show_as">checkbox</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/includeMetadata"
+                                     readonly="false"
+                                     required="false"
+                                     type="boolean">
+                        <options>
+                           <option name="defaultvalue">true</option>
+                           <option name="boolean_show_as">checkbox</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="ivjsmmt4">
+                  <title>Results</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="resultXml (temporary)" name="temp.resultXml" readonly="readonly" type="text" value="resultXml (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="ivjsmmt4_ivjsmms6" targetScreen="ivjsmms6">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.resultXml"
+                                     readonly="true"
+                                     required="false"
+                                     type="richtextarea">
+                        <options>
+                           <option name="text_height">20</option>
+                           <option name="text_width">100</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="ivjssaqi">
+                  <title>Test Results</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.testResults" readonly="readonly" type="text" value="testResults (output)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="ivjssaqi_ivjssaqp" targetScreen="ivjssaqp">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="ivjssaqi_ivjssaqt" targetScreen="ivjssaqt">
+                        <text>Run Test Again</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.testResults"
+                                     readonly="true"
+                                     renderingType="table"
+                                     required="false"
+                                     type="objectlist">
+                        <options>
+                           <option hide="true" name="referenceTo">$po:TestResult</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"testName","type":"string","label":"Test Name","renderingType":"string"},{"name":"message","type":"richtextarea","label":"Message","renderingType":"richtextarea"},{"name":"testResult","type":"picklist","label":"Test Result","renderingType":"picklist"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option name="text_height">10</option>
+                           <option name="text_width">100</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <service id="ivjsmmsm">
+                  <title>execSQLProxy</title>
+                  <serviceName>execSQLProxy</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter id="ive6ik4z"
+                                name="dataAccessRequest"
+                                source="formula"
+                                updatable="false">xpath $temp.dataAccessRequest</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="ivjsmmsm_ivjsmmsv" targetScreen="ivjsmmsv">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <service id="ivjssaqa">
+                  <title>TEST DAS</title>
+                  <serviceName>TEST_DAS</serviceName>
+                  <serviceGUID/>
+                  <actions>
+                     <action alt="null" id="ivjssaqa_ivjssaqi" targetScreen="ivjssaqi">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <endScreen id="ive6vc27">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="noRedirectTo"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="ivjsmms6">
+                  <actions>
+                     <action alt="null" id="ivjsmms6_ive6vc27" targetScreen="ive6vc27">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="ivjssaqp">
+                  <actions>
+                     <action alt="" id="ivjssaqp_ivjsmms6" targetScreen="ivjsmms6">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <jumpTo id="ivjssaqt" targetTitle="TEST DAS">
+                  <actions>
+                     <action alt="null" id="ivjssaqt_ivjssaqa" targetScreen="ivjssaqa">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <assignment id="ivjsmmsv">
+                  <title>Assignment</title>
+                  <operation source="formula" to="temp.resultXml">
+                     <expression language="XQuery">&lt;div&gt;
+ &lt;code&gt;{$output.dataAccessResponse}&lt;/code&gt;
+&lt;/div&gt;</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="ivjsmmsv_ivjsmmt4" targetScreen="ivjsmmt4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>f75peumT9eykTXqwHrSGCX</types1:GUID>
+      <types1:DisplayName>TEST DAS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-10T09:14:15.159Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "73ogWDi1l2ZeRlg6OhQ7i2",
+    "name" : "execMultiSQLProxy",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UoFxWZvWMOxBchz-gt-7126420-2020-04-21T17:25:51.743Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This service allows to Access the execMultiSQL DAS Services running on the Secure Agent from the cloud process or the guide.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "b23rsyU4cmzcla1wYStt8o",
+    "name" : "DataAccessService",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0BAWa-gt-7126457-2020-04-21T17:25:51.997Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/DAS"
+  } ]
+}

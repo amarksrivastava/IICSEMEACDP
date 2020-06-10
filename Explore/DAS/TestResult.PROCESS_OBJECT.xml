@@ -1,0 +1,40 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>M9hOznKKvvNtLSV-gt-7126410-2020-04-21T17:25:51.616Z::po.xml</types1:EntryId>
+      <types1:Name>TestResult</types1:Name>
+      <types1:ParentFlowIds>IjG3lqAOclkZ2sB-gt-1155692-2020-04-21T17:25:52.558Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>This Object Represent a Test Reults</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bmantha_asshared</types1:CreatedBy>
+      <types1:CreationDate>2020-04-21T17:25:52Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="TestResult"
+                        isByCopy="true"
+                        name="TestResult">
+            <description>This Object Represent a Test Reults</description>
+            <detail>
+               <field label="Test Name" name="testName" type="string"/>
+               <field label="Test Result" name="testResult" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"succes","label":"succes"},{"value":"fail","label":"fail"}]</option>
+                  </options>
+               </field>
+               <field label="Message" name="message" type="richtextarea"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>4WC4MehkYociZ32xrbaUaC</types1:GUID>
+      <types1:DisplayName>TestResult</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-10T09:14:15.1Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

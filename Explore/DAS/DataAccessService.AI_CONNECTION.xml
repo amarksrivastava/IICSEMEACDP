@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>0BAWa-gt-7126457-2020-04-21T17:25:51.997Z::conn.xml</types1:EntryId>
+      <types1:Name>DataAccessService</types1:Name>
+      <types1:ParentFlowIds>3A1vyoY2G7QnG5Y-gt-7126437-2020-04-21T17:25:51.874Z::pd.xml,DlUxQ2Tp5OjG4ab-gt-1144343-2020-04-21T18:10:31.471Z::pd.xml,hINciZBpDUQbgdw-gt-8508950-2020-05-19T10:50:08.112Z::pd.xml,IjG3lqAOclkZ2sB-gt-1155692-2020-04-21T17:25:52.558Z::pd.xml,T53nQciSrZMSPfX-gt-1155702-2020-04-21T17:25:52.734Z::gt.xml,UoFxWZvWMOxBchz-gt-7126420-2020-04-21T17:25:51.743Z::pd.xml,VMPINciZBpDUQbg-gt-1155339-2020-04-21T17:21:44.77Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bmantha_asshared</types1:CreatedBy>
+      <types1:CreationDate>2020-04-21T17:25:52Z</types1:CreationDate>
+      <types1:ModifiedBy>bmantha_asshared</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-21T17:27:27Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>bmantha_asshared</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-21T17:27:32Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/DataAccessService/DataAccessService.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="DataAccessService"
+                     label="DataAccessService"
+                     name="DataAccessService">
+            <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</description>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml"
+                               guid="6kukaHkgqS9kf22vMFhzew"
+                               name="DataAccessService"
+                               supportsConnectionTest="false"
+                               uuid="93d7509e-96fb-4872-b8c1-41f382c1811f">
+               <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>b23rsyU4cmzcla1wYStt8o</types1:GUID>
+      <types1:DisplayName>DataAccessService</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-06-10T09:14:15.206Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
