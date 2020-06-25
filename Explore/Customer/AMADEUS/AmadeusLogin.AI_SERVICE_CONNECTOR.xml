@@ -13,8 +13,9 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2020-05-19T09:56:11Z</types1:CreationDate>
-      <types1:ModifiedBy/>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-25T13:55:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2020-05-19T09:56:12Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/AmadeusLogin/AmadeusLogin_svcDef.xml</types1:PublishedContributionId>
@@ -56,16 +57,18 @@
                      <parameter label="client_id"
                                 name="client_id"
                                 required="true"
-                                testWith="OWJPgfEZmKfhqSNpSgr6fGpEcUgmP7hx"
+                                testWith="eAvA3ltQ1bESQilIvneth0CvOY2V6pOU"
                                 type="string"/>
                      <parameter label="client_secret"
                                 name="client_secret"
                                 required="true"
-                                testWith="bn91V424Uce55kGY"
+                                testWith="4fGXd9stEV6NEbNj"
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="https://test.api.amadeus.com/v1/security/oauth2/token" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://test.api.amadeus.com/v1/security/oauth2/token"
+                                        verb="POST">
                         <body generateUsing="Form"/>
                      </restSimpleBinding>
                   </binding>
@@ -83,5 +86,5 @@
       <types1:GUID>7uOoJiCkuGykP23eIBnQQY</types1:GUID>
       <types1:DisplayName>AmadeusLogin</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-06-25T13:55:17.633Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-06-25T13:56:09.306Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
