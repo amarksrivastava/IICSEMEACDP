@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "98aLjLVGUwEjWGChLtfRYf",
+    "name" : "EmailWithAttachmentProcess",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UPAZf5kck8jKBme-gt-1364663-2021-02-24T17:16:43.746Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Email subscribers to Hub for manual intervention in Process",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "02HTFE5TMIAkGgkRexCpOc",
+    "name" : "EmailConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lDjAqQHhwq9bdsr-gt-1059186-2020-05-01T11:32:49.186Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Server name: pro.turbo-smtp.com\nServer name (recommended for EU users): pro.eu.turbo-smtp.com \nUsername: amsrivastava@informatica.com \nPassword: kCDyof0G \nPort: 25 (default) or 587; if you use an SSL connection, choose port 465",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAITraining/Email"
+  } ]
+}

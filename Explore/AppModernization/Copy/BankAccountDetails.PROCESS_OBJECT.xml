@@ -1,0 +1,39 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Ftclq1iUsRvsGRv-gt-1326474-2021-02-24T15:30:47.51Z::po.xml</types1:EntryId>
+      <types1:Name>BankAccountDetails-1</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-24T15:30:48Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        xmlns:_0="http://schemas.informatica.com/socrates/processobject/factory/2019/07/common/infaProcessObjectFactory.xsd"
+                        xmlns:aetgt="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:internal2="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        isByCopy="true"
+                        name="BankAccountDetails-1">
+            <description>This object was generated from [anonymous complex type] located in the [AcceptQuoteRequest.xsd] source XML schema.</description>
+            <detail>
+               <field label="AccountName" name="AccountName" type="string"/>
+               <field label="AccountNo" name="AccountNo" type="int"/>
+               <field label="BranchName" name="BranchName" type="string"/>
+               <field label="SortCode" name="SortCode" type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>0kyd1ATQAMWeHxG8hwRiMi</types1:GUID>
+      <types1:DisplayName>BankAccountDetails</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:07.991Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

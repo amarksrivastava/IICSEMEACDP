@@ -1,0 +1,276 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ltnKLLsciQlBWlD-gt-6268410-2021-02-18T16:22:32.182Z::pd.xml</types1:EntryId>
+      <types1:Name>CreateQuote</types1:Name>
+      <types1:ParentFlowIds>pBDwXtqdsQR6kbe-gt-1370203-2021-02-24T17:38:04.425Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-18T16:22:32Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-25T15:01:23Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-25T15:01:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.CreateQuote/CreateQuote.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="CreateQuote"
+                  name="CreateQuote"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:poQuoteRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">36ESRCQNWwMeGpDBcP31ez</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Response" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateQuoteResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">iAZZ40QJmqnh1F3BiLizwf</option>
+                  </options>
+               </field>
+               <field description="" name="ErrorDescription" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="IsSICAndAddressValid" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="klia4uve" targetId="klia4uvd"/>
+               </start>
+               <container id="klia4uvd" type="exclusive">
+                  <title>SalesChannel</title>
+                  <flow id="klia4uvh">
+                     <container id="klia4ux0" type="exclusive">
+                        <title>Check Age</title>
+                        <flow id="klia4ux1">
+                           <container id="klia4ux2" type="parallel">
+                              <title>Parallel Convoy</title>
+                              <flow id="klia4ux3">
+                                 <eventContainer id="klia4ux4">
+                                    <service id="klia4ux8">
+                                       <title>SICCodeValidation</title>
+                                       <serviceName>acSICCode:ValidateSICCode</serviceName>
+                                       <serviceGUID>fJCDbsdXVO5ipSchOoHSU2</serviceGUID>
+                                       <serviceInput>
+                                          <parameter name="SICCode" source="field" updatable="true">input.input[1]/OccupationCategory</parameter>
+                                       </serviceInput>
+                                    </service>
+                                    <flow id="klia4ux5">
+                                       <link id="klia4uxv" targetId="klia4ux4" type="containerLink"/>
+                                    </flow>
+                                    <flow id="klia4ux6">
+                                       <assignment id="klia4ux7">
+                                          <title>Assignment to ErrorDescription</title>
+                                          <operation source="formula" to="output.Response">
+                                             <expression language="XQuery">$output.Response + "SIC Code Validation Service Not Responding"</expression>
+                                          </operation>
+                                       </assignment>
+                                       <link id="klia4uxw" targetId="klia4ux4" type="containerLink"/>
+                                    </flow>
+                                    <link id="klia4uxt" targetId="klia4ux5" type="containerLink"/>
+                                    <events>
+                                       <catch faultField="faultInfo" id="kli4445p" interrupting="true">
+                                          <link id="klia4uxu" targetId="klia4ux6" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="klia4uxs" targetId="klia4ux2" type="containerLink"/>
+                              </flow>
+                              <flow id="klia4ux9">
+                                 <eventContainer id="klia4uxa">
+                                    <service id="klia4uxe">
+                                       <title>AddressValidation</title>
+                                       <serviceName>acAddressValidation:ValidatePostCode</serviceName>
+                                       <serviceGUID>3DWVco6tMMoju7yqMiVK6n</serviceGUID>
+                                       <serviceInput>
+                                          <parameter name="Postcode" source="field" updatable="true">input.input[1]/PostCode</parameter>
+                                       </serviceInput>
+                                    </service>
+                                    <flow id="klia4uxb">
+                                       <link id="klia4uy0" targetId="klia4uxa" type="containerLink"/>
+                                    </flow>
+                                    <flow id="klia4uxc">
+                                       <assignment id="klia4uxd">
+                                          <title>Assignment to ErrorDescription</title>
+                                          <operation source="formula" to="output.Response">
+                                             <expression language="XQuery">$output.Response + "Address Validation Service Not Responding"</expression>
+                                          </operation>
+                                       </assignment>
+                                       <link id="klia4uy1" targetId="klia4uxa" type="containerLink"/>
+                                    </flow>
+                                    <link id="klia4uxy" targetId="klia4uxb" type="containerLink"/>
+                                    <events>
+                                       <catch faultField="faultInfo" id="kli44458" interrupting="true">
+                                          <link id="klia4uxz" targetId="klia4uxc" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="klia4uxx" targetId="klia4ux2" type="containerLink"/>
+                              </flow>
+                              <link id="klia4uxp" targetId="klia4ux3" type="containerLink"/>
+                              <link id="klia4uxq" targetId="klia4ux9" type="containerLink"/>
+                              <link id="klia4uxr" targetId="klia4uxf"/>
+                           </container>
+                           <container id="klia4uxg" type="exclusive">
+                              <title>IsSICAndAddressValid</title>
+                              <flow id="klia4uxh">
+                                 <subflow id="klia4uxi">
+                                    <title>Policy Admin System Subprocess</title>
+                                    <subflowGUID>jM2BCJex6MjhtOQLiTHyYk</subflowGUID>
+                                    <subflowPath>PolicyAdminSystemCQ</subflowPath>
+                                    <runForEach>false</runForEach>
+                                    <input>
+                                       <parameter name="inputCQ" source="field" updatable="true">input.input</parameter>
+                                    </input>
+                                    <outputDef>
+                                       <field name="responseCQ" type="reference">
+                                          <options>
+                                             <option name="referenceTo">$po:CreateQuoteResponse</option>
+                                             <option name="required">false</option>
+                                             <option name="isCopy">true</option>
+                                             <option name="guid">iAZZ40QJmqnh1F3BiLizwf</option>
+                                          </options>
+                                       </field>
+                                    </outputDef>
+                                    <link id="kljc6jts" targetId="kljc6jfg"/>
+                                 </subflow>
+                                 <create id="kljc6jfg">
+                                    <title>Lead</title>
+                                    <entityName>Salesforce:Lead</entityName>
+                                    <createInput>
+                                       <parameter name="LastName" source="field" updatable="true">input.input[1]/LastName</parameter>
+                                       <parameter name="FirstName" source="field" updatable="true">input.input[1]/FirstName</parameter>
+                                       <parameter name="Company" source="field" updatable="true">input.input[1]/SalesChannel</parameter>
+                                       <parameter name="PostalCode" source="field" updatable="true">input.input[1]/PostCode</parameter>
+                                       <parameter name="Email" source="formula" updatable="true">
+                                          <expression language="XQuery">$input.input[1]/email </expression>
+                                       </parameter>
+                                       <parameter name="LeadSource" source="constant" updatable="true">Web</parameter>
+                                       <parameter name="Status" source="constant" updatable="true">Open - Not Contacted</parameter>
+                                    </createInput>
+                                    <link id="kljc6jfi" targetId="kliaczm8"/>
+                                 </create>
+                                 <assignment id="kliaczm8">
+                                    <title>Assignment to Response</title>
+                                    <operation source="field" to="output.Response">output.responseCQ</operation>
+                                 </assignment>
+                                 <link id="klia4uy5" targetId="klia4uxg" type="containerLink"/>
+                              </flow>
+                              <flow id="klia4uxj">
+                                 <assignment id="klibl5tb">
+                                    <title>Assignment to ErrorDescription</title>
+                                    <operation source="constant" to="output.ErrorDescription">Address Sic Validation Failed.</operation>
+                                 </assignment>
+                                 <link id="klia4uy6" targetId="klia4uxg" type="containerLink"/>
+                              </flow>
+                              <link id="klia4uy3" targetId="klia4uxh" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="set">
+                                       <arg name="field">{$temp.IsSICAndAddressValid}</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="klia4uy4" targetId="klia4uxj" type="containerLink"/>
+                           </container>
+                           <assignment id="klia4uxf">
+                              <title>Assignment to IsSICAndAddressValid</title>
+                              <operation source="formula" to="temp.IsSICAndAddressValid">
+                                 <expression language="XQuery">if ($output.IsValidPostCode=1 and $output.IsValidSICCode=1) then
+$temp.IsSICAndAddressValid =1
+else
+$temp.IsSICAndAddressValid =1</expression>
+                              </operation>
+                              <link id="klia4uy2" targetId="klia4uxg"/>
+                           </assignment>
+                           <link id="klia4uxo" targetId="klia4ux0" type="containerLink"/>
+                        </flow>
+                        <flow id="klia4uxk">
+                           <assignment id="klia4uxl">
+                              <title>Assignment to ErrorDescription</title>
+                              <operation source="constant" to="output.Response">Cannot  provide insurance for age more than 90.</operation>
+                           </assignment>
+                           <link id="klia4uy7" targetId="klia4ux0" type="containerLink"/>
+                        </flow>
+                        <link id="klia4uxm" targetId="klia4ux1" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-than">
+                                 <arg name="left">{$input.input[1]/Age}</arg>
+                                 <arg name="right">{90}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="klia4uxn" targetId="klia4uxk" type="containerLink"/>
+                     </container>
+                     <link id="klia4uvi" targetId="klia4uvd" type="containerLink"/>
+                  </flow>
+                  <flow id="klia4uvk">
+                     <subflow id="klia4uz3">
+                        <title>Call B2B Quote Subprocess</title>
+                        <subflowGUID>2AC97JeETBGcDZlOJdHBeY</subflowGUID>
+                        <subflowPath>B2BQuoteSubProcess-1</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input/>
+                        <outputDef/>
+                     </subflow>
+                     <link id="klia4uvl" targetId="klia4uvd" type="containerLink"/>
+                  </flow>
+                  <link id="klia4uvg" targetId="klia4uvh" type="containerLink">
+                     <condition source="formula">
+                        <function name="included">
+                           <arg name="left">{$input.input[1]/SalesChannel}</arg>
+                           <arg name="right">B2C</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="klia4uvj" targetId="klia4uvk" type="containerLink"/>
+                  <link id="klia4uzz" targetId="c"/>
+               </container>
+               <end id="c">
+                  <title>Success Completion</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1J5RlIacFBBjbyYjQ5wiQd</types1:GUID>
+      <types1:DisplayName>CreateQuote</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.212Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

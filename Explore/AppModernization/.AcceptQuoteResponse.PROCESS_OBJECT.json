@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5q5ua2I2IjdhZYC6LCt4A5",
+    "name" : "AcceptQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eFIKUzeA8rJ4pbg-gt-902481-2021-02-23T17:11:21.071Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

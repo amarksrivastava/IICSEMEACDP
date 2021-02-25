@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9pfzQXNgw4fd9I21NXNOC1",
+    "name" : "QuoteDocument-AMQP",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "mxEKSabbeJOSM8N-gt-469672-2021-02-24T16:33:12.209Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

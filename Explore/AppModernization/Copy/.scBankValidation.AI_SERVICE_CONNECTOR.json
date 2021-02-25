@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6ps1ljzkN4pkEvQI3eZBu8",
+    "name" : "scBankValidation",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qpw0VPNzUzeA8rJ-gt-1322668-2021-02-24T15:30:48.269Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

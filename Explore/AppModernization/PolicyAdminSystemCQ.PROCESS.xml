@@ -1,0 +1,90 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>RtFgpKi9zhFtybd-gt-907445-2021-02-23T17:02:43.702Z::pd.xml</types1:EntryId>
+      <types1:Name>PolicyAdminSystemCQ</types1:Name>
+      <types1:ParentFlowIds>ltnKLLsciQlBWlD-gt-6268410-2021-02-18T16:22:32.182Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-23T17:02:44Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-24T15:07:44Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-25T15:01:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.PolicyAdminSystemCQ/PolicyAdminSystemCQ.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="PolicyAdminSystemCQ"
+                  name="PolicyAdminSystemCQ"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="inputCQ" required="true" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:poQuoteRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">36ESRCQNWwMeGpDBcP31ez</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="responseCQ" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateQuoteResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">iAZZ40QJmqnh1F3BiLizwf</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kli9onmk" targetId="kli9onmj"/>
+               </start>
+               <assignment id="kli9onmj">
+                  <title>Assignment to QuoteNumber, AnnualRenewalDate etc.</title>
+                  <operation source="formula" to="output.responseCQ[1]/QuoteNumber">
+                     <expression language="XQuery">56004785</expression>
+                  </operation>
+                  <operation source="formula" to="output.responseCQ[1]/AnnualRenewalDate">
+                     <function name="days_from_today">
+                        <arg name="days">365</arg>
+                        <arg name="busDays">false</arg>
+                     </function>
+                  </operation>
+                  <operation source="constant" to="output.responseCQ[1]/AnnualMonthlyPremium">87.42</operation>
+                  <operation source="constant" to="output.responseCQ[1]/AnnualYearlyPremium">1018.59</operation>
+                  <operation source="constant" to="output.responseCQ[1]/FreeCoverLimit">500000</operation>
+                  <operation source="constant" to="output.responseCQ[1]/TotalAnnualBenefit">900000</operation>
+                  <operation source="constant" to="output.responseCQ[1]/MessageStatus">Success</operation>
+                  <link id="kli9onml" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>jM2BCJex6MjhtOQLiTHyYk</types1:GUID>
+      <types1:DisplayName>PolicyAdminSystemCQ</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.009Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

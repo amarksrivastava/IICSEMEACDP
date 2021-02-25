@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>iSbeIXycotFgpKi-gt-1322163-2021-02-24T15:29:22.131Z::conn.xml</types1:EntryId>
+      <types1:Name>acBankValidation</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-24T15:29:22Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>rohitsrivastava@demo.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-24T15:29:32Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/acBankValidation/acBankValidation.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="acBankValidation"
+                     label="acBankValidation"
+                     name="acBankValidation">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/scBankValidation/scBankValidation_svcDef.xml"
+                               guid="bMxDlfr4iC1bBhhF4yWqy5"
+                               name="scBankValidation"
+                               supportsConnectionTest="false"
+                               uuid="fff405e9-198a-4348-b3c7-042292ac3121">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>53qOfXRHYJEg9mgJ7ahpWh</types1:GUID>
+      <types1:DisplayName>acBankValidation</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.084Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

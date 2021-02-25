@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "2AC97JeETBGcDZlOJdHBeY",
+    "name" : "B2BQuoteSubProcess",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UHukfRLdqcgm8ln-gt-330377-2021-02-23T17:24:13.745Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

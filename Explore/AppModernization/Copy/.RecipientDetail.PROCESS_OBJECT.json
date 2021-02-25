@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9dvdJ2r0dfLj30bV6Hgt2v",
+    "name" : "RecipientDetail",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3WAiRASmvD4teIs-gt-1311777-2021-02-24T15:30:47.876Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

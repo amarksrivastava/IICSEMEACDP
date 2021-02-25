@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "0kyd1ATQAMWeHxG8hwRiMi",
+    "name" : "BankAccountDetails",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Ftclq1iUsRvsGRv-gt-1326474-2021-02-24T15:30:47.51Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

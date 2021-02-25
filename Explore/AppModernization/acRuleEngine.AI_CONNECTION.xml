@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>9Em2kVNKSmvD4te-gt-1308784-2021-02-24T15:27:51.977Z::conn.xml</types1:EntryId>
+      <types1:Name>acRuleEngine</types1:Name>
+      <types1:ParentFlowIds>Ak0qZF3a-gt-6270827-2021-02-18T16:37:43.426Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-24T15:27:52Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>rohitsrivastava@demo.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-24T15:44:38Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/acRuleEngine/acRuleEngine.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="acRuleEngine"
+                     label="acRuleEngine"
+                     name="acRuleEngine">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/scRuleEngine/scRuleEngine_svcDef.xml"
+                               guid="litVGUB46eobku9JjVAvAJ"
+                               name="scRuleEngine"
+                               supportsConnectionTest="false"
+                               uuid="aaa16963-037f-4f52-b118-c568ecd327b6">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>2O6LBAaYMBtf6XAUjgcFwk</types1:GUID>
+      <types1:DisplayName>acRuleEngine</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.041Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

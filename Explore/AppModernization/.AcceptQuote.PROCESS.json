@@ -1,0 +1,244 @@
+{
+  "objectInfo" : {
+    "id" : "0n4b4uPLGkycKMGq0pfR66",
+    "name" : "AcceptQuote",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Ak0qZF3a-gt-6270827-2021-02-18T16:37:43.426Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "5q5ua2I2IjdhZYC6LCt4A5",
+    "name" : "AcceptQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eFIKUzeA8rJ4pbg-gt-902481-2021-02-23T17:11:21.071Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "axkMkwdS1MilwzqJt4dKCQ",
+    "name" : "DocumentService",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "E69xGomUhGdwOLI-gt-304461-2021-02-23T15:01:51.489Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "9pfzQXNgw4fd9I21NXNOC1",
+    "name" : "QuoteDocument-AMQP",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "mxEKSabbeJOSM8N-gt-469672-2021-02-24T16:33:12.209Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "4ldyMSn22IEbCssBqWr0MP",
+    "name" : "AcceptQuoteRequest",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "MuKNf4TsrT2htgh-gt-909177-2021-02-23T17:10:18.627Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "iAZZ40QJmqnh1F3BiLizwf",
+    "name" : "CreateQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Cbdp2vRES7FdpOf-gt-890730-2021-02-23T17:05:34.458Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "2O6LBAaYMBtf6XAUjgcFwk",
+    "name" : "acRuleEngine",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "9Em2kVNKSmvD4te-gt-1308784-2021-02-24T15:27:51.977Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "02HTFE5TMIAkGgkRexCpOc",
+    "name" : "EmailConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lDjAqQHhwq9bdsr-gt-1059186-2020-05-01T11:32:49.186Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Server name: pro.turbo-smtp.com\nServer name (recommended for EU users): pro.eu.turbo-smtp.com \nUsername: amsrivastava@informatica.com \nPassword: kCDyof0G \nPort: 25 (default) or 587; if you use an SSL connection, choose port 465",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAITraining/Email"
+  }, {
+    "id" : "53qOfXRHYJEg9mgJ7ahpWh",
+    "name" : "acBankValidation",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iSbeIXycotFgpKi-gt-1322163-2021-02-24T15:29:22.131Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "8qC48lJTsLRkULE1el5583",
+    "name" : "ProcessGetQuote",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "KYsGuDoWn2sqeEr-gt-456829-2021-02-24T14:59:28.581Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "00pJ2gf6vqtkKSx463UJ49",
+    "name" : "PolicyAdminSystemAQ",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rRfRW8UBM7zsZvE-gt-3666021-2021-02-24T15:55:30.277Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  }, {
+    "id" : "ltvsMzH3f8xcNE7APlWtUk",
+    "name" : "UpdateSFLeadStatus",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "PrXbeMVX3cjk91p-gt-1612208-2021-02-25T11:09:17.672Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  } ]
+}

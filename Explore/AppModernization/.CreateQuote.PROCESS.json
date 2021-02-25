@@ -1,0 +1,144 @@
+{
+  "objectInfo" : {
+    "id" : "1J5RlIacFBBjbyYjQ5wiQd",
+    "name" : "CreateQuote",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ltnKLLsciQlBWlD-gt-6268410-2021-02-18T16:22:32.182Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "36ESRCQNWwMeGpDBcP31ez",
+    "name" : "poQuoteRequest",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "9yCEx9dwMbgbdoP-gt-24599232-2021-02-18T16:18:01.598Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "iAZZ40QJmqnh1F3BiLizwf",
+    "name" : "CreateQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Cbdp2vRES7FdpOf-gt-890730-2021-02-23T17:05:34.458Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "jM2BCJex6MjhtOQLiTHyYk",
+    "name" : "PolicyAdminSystemCQ",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "RtFgpKi9zhFtybd-gt-907445-2021-02-23T17:02:43.702Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "2AC97JeETBGcDZlOJdHBeY",
+    "name" : "B2BQuoteSubProcess",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UHukfRLdqcgm8ln-gt-330377-2021-02-23T17:24:13.745Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "3DWVco6tMMoju7yqMiVK6n",
+    "name" : "acAddressValidation",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "q1iUsRvsGRvDINc-gt-2773765-2021-02-23T15:16:07.226Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  }, {
+    "id" : "fJCDbsdXVO5ipSchOoHSU2",
+    "name" : "acSICCode",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "OyCEx9dwMbgbdoP-gt-835291-2021-02-23T15:16:47.651Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization"
+  } ]
+}

@@ -1,0 +1,62 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>9yCEx9dwMbgbdoP-gt-24599232-2021-02-18T16:18:01.598Z::po.xml</types1:EntryId>
+      <types1:Name>poQuoteRequest</types1:Name>
+      <types1:ParentFlowIds>ltnKLLsciQlBWlD-gt-6268410-2021-02-18T16:22:32.182Z::pd.xml,pBDwXtqdsQR6kbe-gt-1370203-2021-02-24T17:38:04.425Z::gt.xml,RtFgpKi9zhFtybd-gt-907445-2021-02-23T17:02:43.702Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-18T16:18:02Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-25T09:32:37Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="poQuoteRequest"
+                        isByCopy="true"
+                        name="poQuoteRequest">
+            <description/>
+            <tags/>
+            <detail>
+               <field label="FirstName" name="FirstName" type="string"/>
+               <field label="LastName" name="LastName" type="string"/>
+               <field label="Age" name="Age" type="int"/>
+               <field label="PostCode" name="PostCode" type="string"/>
+               <field label="AnyMedicalHistory" name="AnyMedicalHistory" type="boolean"/>
+               <field label="RecentTravel" name="RecentTravel" type="boolean"/>
+               <field label="UniqueIdentifier" name="UniqueIdentifier" type="string"/>
+               <field label="email" name="email" type="string"/>
+               <field label="OccupationCategory"
+                      name="OccupationCategory"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"value":"Agriculture, Forestry, Fishing","label":"Agriculture, Forestry, Fishing"},{"value":"Mining","label":"Mining"},{"value":"Construction","label":"Construction"},{"value":"Manufacturing","label":"Manufacturing"},{"value":"Transportation &amp; Public Utilities","label":"Transportation &amp; Public Utilities"},{"value":"Wholesale Trade","label":"Wholesale Trade"},{"value":"Retail Trade","label":"Retail Trade"},{"value":"Finance, Insurance, Real Estate","label":"Finance, Insurance, Real Estate"},{"value":"Services","label":"Services"},{"value":"Public Administration","label":"Public Administration"}]</option>
+                  </options>
+               </field>
+               <field label="SalesChannel" name="SalesChannel" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"B2C","label":"B2C"},{"value":"B2B","label":"B2B"}]</option>
+                  </options>
+               </field>
+               <field label="Address" name="Address" type="string"/>
+               <field label="DateofBirth" name="DateofBirth" type="string"/>
+               <field label="Gender" name="Gender" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"Male","label":"Male"},{"value":"Female","label":"Female"},{"value":"Transgender","label":"Transgender"},{"value":"Non-binary","label":"Non-binary"}]</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>36ESRCQNWwMeGpDBcP31ez</types1:GUID>
+      <types1:DisplayName>poQuoteRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:07.52Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

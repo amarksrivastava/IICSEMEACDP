@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "a6GeYbEgLWThnb7l7KIiUX",
+    "name" : "ValidationServices",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qig0zFMi4tciSrZ-gt-461830-2021-02-24T15:30:49.267Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

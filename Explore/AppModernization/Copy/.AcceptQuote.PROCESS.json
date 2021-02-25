@@ -1,0 +1,124 @@
+{
+  "objectInfo" : {
+    "id" : "ixRPk1scYWDfgx6DUdHOY2",
+    "name" : "AcceptQuote",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "jvppppppppppppp-gt-1311857-2021-02-24T15:30:49.153Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "6qytqOmfkLihTZ7P4NZfIh",
+    "name" : "ProcessGetQuote",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "x6i4tciSrZMSPfX-gt-1326496-2021-02-24T15:30:48.386Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  }, {
+    "id" : "9XbN4o74t4klHdcj9av92s",
+    "name" : "AcceptQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UconQYWeIssjqlu-gt-1309930-2021-02-24T15:30:46.755Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  }, {
+    "id" : "8533EODzrW4hAF5VxVgTAq",
+    "name" : "CreateQuoteResponse",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iXJt93aaa-gt-1309947-2021-02-24T15:30:48.134Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  }, {
+    "id" : "02HTFE5TMIAkGgkRexCpOc",
+    "name" : "EmailConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lDjAqQHhwq9bdsr-gt-1059186-2020-05-01T11:32:49.186Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Server name: pro.turbo-smtp.com\nServer name (recommended for EU users): pro.eu.turbo-smtp.com \nUsername: amsrivastava@informatica.com \nPassword: kCDyof0G \nPort: 25 (default) or 587; if you use an SSL connection, choose port 465",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAITraining/Email"
+  }, {
+    "id" : "7p2CMtfPdmsc0ylvRu7pin",
+    "name" : "AcceptQuoteRequest",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "beDXJqEhynzYLnz-gt-461814-2021-02-24T15:30:48.026Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  } ]
+}

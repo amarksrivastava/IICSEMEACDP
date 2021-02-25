@@ -1,0 +1,665 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pBDwXtqdsQR6kbe-gt-1370203-2021-02-24T17:38:04.425Z::gt.xml</types1:EntryId>
+      <types1:Name>QuoteAndBuyGuide</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-24T17:38:04Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-25T13:34:01Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-25T13:34:06Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.QuoteAndBuyGuide/QuoteAndBuyGuide.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="QuoteAndBuyGuide"
+                         doneOnEndStep="false"
+                         name="QuoteAndBuyGuide"
+                         runAsUser="$current">
+            <description/>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="CQRequest"
+                          required="false"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:poQuoteRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">36ESRCQNWwMeGpDBcP31ez</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tAQRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AcceptQuoteRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4ldyMSn22IEbCssBqWr0MP</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_kljpyuz3" targetScreen="kljpyuz3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="kljpyuz3">
+                  <title>Create Quote</title>
+                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: left;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-77972.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p style="padding-left: 480px;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="padding-left: 40px;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="padding-left: 40px;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="text-align: left;"&gt;&lt;span style="color: #169179; font-size: 14pt; font-family: 'comic sans ms', sans-serif;"&gt;Need an Insurance Quote? Please fill the below details:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 58.5383%; height: 139px;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;First Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input class="" name="input.CQRequest[1]/FirstName" type="text" value="CQRequest&gt;FirstName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Last Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input class="" name="input.CQRequest[1]/LastName" type="text" value="CQRequest&gt;LastName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Gender&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input class="" name="input.CQRequest[1]/Gender" type="text" value="CQRequest&gt;Gender"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 13px;"&gt;&lt;span style="color: #236fa1;"&gt;Date of Birth&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 13px;"&gt;&lt;input title="CQRequest&gt;DateofBirth" name="input.CQRequest[1]/DateofBirth" type="text" value="CQRequest&gt;DateofBirth"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Address&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input name="input.CQRequest[1]/Address" type="text" value="CQRequest&gt;Address"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Postcode&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input name="input.CQRequest[1]/PostCode" type="text" value="CQRequest&gt;PostCode"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Email&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input name="input.CQRequest[1]/email" type="text" value="CQRequest&gt;email"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Occupation Category&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input title="CQRequest&gt;OccupationCategory" name="input.CQRequest[1]/OccupationCategory" type="text" value="CQRequest&gt;OccupationCategory"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Any Medical History&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input title="CQRequest&gt;AnyMedicalHistory" name="input.CQRequest[1]/AnyMedicalHistory" type="text" value="CQRequest&gt;AnyMedicalHistory"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Recent Overseas Travel (within 1 month)&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 43.0311%; height: 14px;"&gt;&lt;input title="CQRequest&gt;RecentTravel" name="input.CQRequest[1]/RecentTravel" type="text" value="CQRequest&gt;RecentTravel"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kljpyuz3_klkocq5t" targetScreen="klkocq5t">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="input.CQRequest[1]/FirstName"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/LastName"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/Gender"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Male","label":"Male"},{"value":"Female","label":"Female"},{"value":"Transgender","label":"Transgender"},{"value":"Non-binary","label":"Non-binary"}]</option>
+                           <option name="required">false</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/PostCode"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/Address"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/email"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/AnyMedicalHistory"
+                                     readonly="false"
+                                     required="false"
+                                     type="boolean">
+                        <options>
+                           <option name="defaultvalue">false</option>
+                           <option name="boolean_show_as">checkbox</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/OccupationCategory"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Agriculture, Forestry, Fishing","label":"Agriculture, Forestry, Fishing"},{"value":"Mining","label":"Mining"},{"value":"Construction","label":"Construction"},{"value":"Manufacturing","label":"Manufacturing"},{"value":"Transportation &amp; Public Utilities","label":"Transportation &amp; Public Utilities"},{"value":"Wholesale Trade","label":"Wholesale Trade"},{"value":"Retail Trade","label":"Retail Trade"},{"value":"Finance, Insurance, Real Estate","label":"Finance, Insurance, Real Estate"},{"value":"Services","label":"Services"},{"value":"Public Administration","label":"Public Administration"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/RecentTravel"
+                                     readonly="false"
+                                     required="false"
+                                     type="boolean">
+                        <options>
+                           <option name="defaultvalue">false</option>
+                           <option name="boolean_show_as">checkbox</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/DateofBirth"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="klkocq59">
+                  <title>Quote Details</title>
+                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-68374.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #169179;"&gt;Thanks for the quote request. Please find below your quotation for insurance policy:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 53.9474%; height: 144px;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 15.8435%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Quote Number&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.Response[1]/QuoteNumber" readonly="readonly" type="text" value="Response&gt;QuoteNumber"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 15.8435%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;First Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/FirstName" readonly="readonly" type="text" value="CQRequest&gt;FirstName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Last Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/LastName" readonly="readonly" type="text" value="CQRequest&gt;LastName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Date of Birth&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="CQRequest&gt;DateofBirth" name="input.CQRequest[1]/DateofBirth" readonly="readonly" type="text" value="CQRequest&gt;DateofBirth"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Gender&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/Gender" readonly="readonly" type="text" value="CQRequest&gt;Gender"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Monthly Premium&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="Response&gt;AnnualMonthlyPremium" name="output.Response[1]/AnnualMonthlyPremium" readonly="readonly" type="text" value="Response&gt;AnnualMonthlyPremium"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Yearly Premium&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="Response&gt;AnnualYearlyPremium" name="output.Response[1]/AnnualYearlyPremium" readonly="readonly" type="text" value="Response&gt;AnnualYearlyPremium"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Renewal Date&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="Response&gt;AnnualRenewalDate" name="output.Response[1]/AnnualRenewalDate" readonly="readonly" type="text" value="Response&gt;AnnualRenewalDate"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Total Annual Benefit&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="Response&gt;TotalAnnualBenefit" name="output.Response[1]/TotalAnnualBenefit" readonly="readonly" type="text" value="Response&gt;TotalAnnualBenefit"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 15.8435%; height: 14px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="width: 36.7388%; height: 14px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="klkocq59_klkocq9e" targetScreen="klkocq9e">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="input.CQRequest[1]/FirstName"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/LastName"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/DateofBirth"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/Gender"
+                                     readonly="true"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Male","label":"Male"},{"value":"Female","label":"Female"},{"value":"Transgender","label":"Transgender"},{"value":"Non-binary","label":"Non-binary"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.Response[1]/QuoteNumber"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.Response[1]/AnnualMonthlyPremium"
+                                     readonly="true"
+                                     required="false"
+                                     type="double">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.Response[1]/AnnualYearlyPremium"
+                                     readonly="true"
+                                     required="false"
+                                     type="double">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.Response[1]/TotalAnnualBenefit"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.Response[1]/AnnualRenewalDate"
+                                     readonly="true"
+                                     required="false"
+                                     type="date">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="klkocqcv">
+                  <title>Bank Details</title>
+                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-934.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;You are just one step away for unleashing the bouquet of benefits. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please enter your bank details for premium payment:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 42.1053%;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="width: 16.3893%;"&gt;&lt;span style="color: #236fa1;"&gt;Account Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 24.3638%;"&gt;&lt;input title="tAQRequest&gt;BankAccountDetails&gt;AccountName" name="temp.tAQRequest[1]/BankAccountDetails[1]/AccountName" type="text" value="tAQRequest&gt;BankAccountDetails&gt;AccountName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="width: 16.3893%;"&gt;&lt;span style="color: #236fa1;"&gt;Account Number&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 24.3638%;"&gt;&lt;input title="tAQRequest&gt;BankAccountDetails&gt;AccountNo" name="temp.tAQRequest[1]/BankAccountDetails[1]/AccountNo" type="text" value="tAQRequest&gt;BankAccountDetails&gt;AccountNo"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="width: 16.3893%;"&gt;&lt;span style="color: #236fa1;"&gt;Branch Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 24.3638%;"&gt;&lt;input title="tAQRequest&gt;BankAccountDetails&gt;BranchName" name="temp.tAQRequest[1]/BankAccountDetails[1]/BranchName" type="text" value="tAQRequest&gt;BankAccountDetails&gt;BranchName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="width: 16.3893%;"&gt;&lt;span style="color: #236fa1;"&gt;Sort Code&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 24.3638%;"&gt;&lt;input title="tAQRequest&gt;BankAccountDetails&gt;SortCode" name="temp.tAQRequest[1]/BankAccountDetails[1]/SortCode" type="text" value="tAQRequest&gt;BankAccountDetails&gt;SortCode"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="klkocqcv_klkocq96" targetScreen="klkocq96">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tAQRequest[1]/BankAccountDetails[1]/AccountName"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tAQRequest[1]/BankAccountDetails[1]/AccountNo"
+                                     readonly="false"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tAQRequest[1]/BankAccountDetails[1]/BranchName"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tAQRequest[1]/BankAccountDetails[1]/SortCode"
+                                     readonly="false"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="klkocqdc">
+                  <title>Policy Details</title>
+                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-47770.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p style="padding-left: 240px;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Thanks for buying a policy and joining the network of our valued customers.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please find below your policy details. The policy documents will be sent within 24 hours on your registered email.&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 56.4404%; height: 147px;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 12.894%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Policy Number&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.ResponseAQ[1]/PolicyNo" readonly="readonly" type="text" value="ResponseAQ&gt;PolicyNo"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 12.894%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;First Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/FirstName" readonly="readonly" type="text" value="CQRequest&gt;FirstName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 12.894%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Last Name&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/LastName" readonly="readonly" type="text" value="CQRequest&gt;LastName"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 16px;"&gt;
+&lt;td style="width: 12.894%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Email&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 16px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/email" readonly="readonly" type="text" value="CQRequest&gt;email"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 13px;"&gt;&lt;span style="color: #236fa1;"&gt;Date of Birth&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 13px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="CQRequest&gt;DateofBirth" name="input.CQRequest[1]/DateofBirth" readonly="readonly" type="text" value="CQRequest&gt;DateofBirth"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Gender&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="input.CQRequest[1]/Gender" readonly="readonly" type="text" value="CQRequest&gt;Gender"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Annual Premium&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="ResponseAQ&gt;AnnualPremium" name="output.ResponseAQ[1]/AnnualPremium" readonly="readonly" type="text" value="ResponseAQ&gt;AnnualPremium"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Annual Premium Date&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="ResponseAQ&gt;AnnualReviewDate" name="output.ResponseAQ[1]/AnnualReviewDate" readonly="readonly" type="text" value="ResponseAQ&gt;AnnualReviewDate"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;Total Annual Benefit&lt;/span&gt;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 14px;"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="ResponseAQ&gt;TotalAnnualBenefit" name="output.ResponseAQ[1]/TotalAnnualBenefit" readonly="readonly" type="text" value="ResponseAQ&gt;TotalAnnualBenefit"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 14px;"&gt;
+&lt;td style="width: 12.894%; height: 14px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style="width: 25.9099%; height: 14px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="klkocqdc_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.ResponseAQ[1]/PolicyNo"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/FirstName"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/LastName"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/email"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/DateofBirth"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.CQRequest[1]/Gender"
+                                     readonly="true"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Male","label":"Male"},{"value":"Female","label":"Female"},{"value":"Transgender","label":"Transgender"},{"value":"Non-binary","label":"Non-binary"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.ResponseAQ[1]/AnnualPremium"
+                                     readonly="true"
+                                     required="false"
+                                     type="double">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.ResponseAQ[1]/AnnualReviewDate"
+                                     readonly="true"
+                                     required="false"
+                                     type="date">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.ResponseAQ[1]/TotalAnnualBenefit"
+                                     readonly="true"
+                                     required="false"
+                                     type="double">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <callProcess id="klkocq4n">
+                  <title>CreateQuote</title>
+                  <subflowGUID>1J5RlIacFBBjbyYjQ5wiQd</subflowGUID>
+                  <subflowPath>CreateQuote</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="klkocq4q" name="input" source="field" updatable="true">input.CQRequest</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="Response" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:CreateQuoteResponse</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">iAZZ40QJmqnh1F3BiLizwf</option>
+                        </options>
+                     </field>
+                     <field name="ErrorDescription" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="klkocq4n_klkocq59" targetScreen="klkocq59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <callProcess id="klkocq96">
+                  <title>AcceptQuote</title>
+                  <subflowGUID>0n4b4uPLGkycKMGq0pfR66</subflowGUID>
+                  <subflowPath>AcceptQuote</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="klkqsr1f" name="input" source="field" updatable="true">temp.tAQRequest</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="ResponseAQ" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:AcceptQuoteResponse</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">5q5ua2I2IjdhZYC6LCt4A5</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="" id="klkocq96_klkocqdc" targetScreen="klkocqdc">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <assignment id="klkocq5t">
+                  <title>Assignment to FirstName, LastName etc.</title>
+                  <operation source="constant" to="input.CQRequest[1]/FirstName">Robert</operation>
+                  <operation source="constant" to="input.CQRequest[1]/LastName">Bush</operation>
+                  <operation source="constant" to="input.CQRequest[1]/Address">55, New Street, New York</operation>
+                  <operation source="constant" to="input.CQRequest[1]/Age">45</operation>
+                  <operation source="constant" to="input.CQRequest[1]/AnyMedicalHistory">false</operation>
+                  <operation source="constant" to="input.CQRequest[1]/DateofBirth">05-July-1975</operation>
+                  <operation source="constant" to="input.CQRequest[1]/OccupationCategory">Services</operation>
+                  <operation source="constant" to="input.CQRequest[1]/PostCode">10005</operation>
+                  <operation source="constant" to="input.CQRequest[1]/SalesChannel">B2C</operation>
+                  <operation source="constant" to="input.CQRequest[1]/RecentTravel">true</operation>
+                  <operation source="constant" to="input.CQRequest[1]/Gender">Male</operation>
+                  <operation source="constant" to="input.CQRequest[1]/email">robert.bush@insta.com</operation>
+                  <actions>
+                     <action alt="null" id="klkocq5t_klkocq4n" targetScreen="klkocq4n">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="klkocq9e">
+                  <title>Assignment to AccountName, AccountNo etc.</title>
+                  <operation source="constant"
+                             to="temp.tAQRequest[1]/BankAccountDetails[1]/AccountName">Robert Bush</operation>
+                  <operation source="constant"
+                             to="temp.tAQRequest[1]/BankAccountDetails[1]/AccountNo">22787675</operation>
+                  <operation source="constant"
+                             to="temp.tAQRequest[1]/BankAccountDetails[1]/BranchName">New York</operation>
+                  <operation source="constant"
+                             to="temp.tAQRequest[1]/BankAccountDetails[1]/SortCode">20055</operation>
+                  <operation source="constant" to="temp.tAQRequest[1]/RecipientDetail[1]/Email">{$input.CQRequest[1]/email}</operation>
+                  <actions>
+                     <action alt="null" id="klkocq9e_klkocqcv" targetScreen="klkocqcv">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>3hIEw2wCjVKh4XN4uu41up</types1:GUID>
+      <types1:DisplayName>QuoteAndBuyGuide</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.437Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

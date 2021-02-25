@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "9VfnOM7bHQqf8Q05FVnU8m",
+    "name" : "acSICCode",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "EssWOVGuDoWn2sq-gt-1326509-2021-02-24T15:30:49Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "gMO1QxE04gTieZQqGX1Bi0",
+    "name" : "scSICCode",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3xgjATO9pH8sVYx-gt-1322682-2021-02-24T15:30:48.885Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/AppModernization/Copy"
+  } ]
+}

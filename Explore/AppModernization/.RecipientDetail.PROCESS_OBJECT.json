@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "7lk0TnYIUS6dd98uFLhqoR",
+    "name" : "RecipientDetail",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "dy18ypmaaa-gt-2843313-2021-02-23T17:10:19.063Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

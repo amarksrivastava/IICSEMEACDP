@@ -1,0 +1,322 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Ak0qZF3a-gt-6270827-2021-02-18T16:37:43.426Z::pd.xml</types1:EntryId>
+      <types1:Name>AcceptQuote</types1:Name>
+      <types1:ParentFlowIds>pBDwXtqdsQR6kbe-gt-1370203-2021-02-24T17:38:04.425Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-18T16:37:43Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-25T15:02:30Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-25T15:02:50Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.AcceptQuote/AcceptQuote.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="AcceptQuote"
+                  name="AcceptQuote"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AcceptQuoteRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4ldyMSn22IEbCssBqWr0MP</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="ResponseAQ" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AcceptQuoteResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5q5ua2I2IjdhZYC6LCt4A5</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tBankValidationCounter" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">1</option>
+                  </options>
+               </field>
+               <field description="" name="tEmailTask" type="reference">
+                  <options>
+                     <option name="referenceTo">EmailConnection:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">02HTFE5TMIAkGgkRexCpOc</option>
+                  </options>
+               </field>
+               <field description="" name="tMQWiteEvent" type="reference">
+                  <options>
+                     <option name="referenceTo">QuoteDocument-AMQP:AMQPMessage</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9pfzQXNgw4fd9I21NXNOC1</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+                  <wholePayload inputWholePayload="true" outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="klb37zlh" targetId="klb37zlg"/>
+               </start>
+               <subflow id="klb37zlg">
+                  <title>GetQuoteDetailsFromPolicyAdmin</title>
+                  <subflowGUID>8qC48lJTsLRkULE1el5583</subflowGUID>
+                  <subflowPath>ProcessGetQuote</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input>
+                     <parameter name="QuoteNo" source="field" updatable="true">input.input[1]/QuoteNo</parameter>
+                  </input>
+                  <outputDef>
+                     <field name="QuoteDetails" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:CreateQuoteResponse</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">iAZZ40QJmqnh1F3BiLizwf</option>
+                        </options>
+                     </field>
+                     <field name="IsQuoteStillValid" type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </outputDef>
+                  <link id="kljne7dt" targetId="kljne7ds"/>
+               </subflow>
+               <container id="kljne7ds" type="exclusive">
+                  <title>IsQuoteStillValid</title>
+                  <flow id="kljne7dw">
+                     <service id="kljne7f2">
+                        <title>RuleEngine</title>
+                        <serviceName>acRuleEngine:ApplyBusinessRules</serviceName>
+                        <serviceGUID>2O6LBAaYMBtf6XAUjgcFwk</serviceGUID>
+                        <serviceInput>
+                           <parameter name="QuoteData" source="field" updatable="true">input.input[1]/QuoteNo</parameter>
+                        </serviceInput>
+                        <link id="kljoaqhv" targetId="kljne7gg"/>
+                     </service>
+                     <container id="kljne7gg" type="exclusive">
+                        <title>tBankValidationCounter</title>
+                        <flow id="kljne7gh">
+                           <eventContainer id="kljne7gi">
+                              <service id="kljne7go">
+                                 <title>BankValidation</title>
+                                 <serviceName>acBankValidation:ValidateBankDetails</serviceName>
+                                 <serviceGUID>53qOfXRHYJEg9mgJ7ahpWh</serviceGUID>
+                                 <serviceInput/>
+                              </service>
+                              <flow id="kljne7gj">
+                                 <link id="kljne7gv" targetId="kljne7gi" type="containerLink"/>
+                              </flow>
+                              <flow id="kljne7gk">
+                                 <assignment id="kljne7gl">
+                                    <title>Assignment to tBankValidationCounter</title>
+                                    <operation source="formula" to="temp.tBankValidationCounter">
+                                       <expression language="XQuery">$temp.tBankValidationCounter +1</expression>
+                                    </operation>
+                                    <link id="kljne7gw" targetId="kljne7gm"/>
+                                 </assignment>
+                                 <wait id="kljne7gm">
+                                    <title>Wait 5 seconds</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">S</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="kljne7gx" targetId="kljne7gn"/>
+                                 </wait>
+                                 <jumpTo id="kljne7gn">
+                                    <link id="kljne7gy" targetId="kljne7gi"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="kljne7gt" targetId="kljne7gj" type="containerLink"/>
+                              <events>
+                                 <catch faultField="faultInfo" id="klb37zrb" interrupting="true">
+                                    <link id="kljne7gu" targetId="kljne7gk" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <link id="kljne7gs" targetId="kljne7gg" type="containerLink"/>
+                        </flow>
+                        <flow id="kljne7gp">
+                           <link id="kljne7gz" targetId="kljne7gg" type="containerLink"/>
+                        </flow>
+                        <link id="kljne7gq" targetId="kljne7gh" type="containerLink">
+                           <condition source="formula">
+                              <function name="less-or-equals">
+                                 <arg name="left">{$temp.tBankValidationCounter}</arg>
+                                 <arg name="right">{2}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kljne7gr" targetId="kljne7gp" type="containerLink"/>
+                        <link id="kljne7hs" targetId="kljne7hr"/>
+                     </container>
+                     <subflow id="kljne7hr">
+                        <title>PolicyAdminAcceptQuote</title>
+                        <subflowGUID>00pJ2gf6vqtkKSx463UJ49</subflowGUID>
+                        <subflowPath>PolicyAdminSystemAQ</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input>
+                           <parameter name="inputAQRequest" source="field" updatable="true">input.input</parameter>
+                        </input>
+                        <outputDef>
+                           <field name="AQResponse" type="reference">
+                              <options>
+                                 <option name="referenceTo">$po:AcceptQuoteResponse</option>
+                                 <option name="required">false</option>
+                                 <option name="isCopy">true</option>
+                                 <option name="guid">5q5ua2I2IjdhZYC6LCt4A5</option>
+                              </options>
+                           </field>
+                        </outputDef>
+                        <link id="kljne7il" targetId="kljne7ik"/>
+                     </subflow>
+                     <subflow id="klkrt335">
+                        <title>UpdateSFLeadStatus</title>
+                        <subflowGUID>ltvsMzH3f8xcNE7APlWtUk</subflowGUID>
+                        <subflowPath>UpdateSFLeadStatus</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input>
+                           <parameter name="iemail" source="field" updatable="true">input.input[1]/RecipientDetail[1]/Email</parameter>
+                        </input>
+                        <outputDef/>
+                        <link id="klkrt337" targetId="kljne7jd"/>
+                     </subflow>
+                     <assignment id="kljne7ik">
+                        <title>Assignment to Response</title>
+                        <operation source="field" to="output.ResponseAQ">output.AQResponse</operation>
+                        <link id="klkrt336" targetId="klkrt335"/>
+                     </assignment>
+                     <milestone id="kljne7jd">
+                        <title>Send Async Response</title>
+                        <link id="kljne7kf" targetId="kljne7k2"/>
+                     </milestone>
+                     <eventContainer id="kljne7k2">
+                        <subflow id="kljne7k9">
+                           <title>DocumentGenerationSubProcess</title>
+                           <subflowGUID>axkMkwdS1MilwzqJt4dKCQ</subflowGUID>
+                           <subflowPath>DocumentService</subflowPath>
+                           <runForEach>false</runForEach>
+                           <input>
+                              <parameter name="QuoteNo" source="field" updatable="true">input.input[1]/QuoteNo</parameter>
+                           </input>
+                           <outputDef>
+                              <field name="IsValid" type="string">
+                                 <options>
+                                    <option name="required">false</option>
+                                 </options>
+                              </field>
+                           </outputDef>
+                        </subflow>
+                        <flow id="kljne7k3">
+                           <assignment id="kljne7om">
+                              <title>Assignment to Recipient Addresses, Body etc.</title>
+                              <operation source="field" to="temp.tEmailTask[1]/to">input.input[1]/RecipientDetail[1]/Email</operation>
+                              <operation source="constant" to="temp.tEmailTask[1]/body">Policy Document</operation>
+                              <operation source="constant" to="temp.tEmailTask[1]/subject">Policy Document</operation>
+                              <link id="kljne7on" targetId="kljne7k4"/>
+                           </assignment>
+                           <service id="kljne7k4">
+                              <title>sendEmailService</title>
+                              <serviceName>EmailConnection:sendEmailService</serviceName>
+                              <serviceGUID>02HTFE5TMIAkGgkRexCpOc</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="emailTaskInput" source="field" updatable="true">temp.tEmailTask</parameter>
+                              </serviceInput>
+                           </service>
+                           <link id="kljne7kc" targetId="kljne7k2" type="containerLink"/>
+                        </flow>
+                        <flow id="kljne7k5">
+                           <assignment id="kljne7k6">
+                              <title>Assignment to Message Body</title>
+                              <operation source="field" to="temp.tMQWiteEvent[1]/body">output.AQResponse</operation>
+                              <link id="kljne7kd" targetId="kljne7k7"/>
+                           </assignment>
+                           <service id="kljne7k7">
+                              <title>Send The Request To Queue</title>
+                              <serviceName>QuoteDocument-AMQP:DocWriteEvent</serviceName>
+                              <serviceGUID>9pfzQXNgw4fd9I21NXNOC1</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="event" source="field" updatable="true">temp.tMQWiteEvent</parameter>
+                              </serviceInput>
+                              <link id="kljne7ke" targetId="kljne7k8"/>
+                           </service>
+                           <end id="kljne7k8">
+                              <title>End with Async</title>
+                           </end>
+                        </flow>
+                        <link id="kljne7ka" targetId="kljne7k3" type="containerLink"/>
+                        <events>
+                           <timer id="klb37zih" interrupting="true">
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">{10}</arg>
+                                    <arg name="scale">S</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="kljne7kb" targetId="kljne7k5" type="containerLink"/>
+                           </timer>
+                        </events>
+                     </eventContainer>
+                     <link id="kljne7dx" targetId="kljne7ds" type="containerLink"/>
+                  </flow>
+                  <flow id="kljne7dz">
+                     <assignment id="kljne7l7">
+                        <title>QuoteExpired</title>
+                        <operation source="constant" to="output.ResponseAQ[1]/MessageStatus">Quote Expired.</operation>
+                     </assignment>
+                     <link id="kljne7e0" targetId="kljne7ds" type="containerLink"/>
+                  </flow>
+                  <link id="kljne7dv" targetId="kljne7dw" type="containerLink">
+                     <condition source="formula">
+                        <function name="equals">
+                           <arg name="left">{$output.IsQuoteStillValid}</arg>
+                           <arg name="right">{1}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kljne7dy" targetId="kljne7dz" type="containerLink"/>
+                  <link id="kljne7lw" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>0n4b4uPLGkycKMGq0pfR66</types1:GUID>
+      <types1:DisplayName>AcceptQuote</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:08.368Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

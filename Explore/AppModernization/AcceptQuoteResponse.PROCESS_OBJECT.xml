@@ -1,0 +1,41 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>eFIKUzeA8rJ4pbg-gt-902481-2021-02-23T17:11:21.071Z::po.xml</types1:EntryId>
+      <types1:Name>AcceptQuoteResponse</types1:Name>
+      <types1:ParentFlowIds>Ak0qZF3a-gt-6270827-2021-02-18T16:37:43.426Z::pd.xml,rRfRW8UBM7zsZvE-gt-3666021-2021-02-24T15:55:30.277Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-23T17:11:21Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        xmlns:_0="http://schemas.informatica.com/socrates/processobject/factory/2019/07/common/infaProcessObjectFactory.xsd"
+                        xmlns:aetgt="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:internal2="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        isByCopy="true"
+                        name="AcceptQuoteResponse">
+            <description>This object was generated from [AcceptQuoteResponse element declaration] located in the [AcceptQuoteResponse.xsd] source XML schema.</description>
+            <detail>
+               <field label="AnnualReviewDate" name="AnnualReviewDate" type="date"/>
+               <field label="AnnualPremium" name="AnnualPremium" type="double"/>
+               <field label="PolicyNo" name="PolicyNo" type="int"/>
+               <field label="TotalAnnualBenefit" name="TotalAnnualBenefit" type="double"/>
+               <field label="MessageStatus" name="MessageStatus" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>5q5ua2I2IjdhZYC6LCt4A5</types1:GUID>
+      <types1:DisplayName>AcceptQuoteResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:07.452Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

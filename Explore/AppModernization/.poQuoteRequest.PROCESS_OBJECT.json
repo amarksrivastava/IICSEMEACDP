@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "36ESRCQNWwMeGpDBcP31ez",
+    "name" : "poQuoteRequest",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "9yCEx9dwMbgbdoP-gt-24599232-2021-02-18T16:18:01.598Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

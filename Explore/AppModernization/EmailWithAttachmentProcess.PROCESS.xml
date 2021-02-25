@@ -1,0 +1,107 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>UPAZf5kck8jKBme-gt-1364663-2021-02-24T17:16:43.746Z::pd.xml</types1:EntryId>
+      <types1:Name>EmailWithAttachmentProcess-1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Email subscribers to Hub for manual intervention in Process</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:AS_AGENT</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2021-02-24T17:16:44Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-25T12:00:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-25T12:01:02Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.EmailWithAttachmentProcess-1/EmailWithAttachmentProcess-1.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="EmailWithAttachmentProcess"
+                  name="EmailWithAttachmentProcess-1"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Email subscribers to Hub for manual intervention in Process</description>
+            <tags>.agent:AS_AGENT</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="fileEvent" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">acPolicyDocument:AttachmentFileContent</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="EmailInputObject" type="reference">
+                  <options>
+                     <option name="referenceTo">EmailConnection:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">02HTFE5TMIAkGgkRexCpOc</option>
+                  </options>
+               </field>
+               <field description="" name="EmailAttachment" type="reference">
+                  <options>
+                     <option name="referenceTo">EmailConnection:AttachmentInformation</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">02HTFE5TMIAkGgkRexCpOc</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>AS_AGENT</targetLocation>
+               <event eventSource="acPolicyDocument:FileParser"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jsw16uc4" targetId="jsw16uc3"/>
+               </start>
+               <assignment id="jsw16uc3">
+                  <title>Prepare Attachment</title>
+                  <operation source="field" to="temp.EmailAttachment[1]/name">input.fileEvent[1]/fileInfo[1]/name</operation>
+                  <operation source="field" to="temp.EmailAttachment[1]/content">input.fileEvent[1]/attachment</operation>
+                  <link id="kljp9nqb" targetId="io4lkri2"/>
+               </assignment>
+               <assignment id="io4lkri2">
+                  <title>Email Details</title>
+                  <operation source="constant" to="temp.EmailInputObject[1]/to">amsrivastava@informatica.com</operation>
+                  <operation source="constant" to="temp.EmailInputObject[1]/subject">We Care Everywhere Policy Details</operation>
+                  <operation source="formula" to="temp.EmailInputObject[1]/body">
+                     <expression language="XQuery">'CERTIFICATE OF INSURANCE 
+Policy Number 550102611
+Underwritten by: We Care Everywhere Health Insurance Company 
+We Care Everywhere Health Insurance Company hereby certifies that it has issued and delivered to the Policyholder the above specified group policy.'
+</expression>
+                  </operation>
+                  <operation source="field" to="temp.EmailInputObject[1]/attachments">temp.EmailAttachment</operation>
+                  <link id="jsw16ue3" targetId="jsw16ue2"/>
+               </assignment>
+               <service id="jsw16ue2">
+                  <title>sendEmailService</title>
+                  <serviceName>EmailConnection:sendEmailService</serviceName>
+                  <serviceGUID>02HTFE5TMIAkGgkRexCpOc</serviceGUID>
+                  <serviceInput>
+                     <parameter name="emailTaskInput" source="field" updatable="true">temp.EmailInputObject</parameter>
+                  </serviceInput>
+                  <link id="jsw16uek" targetId="d"/>
+               </service>
+               <end id="d">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>98aLjLVGUwEjWGChLtfRYf</types1:GUID>
+      <types1:DisplayName>EmailWithAttachmentProcess</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-25T17:09:07.437Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
