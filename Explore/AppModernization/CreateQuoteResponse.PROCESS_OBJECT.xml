@@ -5,7 +5,7 @@
       <types1:Name>CreateQuoteResponse</types1:Name>
       <types1:ParentFlowIds>KYsGuDoWn2sqeEr-gt-456829-2021-02-24T14:59:28.581Z::pd.xml,ltnKLLsciQlBWlD-gt-6268410-2021-02-18T16:22:32.182Z::pd.xml,RtFgpKi9zhFtybd-gt-907445-2021-02-23T17:02:43.702Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description/>
+      <types1:Description>This object was generated from [CreateQuoteResponse element declaration] located in the [CreateQuoteResponse.xsd] source XML schema.</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,18 +13,17 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2021-02-23T17:05:34Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-27T06:52:37Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                        xmlns:_0="http://schemas.informatica.com/socrates/processobject/factory/2019/07/common/infaProcessObjectFactory.xsd"
-                        xmlns:aetgt="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
-                        xmlns:internal2="http://schemas.informatica.com/socrates/processobject/factory/2019/07/internal/infaProcessObjectFactory.xsd"
-                        xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd"
+                        displayName="CreateQuoteResponse"
                         isByCopy="true"
                         name="CreateQuoteResponse">
             <description>This object was generated from [CreateQuoteResponse element declaration] located in the [CreateQuoteResponse.xsd] source XML schema.</description>
+            <tags/>
             <detail>
                <field label="AnnualRenewalDate" name="AnnualRenewalDate" type="date"/>
                <field label="AnnualYearlyPremium"
@@ -34,7 +33,7 @@
                       name="AnnualMonthlyPremium"
                       type="double"/>
                <field label="FreeCoverLimit" name="FreeCoverLimit" type="int"/>
-               <field label="QuoteNumber" name="QuoteNumber" type="int"/>
+               <field label="QuoteNumber" name="QuoteNumber" type="string"/>
                <field label="TotalAnnualBenefit" name="TotalAnnualBenefit" type="int"/>
                <field label="MessageStatus" name="MessageStatus" type="string"/>
             </detail>
@@ -43,5 +42,5 @@
       <types1:GUID>iAZZ40QJmqnh1F3BiLizwf</types1:GUID>
       <types1:DisplayName>CreateQuoteResponse</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-02-25T17:09:07.442Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-02-27T07:43:04.558Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

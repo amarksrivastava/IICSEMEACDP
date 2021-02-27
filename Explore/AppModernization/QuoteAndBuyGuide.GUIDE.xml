@@ -13,10 +13,10 @@
       <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2021-02-24T17:38:04Z</types1:CreationDate>
       <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2021-02-25T13:34:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-02-27T06:51:52Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2021-02-25T13:34:06Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-02-27T06:51:58Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.QuoteAndBuyGuide/QuoteAndBuyGuide.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -73,19 +73,10 @@
                </startScreen>
                <screen id="kljpyuz3">
                   <title>Create Quote</title>
-                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: left;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-77972.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+                  <body contentType="text/html">&lt;p&gt;&lt;img style="width: 251px; height: 249px; display: block; margin-left: auto; margin-right: auto;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-77972.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
 &lt;p style="padding-left: 480px;"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p style="padding-left: 40px;"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p style="padding-left: 40px;"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p style="text-align: center;"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p style="text-align: left;"&gt;&lt;span style="color: #169179; font-size: 14pt; font-family: 'comic sans ms', sans-serif;"&gt;Need an Insurance Quote? Please fill the below details:&lt;/span&gt;&lt;/p&gt;
-&lt;table style="border-collapse: collapse; width: 58.5383%; height: 139px;" cellpadding="5"&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="color: #169179; font-size: 14pt; font-family: 'comic sans ms', sans-serif;"&gt;Need an Insurance Quote? Please fill the below details:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 58.5383%; height: 139px; margin-left: auto; margin-right: auto;" cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr style="height: 14px;"&gt;
 &lt;td style="width: 14.1147%; height: 14px;"&gt;&lt;span style="color: #236fa1;"&gt;First Name&lt;/span&gt;&lt;/td&gt;
@@ -129,7 +120,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
@@ -230,10 +221,10 @@
                </screen>
                <screen id="klkocq59">
                   <title>Quote Details</title>
-                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-68374.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #169179;"&gt;Thanks for the quote request. Please find below your quotation for insurance policy:&lt;/span&gt;&lt;/p&gt;
-&lt;table style="border-collapse: collapse; width: 53.9474%; height: 144px;" cellpadding="5"&gt;
+                  <body contentType="text/html">&lt;p&gt;&lt;img style="width: 251px; height: 249px; float: none; display: block; margin-left: auto; margin-right: auto;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-68374.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #169179;"&gt;Thanks for the quote request. Please find below your quotation for insurance policy:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 53.9474%; height: 144px; margin-left: auto; margin-right: auto;" cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr style="height: 16px;"&gt;
 &lt;td style="width: 15.8435%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Quote Number&lt;/span&gt;&lt;/td&gt;
@@ -361,10 +352,10 @@
                </screen>
                <screen id="klkocqcv">
                   <title>Bank Details</title>
-                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-934.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;You are just one step away for unleashing the bouquet of benefits. &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please enter your bank details for premium payment:&lt;/span&gt;&lt;/p&gt;
-&lt;table style="border-collapse: collapse; width: 42.1053%;" cellpadding="5"&gt;
+                  <body contentType="text/html">&lt;p style="text-align: center;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-934.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;You are just one step away for unleashing the bouquet of benefits. &lt;/span&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please enter your bank details for premium payment:&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 42.1053%; margin-left: auto; margin-right: auto;" cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style="width: 16.3893%;"&gt;&lt;span style="color: #236fa1;"&gt;Account Name&lt;/span&gt;&lt;/td&gt;
@@ -427,11 +418,11 @@
                </screen>
                <screen id="klkocqdc">
                   <title>Policy Details</title>
-                  <body contentType="text/html">&lt;p style="padding-left: 280px;"&gt;&lt;img style="width: 251px; height: 249px; float: none;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-47770.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
-&lt;p style="padding-left: 240px;"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Thanks for buying a policy and joining the network of our valued customers.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please find below your policy details. The policy documents will be sent within 24 hours on your registered email.&lt;/span&gt;&lt;/p&gt;
-&lt;table style="border-collapse: collapse; width: 56.4404%; height: 147px;" cellpadding="5"&gt;
+                  <body contentType="text/html">&lt;p&gt;&lt;img style="width: 251px; height: 249px; float: none; display: block; margin-left: auto; margin-right: auto;" title="WeCareEverywhereLogo.JPG" src="project:/fuKLowf1IOtlcwKRfcOQgM/socrates.user.contributed.resources/resources/WeCareEverywhereLogo-47770.JPG" alt="WeCareEverywhereLogo.JPG"&gt;&lt;/p&gt;
+&lt;p style="padding-left: 240px; text-align: center;"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Thanks for buying a policy and joining the network of our valued customers.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;span style="font-size: 14pt; font-family: 'comic sans ms', sans-serif; color: #169179;"&gt;Please find below your policy details. The policy documents will be sent within 24 hours on your registered email.&lt;/span&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 56.4404%; height: 147px; margin-left: auto; margin-right: auto;" cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr style="height: 16px;"&gt;
 &lt;td style="width: 12.894%; height: 16px;"&gt;&lt;span style="color: #236fa1;"&gt;Policy Number&lt;/span&gt;&lt;/td&gt;
@@ -613,7 +604,7 @@
                      </field>
                   </subflowOutput>
                   <actions>
-                     <action alt="" id="klkocq96_klkocqdc" targetScreen="klkocqdc">
+                     <action alt="null" id="klkocq96_klkocqdc" targetScreen="klkocqdc">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -661,5 +652,5 @@
       <types1:GUID>3hIEw2wCjVKh4XN4uu41up</types1:GUID>
       <types1:DisplayName>QuoteAndBuyGuide</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-02-25T17:09:08.437Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-02-27T07:43:06.142Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

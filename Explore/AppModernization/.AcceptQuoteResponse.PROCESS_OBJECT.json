@@ -13,7 +13,7 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
+        "description" : "This object was generated from [AcceptQuoteResponse element declaration] located in the [AcceptQuoteResponse.xsd] source XML schema.",
         "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
