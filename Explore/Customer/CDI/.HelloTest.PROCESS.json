@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "lqwiwwPcKoKdgNNJEjmaGn",
+    "name" : "HelloTest",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0OKx6I1dq2ME9pa-gt-1115881-2021-05-13T09:30:48.998Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

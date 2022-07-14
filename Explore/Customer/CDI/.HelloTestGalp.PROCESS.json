@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "80KjBKurOaqfoYwbRHLNUK",
+    "name" : "HelloTestGalp",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "G9JFi8RVf4VQT53-gt-37427407-2021-05-18T11:47:12.519Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
