@@ -1,0 +1,291 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>aabcoq3xgjATO9p-gt-8215972-2020-05-18T13:20:34.012Z::pd.xml</types1:EntryId>
+      <types1:Name>ProcessInsertFlightMovement</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>amsrivastava@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-18T13:20:34Z</types1:CreationDate>
+      <types1:ModifiedBy>amsrivastava@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-05-21T09:11:11Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>amsrivastava@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-05-21T09:11:14Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.ProcessInsertFlightMovement/ProcessInsertFlightMovement.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="ProcessInsertFlightMovement"
+                  name="ProcessInsertFlightMovement"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Request" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:StrFlightMov</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9mjeejhxOyQjQ57TQi6nUo</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="UniqueId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="FlightId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmpRecordId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmpMethod" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmpStrHandlerCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmpIterator" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">1</option>
+                  </options>
+               </field>
+               <field description="" name="tmpMQWrite" type="reference">
+                  <options>
+                     <option name="referenceTo">AMQP-FlightMovement:AMQPMessage</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">1zVc4QYc7a6iRxAu9LvOWv</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>amsrivastava@informatica.com</user>
+                  </allowedUsers>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kaffu6kt" targetId="kaffu6ks"/>
+               </start>
+               <assignment id="kaffu6ks">
+                  <title>Assignment to tmpRecordId, tmpMethod etc.</title>
+                  <operation source="formula" to="temp.tmpRecordId">
+                     <expression language="XQuery">util:generateUUID()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmpMethod">
+                     <expression language="XQuery">request:getAllHeaders()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmpStrHandlerCount">
+                     <expression language="XQuery">fn:count($input.Request[1]/HandlersList[1]/str_Handler)</expression>
+                  </operation>
+                  <operation source="field" to="output.UniqueId">temp.tmpRecordId</operation>
+                  <operation source="field" to="output.FlightId">input.Request[1]/FlightId</operation>
+                  <operation source="constant" to="output.Status">Failed. Duplicate record has been found.</operation>
+                  <link id="kaffu6ku" targetId="kaffu6f2"/>
+               </assignment>
+               <assignment id="kaffu6yp">
+                  <title>Assignment to Status</title>
+                  <operation source="constant" to="output.Status">The request has been processed successfully.</operation>
+                  <link id="kaffu6yr" targetId="c"/>
+               </assignment>
+               <container id="kaffu6f2" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="kaffu6f6">
+                     <eventContainer id="kaffu6t7">
+                        <create id="kaffu6fq">
+                           <title>ANA_StrFlightMov</title>
+                           <entityName>SQLServerDBOnPremise:ANA_StrFlightMov</entityName>
+                           <createInput>
+                              <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="FlightId" source="field" updatable="true">input.Request[1]/FlightId</parameter>
+                              <parameter name="FlightCode" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="MovType" source="field" updatable="true">input.Request[1]/MovType</parameter>
+                              <parameter name="ScheduleDateTimeUTC" source="field" updatable="true">input.Request[1]/ScheduleDateTimeUTC</parameter>
+                              <parameter name="Airport" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="FlightType" source="field" updatable="true">input.Request[1]/FlightType</parameter>
+                              <parameter name="CallSign" source="field" updatable="true">input.Request[1]/CallSign</parameter>
+                              <parameter name="AircraftModel" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="AircraftCapacity" source="field" updatable="true">input.Request[1]/AircraftCapacity</parameter>
+                              <parameter name="OrigDestAirport" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="ClassificationCode" source="field" updatable="true">input.Request[1]/ClassificationCode</parameter>
+                              <parameter name="ServiceTypeCode" source="field" updatable="true">input.Request[1]/ServiceTypeCode</parameter>
+                              <parameter name="NatureCode" source="field" updatable="true">input.Request[1]/NatureCode</parameter>
+                              <parameter name="OperationCode" source="field" updatable="true">input.Request[1]/OperationCode</parameter>
+                              <parameter name="LastDateTimeUTC" source="field" updatable="true">input.Request[1]/LastDateTimeUTC</parameter>
+                              <parameter name="EstimatedDateTimeUTC" source="field" updatable="true">input.Request[1]/EstimatedDateTimeUTC</parameter>
+                              <parameter name="PublicEstimatedDateTimeUTC" source="field" updatable="true">input.Request[1]/PublicEstimatedDateTimeUTC</parameter>
+                              <parameter name="BlockDateTimeUTC" source="field" updatable="true">input.Request[1]/BlockDateTimeUTC</parameter>
+                              <parameter name="ActualDateTimeUTC" source="field" updatable="true">input.Request[1]/ActualDateTimeUTC</parameter>
+                              <parameter name="HandlersList" source="field" updatable="true">temp.tmpRecordId</parameter>
+                              <parameter name="RotationKey" source="field" updatable="true">input.Request[1]/RotationKey</parameter>
+                              <parameter name="OSTD_UTC" source="field" updatable="true">input.Request[1]/OSTD_UTC</parameter>
+                           </createInput>
+                        </create>
+                        <flow id="kaffu6t9">
+                           <create id="kaffu6ts">
+                              <title>ANA_FlightCode</title>
+                              <entityName>SQLServerDBOnPremise:ANA_FlightCode</entityName>
+                              <createInput>
+                                 <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                                 <parameter name="FlightCode" source="field" updatable="true">input.Request[1]/FlightCode[1]/FlightCode</parameter>
+                                 <parameter name="PublicFlightCode" source="field" updatable="true">input.Request[1]/FlightCode[1]/PublicFlightCode</parameter>
+                                 <parameter name="AirlineCodeIATA" source="field" updatable="true">input.Request[1]/FlightCode[1]/AirlineCodeIATA</parameter>
+                                 <parameter name="AirlineCodeICAO" source="field" updatable="true">input.Request[1]/FlightCode[1]/AirlineCodeICAO</parameter>
+                              </createInput>
+                              <link id="kaffu6ub" targetId="kaffu6ua"/>
+                           </create>
+                           <create id="kaffu6ua">
+                              <title>ANA_Airport</title>
+                              <entityName>SQLServerDBOnPremise:ANA_Airport</entityName>
+                              <createInput>
+                                 <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                                 <parameter name="ICAQ" source="field" updatable="true">input.Request[1]/Airport[1]/ICAO</parameter>
+                                 <parameter name="IATA" source="field" updatable="true">input.Request[1]/Airport[1]/IATA</parameter>
+                              </createInput>
+                              <link id="kaffu6us" targetId="kaffu6ur"/>
+                           </create>
+                           <create id="kaffu6ur">
+                              <title>ANA_AircraftModel</title>
+                              <entityName>SQLServerDBOnPremise:ANA_AircraftModel</entityName>
+                              <createInput>
+                                 <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                                 <parameter name="ICAO" source="field" updatable="true">input.Request[1]/AircraftModel[1]/ICAO</parameter>
+                                 <parameter name="IATA" source="field" updatable="true">input.Request[1]/AircraftModel[1]/IATA</parameter>
+                                 <parameter name="IATASubType" source="field" updatable="true">input.Request[1]/AircraftModel[1]/IATASubType</parameter>
+                              </createInput>
+                              <link id="kaffu6va" targetId="kaffu6v9"/>
+                           </create>
+                           <create id="kaffu6v9">
+                              <title>ANA_OrigDestAirport</title>
+                              <entityName>SQLServerDBOnPremise:ANA_OrigDestAirport</entityName>
+                              <createInput>
+                                 <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                                 <parameter name="ICAO" source="field" updatable="true">input.Request[1]/OrigDestAirport[1]/ICAO</parameter>
+                                 <parameter name="IATA" source="field" updatable="true">input.Request[1]/OrigDestAirport[1]/IATA</parameter>
+                              </createInput>
+                              <link id="kaffu6vr" targetId="kaffu6vq"/>
+                           </create>
+                           <create id="kaffu6vq">
+                              <title>ANA_StrHandler</title>
+                              <entityName>SQLServerDBOnPremise:ANA_StrHandler</entityName>
+                              <createInput>
+                                 <parameter name="UniqueId" source="field" updatable="true">temp.tmpRecordId</parameter>
+                                 <parameter name="AssistanceTypeCode" source="formula" updatable="true">
+                                    <expression language="XQuery">$input.Request[1]/HandlersList[1]/str_Handler[$temp.tmpIterator ]/AssistanceTypeCode </expression>
+                                 </parameter>
+                                 <parameter name="HandlerCode" source="formula" updatable="true">
+                                    <expression language="XQuery">$input.Request[1]/HandlersList[1]/str_Handler[$temp.tmpIterator ]/HandlerCode </expression>
+                                 </parameter>
+                                 <parameter name="ServiceCode" source="formula" updatable="true">
+                                    <expression language="XQuery">$input.Request[1]/HandlersList[1]/str_Handler[$temp.tmpIterator ]/ServiceCode </expression>
+                                 </parameter>
+                              </createInput>
+                              <link id="kaffu6w9" targetId="kaffu6w8"/>
+                           </create>
+                           <assignment id="kaffu6w8">
+                              <title>Assignment to tmpIterator</title>
+                              <operation source="formula" to="temp.tmpIterator">
+                                 <expression language="XQuery">$temp.tmpIterator +1</expression>
+                              </operation>
+                              <link id="kaffu6wt" targetId="kaffu6wl"/>
+                           </assignment>
+                           <container id="kaffu6wl" type="exclusive">
+                              <title>tmpStrHandlerCount</title>
+                              <flow id="kaffu6wm">
+                                 <jumpTo id="kaffu6wn">
+                                    <link id="kaffu6wr" targetId="kaffu6vq"/>
+                                 </jumpTo>
+                              </flow>
+                              <flow id="kaffu6wo">
+                                 <link id="kaffu6ws" targetId="kaffu6wl" type="containerLink"/>
+                              </flow>
+                              <link id="kaffu6wp" targetId="kaffu6wm" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="greater-or-equals">
+                                       <arg name="left">{$temp.tmpStrHandlerCount}</arg>
+                                       <arg name="right">{$temp.tmpIterator }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="kaffu6wq" targetId="kaffu6wo" type="containerLink"/>
+                           </container>
+                           <link id="kaffu6ta" targetId="kaffu6t7" type="containerLink"/>
+                        </flow>
+                        <flow id="kaffu6tc">
+                           <end id="kaffu6x6">
+                              <title>End Error Duplicate</title>
+                              <httpStatus>409</httpStatus>
+                           </end>
+                        </flow>
+                        <link id="kaffu6t8" targetId="kaffu6t9" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultInfo" id="kaffu6sj" interrupting="true">
+                              <link id="kaffu6tb" targetId="kaffu6tc" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="kaffu6f7" targetId="kaffu6f2" type="containerLink"/>
+                  </flow>
+                  <flow id="kaffu6f9">
+                     <assignment id="kaffu6l6">
+                        <title>Assignment to UniqueId, Message Body</title>
+                        <operation source="field" to="input.Request[1]/UniqueId">temp.tmpRecordId</operation>
+                        <operation source="field" to="temp.tmpMQWrite[1]/body">input.Request</operation>
+                        <link id="kaffu6ma" targetId="kaffu6m9"/>
+                     </assignment>
+                     <service id="kaffu6m9">
+                        <title>writeEvent</title>
+                        <serviceName>AMQP-FlightMovement:writeEvent</serviceName>
+                        <serviceGUID>1zVc4QYc7a6iRxAu9LvOWv</serviceGUID>
+                        <serviceInput>
+                           <parameter name="event" source="field" updatable="true">temp.tmpMQWrite</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="kaffu6fa" targetId="kaffu6f2" type="containerLink"/>
+                  </flow>
+                  <link id="kaffu6f5" targetId="kaffu6f6" type="containerLink"/>
+                  <link id="kaffu6f8" targetId="kaffu6f9" type="containerLink"/>
+                  <link id="kaffu6yq" targetId="kaffu6yp"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>67Fj76cb8e1cDMBKmJjbgN</types1:GUID>
+      <types1:DisplayName>ProcessInsertFlightMovement</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-09-26T11:37:56.16Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

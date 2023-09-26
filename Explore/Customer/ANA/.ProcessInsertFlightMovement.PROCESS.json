@@ -1,0 +1,65 @@
+{
+  "objectInfo" : {
+    "id" : "67Fj76cb8e1cDMBKmJjbgN",
+    "name" : "ProcessInsertFlightMovement",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "aabcoq3xgjATO9p-gt-8215972-2020-05-18T13:20:34.012Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2023-09-26T11:37:58.854Z",
+  "objectRefs" : [ {
+    "id" : "1zVc4QYc7a6iRxAu9LvOWv",
+    "name" : "AMQP-FlightMovement",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6WIuOSSHCwkNmum-gt-8904375-2020-05-20T14:20:43.926Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/ANAINFA"
+  }, {
+    "id" : "9mjeejhxOyQjQ57TQi6nUo",
+    "name" : "StrFlightMov",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bgaaaaa-gt-39537622-2020-05-18T13:17:02.203Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This object was generated from [str_FlightMov element declaration] located in the [ANAPoCSample.xsd] source XML schema.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customer/ANAINFA"
+  } ]
+}
